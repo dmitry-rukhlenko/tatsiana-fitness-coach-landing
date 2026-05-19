@@ -397,46 +397,58 @@ p {
 
 .info-tile {
     display: grid;
-    align-content: start;
-    min-height: 178px;
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    align-content: center;
+    justify-items: center;
+    min-height: 300px;
+    border: 1px solid var(--color-line);
     border-radius: var(--radius-md);
-    background: rgba(255, 255, 255, 0.78);
-    box-shadow: 0 18px 46px rgba(38, 34, 42, 0.08);
-    padding: 24px;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 18px 52px rgba(185, 163, 200, 0.16);
+    padding: 42px 28px;
+    text-align: center;
+    transform-origin: center;
     transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition);
 }
 
 .info-tile:hover,
 .info-tile:focus-within {
-    transform: translateY(-6px);
-    border-color: rgba(185, 163, 200, 0.35);
-    background: rgba(255, 255, 255, 0.94);
-    box-shadow: 0 24px 62px rgba(38, 34, 42, 0.12);
+    transform: translateY(-8px) scale(1.025);
+    border-color: rgba(185, 163, 200, 0.3);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 28px 70px rgba(185, 163, 200, 0.24);
 }
 
 .tile-icon {
-    display: block;
-    margin-bottom: 22px;
+    display: grid;
+    place-items: center;
+    width: 72px;
+    height: 72px;
+    margin-bottom: 32px;
+    border-radius: 50%;
+    background: var(--color-bg);
     font-size: 2.15rem;
     line-height: 1;
     transform-origin: center;
-    transition: transform var(--transition);
+    transition: transform var(--transition), background-color var(--transition);
 }
 
 .info-tile:hover .tile-icon,
 .info-tile:focus-within .tile-icon {
-    transform: scale(1.08) rotate(-3deg);
+    transform: translateY(-2px) scale(1.08);
+    background: var(--color-mint);
 }
 
 .info-tile h3 {
-    margin-bottom: 10px;
-    font-size: 1.18rem;
+    margin: 0 0 18px;
+    color: var(--color-text);
+    font-size: clamp(1.35rem, 1.7vw, 1.78rem);
+    line-height: 1.12;
 }
 
 .info-tile p {
+    max-width: 300px;
     margin-bottom: 0;
-    font-size: 0.98rem;
+    font-size: 1.02rem;
 }
 
 /* Cards and process ------------------------------------------------------- */
@@ -914,6 +926,20 @@ p {
 .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/*
+    Info tiles also use the reveal animation. Because reveal controls
+    transform, these more specific rules restore the hover lift and zoom
+    after the tile has appeared on screen.
+*/
+.info-tile.reveal {
+    transition: opacity 600ms ease, transform var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition);
+}
+
+.info-tile.reveal.is-visible:hover,
+.info-tile.reveal.is-visible:focus-within {
+    transform: translateY(-10px) scale(1.035);
 }
 
 @media (prefers-reduced-motion: reduce) {

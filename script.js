@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
             trustFourTitle: 'Qualifications',
             trustFourText: 'Details will be added before launch',
             forYouEyebrow: 'Who it helps',
-            forYouTitle: 'For adults who do not want to move through the day feeling stiff.',
+            forYouTitle: 'For adults who do not want to move through the day feeling stiff',
             forYouLead: 'The first step is not a hard challenge. It is a clear conversation about what limits your movement and what kind of training direction makes sense.',
             benefitOneTitle: 'More freedom of movement',
             benefitOneText: 'For people who often feel restricted in the back, hips, shoulders, or neck.',
