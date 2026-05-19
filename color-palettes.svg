@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="980" viewBox="0 0 1200 980">
+  <rect width="1200" height="980" fill="#ffffff"/>
+  <text x="40" y="55" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#1f1f1f">Tatsiana Fitness Coach Landing - Color Palette Options</text>
+  <text x="40" y="88" font-family="Arial, sans-serif" font-size="16" fill="#5f5f5f">Each row includes the required lavender #EDE1EF and mint #D8FFF9 colors.</text>
+
+  <g font-family="Arial, sans-serif" font-size="15">
+    <g transform="translate(40 125)">
+      <text x="0" y="0" font-size="20" font-weight="700" fill="#2F2A33">1. Soft Wellness</text>
+      <rect x="0" y="18" width="190" height="58" rx="10" fill="#FFF9F6"/><text x="12" y="53" fill="#2F2A33">#FFF9F6</text>
+      <rect x="205" y="18" width="190" height="58" rx="10" fill="#EDE1EF"/><text x="217" y="53" fill="#2F2A33">#EDE1EF</text>
+      <rect x="410" y="18" width="190" height="58" rx="10" fill="#D8FFF9"/><text x="422" y="53" fill="#263331">#D8FFF9</text>
+      <rect x="615" y="18" width="190" height="58" rx="10" fill="#DFA7B5"/><text x="627" y="53" fill="#2F2A33">#DFA7B5</text>
+      <rect x="820" y="18" width="190" height="58" rx="10" fill="#2F2A33"/><text x="832" y="53" fill="#ffffff">#2F2A33</text>
+    </g>
+
+    <g transform="translate(40 210)">
+      <text x="0" y="0" font-size="20" font-weight="700" fill="#26222A">2. Premium Pastel</text>
+      <rect x="0" y="18" width="190" height="58" rx="10" fill="#FAF7F2"/><text x="12" y="53" fill="#26222A">#FAF7F2</text>
+      <rect x="205" y="18" width="190" height="58" rx="10" fill="#EDE1EF"/><text x="217" y="53" fill="#26222A">#EDE1EF</text>
+      <rect x="410" y="18" width="190" height="58" rx="10" fill="#D8FFF9"/><text x="422" y="53" fill="#263331">#D8FFF9</text>
+      <rect x="615" y="18" width="190" height="58" rx="10" fill="#B9A3C8"/><text x="627" y="53" fill="#26222A">#B9A3C8</text>
+      <rect x="820" y="18" width="190" height="58" rx="10" fill="#26222A"/><text x="832" y="53" fill="#ffffff">#26222A</text>
+    </g>
+
+    <g transform="translate(40 295)">
+      <text x="0" y="0" font-size="20" font-weight="700" fill="#263331">3. Fresh Fitness</text>
+      <rect x="0" y="18" width="190" height="58" rx="10" fill="#F7FFFC"/><text x="12" y="53" fill="#263331">#F7FFFC</text>
+      <rect x="205" y="18" width="190" height="58" rx="10" fill="#D8FFF9"/><text x="217" y="53" fill="#263331">#D8FFF9</text>
+      <rect x="410" y="18" width="190" height="58" rx="10" fill="#EDE1EF"/><text x="422" y="53" fill="#263331">#EDE1EF</text>
+      <rect x="615" y="18" width="190" height="58" rx="10" fill="#6EC6B8"/><text x="627" y="53" fill="#12302B">#6EC6B8</text>
+      <rect x="820" y="18" width="190" height="58" rx="10" fill="#263331"/><text x="832" y="53" fill="#ffffff">#263331</text>
+    </g>
+
+    <g transform="translate(40 380)">
+      <text x="0" y="0" font-size="20" font-weight="700" fill="#332A30">4. Feminine Minimal</text>
+      <rect x="0" y="18" width="190" height="58" rx="10" fill="#FFF7FA"/><text x="12" y="53" fill="#332A30">#FFF7FA</text>
+      <rect x="205" y="18" width="190" height="58" rx="10" fill="#EDE1EF"/><text x="217" y="53" fill="#332A30">#EDE1EF</text>
+      <rect x="410" y="18" width="190" height="58" rx="10" fill="#F8DDE7"/><text x="422" y="53" fill="#332A30">#F8DDE7</text>
+      <rect x="615" y="18" width="190" height="58" rx="10" fill="#9ECFC7"/><text x="627" y="53" fill="#173632">#9ECFC7</text>
+      <rect x="820" y="18" width="190" height="58" rx="10" fill="#332A30"/><text x="832" y="53" fill="#ffffff">#332A30</text>
+    </g>
+
+    <g transform="translate(40 465)">
+      <text x="0" y="0" font-size="20" font-weight="700" fill="#302D29">5. Calm Studio</text>
+      <rect x="0" y="18" width="190" height="58" rx="10" fill="#F8F4EF"/><text x="12" y="53" fill="#302D29">#F8F4EF</text>
+      <rect x="205" y="18" width="190" height="58" rx="10" fill="#EDE1EF"/><text x="217" y="53" fill="#302D29">#EDE1EF</text>
+      <rect x="410" y="18" width="190" height="58" rx="10" fill="#D8FFF9"/><text x="422" y="53" fill="#263331">#D8FFF9</text>
+      <rect x="615" y="18" width="190" height="58" rx="10" fill="#C8B08A"/><text x="627" y="53" fill="#302D29">#C8B08A</text>
+      <rect x="820" y="18" width="190" height="58" rx="10" fill="#302D29"/><text x="832" y="53" fill="#ffffff">#302D29</text>
+    </g>
+
+    <g transform="translate(40 550)">
+      <text x="0" y="0" font-size="20" font-weight="700" fill="#202826">6. Mint Luxury</text>
+      <rect x="0" y="18" width="190" height="58" rx="10" fill="#FFFFFF" stroke="#d8d8d8"/><text x="12" y="53" fill="#202826">#FFFFFF</text>
+      <rect x="205" y="18" width="190" height="58" rx="10" fill="#D8FFF9"/><text x="217" y="53" fill="#202826">#D8FFF9</text>
+      <rect x="410" y="18" width="190" height="58" rx="10" fill="#EDE1EF"/><text x="422" y="53" fill="#202826">#EDE1EF</text>
+      <rect x="615" y="18" width="190" height="58" rx="10" fill="#B78F9D"/><text x="627" y="53" fill="#202826">#B78F9D</text>
+      <rect x="820" y="18" width="190" height="58" rx="10" fill="#202826"/><text x="832" y="53" fill="#ffffff">#202826</text>
+    </g>
+
+    <g transform="translate(40 635)">
+      <text x="0" y="0" font-size="20" font-weight="700" fill="#362A27">7. Warm Body Tone</text>
+      <rect x="0" y="18" width="190" height="58" rx="10" fill="#FFF3EC"/><text x="12" y="53" fill="#362A27">#FFF3EC</text>
+      <rect x="205" y="18" width="190" height="58" rx="10" fill="#EDE1EF"/><text x="217" y="53" fill="#362A27">#EDE1EF</text>
+      <rect x="410" y="18" width="190" height="58" rx="10" fill="#D8FFF9"/><text x="422" y="53" fill="#263331">#D8FFF9</text>
+      <rect x="615" y="18" width="190" height="58" rx="10" fill="#D7A18D"/><text x="627" y="53" fill="#362A27">#D7A18D</text>
+      <rect x="820" y="18" width="190" height="58" rx="10" fill="#362A27"/><text x="832" y="53" fill="#ffffff">#362A27</text>
+    </g>
+
+    <g transform="translate(40 720)">
+      <text x="0" y="0" font-size="20" font-weight="700" fill="#1F302E">8. Clean Health</text>
+      <rect x="0" y="18" width="190" height="58" rx="10" fill="#F4FBF8"/><text x="12" y="53" fill="#1F302E">#F4FBF8</text>
+      <rect x="205" y="18" width="190" height="58" rx="10" fill="#D8FFF9"/><text x="217" y="53" fill="#1F302E">#D8FFF9</text>
+      <rect x="410" y="18" width="190" height="58" rx="10" fill="#EDE1EF"/><text x="422" y="53" fill="#1F302E">#EDE1EF</text>
+      <rect x="615" y="18" width="190" height="58" rx="10" fill="#7AAFA6"/><text x="627" y="53" fill="#1F302E">#7AAFA6</text>
+      <rect x="820" y="18" width="190" height="58" rx="10" fill="#1F302E"/><text x="832" y="53" fill="#ffffff">#1F302E</text>
+    </g>
+
+    <g transform="translate(40 805)">
+      <text x="0" y="0" font-size="20" font-weight="700" fill="#211F26">9. Modern Contrast</text>
+      <rect x="0" y="18" width="190" height="58" rx="10" fill="#FDF8FF"/><text x="12" y="53" fill="#211F26">#FDF8FF</text>
+      <rect x="205" y="18" width="190" height="58" rx="10" fill="#EDE1EF"/><text x="217" y="53" fill="#211F26">#EDE1EF</text>
+      <rect x="410" y="18" width="190" height="58" rx="10" fill="#D8FFF9"/><text x="422" y="53" fill="#263331">#D8FFF9</text>
+      <rect x="615" y="18" width="190" height="58" rx="10" fill="#3B665F"/><text x="627" y="53" fill="#ffffff">#3B665F</text>
+      <rect x="820" y="18" width="190" height="58" rx="10" fill="#211F26"/><text x="832" y="53" fill="#ffffff">#211F26</text>
+    </g>
+
+    <g transform="translate(40 890)">
+      <text x="0" y="0" font-size="20" font-weight="700" fill="#272321">10. Elegant Pastel Sport</text>
+      <rect x="0" y="18" width="190" height="58" rx="10" fill="#FBFAF7"/><text x="12" y="53" fill="#272321">#FBFAF7</text>
+      <rect x="205" y="18" width="190" height="58" rx="10" fill="#EDE1EF"/><text x="217" y="53" fill="#272321">#EDE1EF</text>
+      <rect x="410" y="18" width="190" height="58" rx="10" fill="#D8FFF9"/><text x="422" y="53" fill="#263331">#D8FFF9</text>
+      <rect x="615" y="18" width="190" height="58" rx="10" fill="#E4B7A0"/><text x="627" y="53" fill="#272321">#E4B7A0</text>
+      <rect x="820" y="18" width="190" height="58" rx="10" fill="#272321"/><text x="832" y="53" fill="#ffffff">#272321</text>
+    </g>
+  </g>
+</svg>

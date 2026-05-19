@@ -1,0 +1,17 @@
+{
+  "name": "tatsiana-fitness-coach-landing",
+  "version": "1.0.0",
+  "description": "Static bilingual landing page for Tatsiana Rukhlenko fitness coaching.",
+  "private": true,
+  "scripts": {
+    "check": "node --check script.js",
+    "test": "npm run check && npm run test:visual",
+    "test:visual": "node tests/playwright-smoke.js"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "commonjs",
+  "devDependencies": {
+    "playwright": "^1.60.0"
+  }
+}

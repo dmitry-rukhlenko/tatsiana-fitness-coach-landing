@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+        Keep the page dependency-free for the MVP:
+        no analytics, no tracking pixels, no external font files, and no cookie banner.
+    -->
+    <title>Tatsiana Rukhlenko | Mobility & Fitness Coaching</title>
+    <meta name="description" content="Kostenlose Online-Beratung mit Tatsiana Rukhlenko: Mobility, Bewegungsfreiheit, Haltung und alltagstaugliches Training.">
+    <meta property="og:title" content="Tatsiana Rukhlenko | Mobility & Fitness Coaching">
+    <meta property="og:description" content="Mehr Bewegungsfreiheit, bessere Körperkontrolle und ein Trainingsansatz, der zu deinem Alltag passt.">
+    <meta property="og:image" content="images/tatsiana-hero.jpg">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#FAF7F2">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--
+        Skip links help keyboard and screen-reader users jump directly to the useful content.
+        They are visually hidden until focused.
+    -->
+    <a class="skip-link" href="#main" data-i18n="skipLink">Zum Inhalt springen</a>
+
+    <header class="site-header" id="top">
+        <div class="header-inner">
+            <a class="brand" href="#top" aria-label="Tatsiana Rukhlenko home">
+                <span class="brand-mark" aria-hidden="true">TR</span>
+                <span>Tatsiana Rukhlenko</span>
+            </a>
+
+            <!-- The aria-expanded value is updated in script.js when the mobile menu opens. -->
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-i18n-aria-label="menuOpenLabel">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+                <a href="#for-you" data-i18n="navForYou">Für wen</a>
+                <a href="#offer" data-i18n="navOffer">Beratung</a>
+                <a href="#services" data-i18n="navServices">Leistungen</a>
+                <a href="#about" data-i18n="navAbout">Über Tatsiana</a>
+                <a href="#faq" data-i18n="navFaq">FAQ</a>
+                <a href="#contact" data-i18n="navContact">Kontakt</a>
+                <a class="nav-cta" href="#consultation" data-i18n="navCta">Kostenlose Beratung</a>
+            </nav>
+
+            <!--
+                The language buttons do not reload the page.
+                JavaScript swaps copy using data-i18n attributes and stores the choice locally.
+            -->
+            <div class="language-switcher" aria-label="Language selector">
+                <button class="language-button is-active" type="button" data-lang-switch="de" aria-pressed="true">DE</button>
+                <button class="language-button" type="button" data-lang-switch="en" aria-pressed="false">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero section-panel">
+            <div class="hero-copy reveal">
+                <p class="eyebrow" data-i18n="heroEyebrow">Mobility & Fitness Coaching</p>
+                <h1 data-i18n="heroTitle">Freier bewegen. Stärker trainieren. Besser fühlen.</h1>
+                <p class="hero-lead" data-i18n="heroLead">Kostenlose Online-Beratung für Erwachsene, die mehr Bewegungsfreiheit, bessere Haltung und ein Training suchen, das wirklich in den Alltag passt.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#consultation" data-i18n="heroPrimary">Beratung anfragen</a>
+                    <a class="button button-secondary" href="#process" data-i18n="heroSecondary">So läuft es ab</a>
+                </div>
+                <p class="hero-note" data-i18n="heroNote">Calendly folgt später. Bis dahin kannst du deine Anfrage direkt per Formular senden.</p>
+            </div>
+
+            <div class="hero-media reveal" aria-label="Tatsiana Rukhlenko portrait">
+                <img src="images/tatsiana-hero.jpg" width="1200" height="1800" fetchpriority="high" alt="Tatsiana Rukhlenko steht in Sportkleidung im warmen Abendlicht auf einer Wiese.">
+            </div>
+        </section>
+
+        <section class="info-tiles" aria-label="Key coaching details">
+            <article class="info-tile reveal">
+                <span class="tile-icon" aria-hidden="true">🌍</span>
+                <h3 data-i18n="trustOneTitle">DE / EN</h3>
+                <p data-i18n="trustOneText">Beratung auf Deutsch und Englisch</p>
+            </article>
+            <article class="info-tile reveal">
+                <span class="tile-icon" aria-hidden="true">🧘</span>
+                <h3 data-i18n="trustTwoTitle">Mobility first</h3>
+                <p data-i18n="trustTwoText">Beweglichkeit, Haltung und Kontrolle</p>
+            </article>
+            <article class="info-tile reveal">
+                <span class="tile-icon" aria-hidden="true">✨</span>
+                <h3 data-i18n="trustThreeTitle">Individuell</h3>
+                <p data-i18n="trustThreeText">Dein Startpunkt, Alltag und Ziel zählen</p>
+            </article>
+            <article class="info-tile reveal">
+                <span class="tile-icon" aria-hidden="true">🎓</span>
+                <h3 data-i18n="trustFourTitle">Qualifikationen</h3>
+                <p data-i18n="trustFourText">Details folgen vor dem Launch</p>
+            </article>
+        </section>
+
+        <section class="content-section" id="for-you">
+            <div class="section-heading reveal">
+                <p class="eyebrow" data-i18n="forYouEyebrow">Für wen</p>
+                <h2 data-i18n="forYouTitle">Für Erwachsene, die sich nicht mehr steif durch den Tag bewegen wollen.</h2>
+                <p data-i18n="forYouLead">Der erste Schritt ist keine harte Challenge. Es ist ein klares Gespräch darüber, was dich im Alltag einschränkt und welche Trainingsrichtung sinnvoll ist.</p>
+            </div>
+
+            <div class="benefit-grid">
+                <article class="benefit-card reveal">
+                    <span class="card-number">01</span>
+                    <h3 data-i18n="benefitOneTitle">Mehr Bewegungsfreiheit</h3>
+                    <p data-i18n="benefitOneText">Für Menschen, die sich im Rücken, in Hüfte, Schultern oder Nacken oft eingeschränkt fühlen.</p>
+                </article>
+                <article class="benefit-card reveal">
+                    <span class="card-number">02</span>
+                    <h3 data-i18n="benefitTwoTitle">Bessere Haltung</h3>
+                    <p data-i18n="benefitTwoText">Für alle, die viel sitzen und wieder stabiler, aufrechter und bewusster trainieren möchten.</p>
+                </article>
+                <article class="benefit-card reveal">
+                    <span class="card-number">03</span>
+                    <h3 data-i18n="benefitThreeTitle">Sicherer Wiedereinstieg</h3>
+                    <p data-i18n="benefitThreeText">Für Erwachsene, die nach einer Pause wieder anfangen wollen und einen ruhigen, nachvollziehbaren Plan brauchen.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section services-section" id="services">
+            <div class="section-heading section-heading-centered reveal">
+                <p class="eyebrow" data-i18n="servicesEyebrow">Leistungen</p>
+                <h2 data-i18n="servicesTitle">Meine Leistungen</h2>
+                <p data-i18n="servicesLead">In der kostenlosen Beratung klären wir, welche Richtung für deinen Körper und deinen Alltag sinnvoll ist.</p>
+            </div>
+
+            <div class="services-group reveal">
+                <h3 data-i18n="mobilityServicesTitle">Mobility-Fokus</h3>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <span class="service-icon" aria-hidden="true">🔎</span>
+                        <h4 data-i18n="serviceMobilityCheckTitle">Mobility Check</h4>
+                        <p data-i18n="serviceMobilityCheckText">Wir schauen auf Bewegungsfreiheit, Einschränkungen und die nächsten sinnvollen Schritte.</p>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-icon" aria-hidden="true">🧍</span>
+                        <h4 data-i18n="servicePostureTitle">Haltung & Beweglichkeit</h4>
+                        <p data-i18n="servicePostureText">Ein ruhiger Fokus auf Haltung, Körpergefühl und mehr Kontrolle in alltäglicher Bewegung.</p>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-icon" aria-hidden="true">🌱</span>
+                        <h4 data-i18n="serviceRestartTitle">Wiedereinstieg</h4>
+                        <p data-i18n="serviceRestartText">Für Erwachsene, die nach einer Pause strukturiert und ohne Überforderung starten möchten.</p>
+                    </article>
+                </div>
+            </div>
+
+            <div class="services-group reveal">
+                <h3 data-i18n="consultationTopicsTitle">Themen der Beratung</h3>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <span class="service-icon" aria-hidden="true">🏋️</span>
+                        <h4 data-i18n="serviceTrainingTitle">Training</h4>
+                        <p data-i18n="serviceTrainingText">Wir besprechen, welche Trainingsform zu deinem Ziel, Level und Alltag passt.</p>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-icon" aria-hidden="true">💻</span>
+                        <h4 data-i18n="serviceOnlineTitle">Online Coaching</h4>
+                        <p data-i18n="serviceOnlineText">Wir klären, ob flexible Online-Begleitung für dich sinnvoll ist und wie sie aussehen könnte.</p>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-icon" aria-hidden="true">🥗</span>
+                        <h4 data-i18n="serviceNutritionTitle">Nutrition Habits</h4>
+                        <p data-i18n="serviceNutritionText">Wir sprechen über einfache Ernährungsgewohnheiten, die Training und Alltag unterstützen können.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="split-section section-panel" id="offer">
+            <div class="split-media reveal">
+                <img src="images/tatsiana-mobility.jpg" width="933" height="1400" loading="lazy" alt="Tatsiana Rukhlenko zeigt eine lockere Mobility-Pose im Park.">
+            </div>
+            <div class="split-copy reveal">
+                <p class="eyebrow" data-i18n="offerEyebrow">Kostenlose Beratung</p>
+                <h2 data-i18n="offerTitle">Erst verstehen, dann trainieren.</h2>
+                <p data-i18n="offerText">In der kostenlosen Online-Beratung sprechen wir über deinen Alltag, deine Bewegungseinschränkungen, dein Trainingslevel und deinen nächsten realistischen Schritt. Danach weißt du klarer, welche Art Training zu dir passt.</p>
+                <ul class="check-list">
+                    <li data-i18n="offerPointOne">Keine pauschalen Versprechen</li>
+                    <li data-i18n="offerPointTwo">Kein Druck, direkt ein Programm zu kaufen</li>
+                    <li data-i18n="offerPointThree">Ein ruhiger Blick auf Ziel, Körpergefühl und Routinen</li>
+                </ul>
+                <a class="button button-primary" href="#consultation" data-i18n="offerCta">Kostenlose Anfrage senden</a>
+            </div>
+        </section>
+
+        <section class="content-section process-section" id="process">
+            <div class="section-heading reveal">
+                <p class="eyebrow" data-i18n="processEyebrow">Ablauf</p>
+                <h2 data-i18n="processTitle">Von der Anfrage zum klaren nächsten Schritt.</h2>
+            </div>
+
+            <div class="process-grid">
+                <article class="process-step reveal">
+                    <span>1</span>
+                    <h3 data-i18n="processOneTitle">Formular senden</h3>
+                    <p data-i18n="processOneText">Du beschreibst kurz dein Ziel und wie du am liebsten kontaktiert werden möchtest.</p>
+                </article>
+                <article class="process-step reveal">
+                    <span>2</span>
+                    <h3 data-i18n="processTwoTitle">Termin abstimmen</h3>
+                    <p data-i18n="processTwoText">Calendly wird später ergänzt. Bis dahin stimmen wir den Termin per E-Mail ab.</p>
+                </article>
+                <article class="process-step reveal">
+                    <span>3</span>
+                    <h3 data-i18n="processThreeTitle">Online sprechen</h3>
+                    <p data-i18n="processThreeText">Im Gespräch klären wir, was dich bewegt, was dich einschränkt und welche Richtung Sinn ergibt.</p>
+                </article>
+                <article class="process-step reveal">
+                    <span>4</span>
+                    <h3 data-i18n="processFourTitle">Nächsten Schritt kennen</h3>
+                    <p data-i18n="processFourText">Du bekommst eine klare Empfehlung, ohne medizinische Diagnose oder unrealistische Versprechen.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="about-section section-panel" id="about">
+            <div class="about-copy reveal">
+                <p class="eyebrow" data-i18n="aboutEyebrow">Über Tatsiana</p>
+                <h2 data-i18n="aboutTitle">Training soll sich nach mehr Freiheit anfühlen, nicht nach mehr Druck.</h2>
+                <p data-i18n="aboutTextOne">Tatsiana Rukhlenko arbeitet mit Menschen, die ihren Körper wieder bewusster bewegen möchten: stärker, flexibler und mit mehr Vertrauen in alltägliche Bewegung.</p>
+                <p data-i18n="aboutTextTwo">Die Beratung ist der Startpunkt. Sie hilft, Ziele zu sortieren, Einschränkungen vorsichtig einzuordnen und einen Trainingsweg zu finden, der nicht überfordert.</p>
+                <div class="placeholder-note">
+                    <strong data-i18n="certTitle">Qualifikationen</strong>
+                    <span data-i18n="certText">Zertifikate und genaue Ausbildungsdetails folgen vor dem öffentlichen Launch.</span>
+                </div>
+            </div>
+            <div class="about-media reveal">
+                <img src="images/tatsiana-about.jpg" width="933" height="1400" loading="lazy" alt="Portrait von Tatsiana Rukhlenko im Park bei Sonnenlicht.">
+            </div>
+        </section>
+
+        <section class="content-section faq-section" id="faq">
+            <div class="section-heading reveal">
+                <p class="eyebrow" data-i18n="faqEyebrow">FAQ</p>
+                <h2 data-i18n="faqTitle">Häufige Fragen vor der ersten Beratung.</h2>
+            </div>
+
+            <div class="faq-list">
+                <details class="faq-item reveal">
+                    <summary data-i18n="faqOneQuestion">Ist das nur für sportliche Menschen?</summary>
+                    <p data-i18n="faqOneAnswer">Nein. Die Beratung ist besonders sinnvoll, wenn du einen verständlichen Einstieg suchst und wissen möchtest, wie du ohne Überforderung anfangen kannst.</p>
+                </details>
+                <details class="faq-item reveal">
+                    <summary data-i18n="faqTwoQuestion">Geht es um Schmerzbehandlung?</summary>
+                    <p data-i18n="faqTwoAnswer">Nein. Das Coaching ersetzt keine medizinische Diagnose oder Therapie. Wir sprechen vorsichtig über Bewegungseinschränkungen und alltagstaugliche Trainingsmöglichkeiten.</p>
+                </details>
+                <details class="faq-item reveal">
+                    <summary data-i18n="faqThreeQuestion">Brauche ich Equipment?</summary>
+                    <p data-i18n="faqThreeAnswer">Für die erste Beratung nicht. Wenn später ein Training entsteht, wird es an dein Umfeld angepasst: Zuhause, Studio oder einfache Hilfsmittel.</p>
+                </details>
+                <details class="faq-item reveal">
+                    <summary data-i18n="faqFourQuestion">Wie buche ich aktuell einen Termin?</summary>
+                    <p data-i18n="faqFourAnswer">Calendly wird später ergänzt. Im MVP sendet das Formular eine vorbereitete E-Mail, danach wird der Termin direkt abgestimmt.</p>
+                </details>
+            </div>
+        </section>
+
+        <section class="contact-panel section-panel reveal" id="contact" aria-label="Contact details">
+            <div class="contact-panel-heading">
+                <p class="eyebrow" data-i18n="contactEyebrow">Kontakt</p>
+                <h2 data-i18n="contactTitle">Direkt erreichbar für deine erste Frage.</h2>
+            </div>
+            <div class="contact-list">
+                <a class="contact-row" href="mailto:tatsiana.rukhlenko@gmail.com">
+                    <span aria-hidden="true">📧</span>
+                    <strong data-i18n="contactEmailLabel">Email:</strong>
+                    <em>tatsiana.rukhlenko@gmail.com</em>
+                </a>
+                <a class="contact-row" href="https://www.instagram.com/tatsi_ru/" target="_blank" rel="noopener noreferrer">
+                    <span aria-hidden="true">📸</span>
+                    <strong data-i18n="contactInstagramLabel">Instagram:</strong>
+                    <em>@tatsi_ru</em>
+                </a>
+            </div>
+        </section>
+
+        <section class="consultation-section" id="consultation">
+            <div class="consultation-copy reveal">
+                <p class="eyebrow" data-i18n="consultEyebrow">Kostenlose Online-Beratung</p>
+                <h2 data-i18n="consultTitle">Erzähl kurz, was dich im Moment einschränkt.</h2>
+                <p data-i18n="consultLead">Das Formular öffnet dein E-Mail-Programm mit einer vorbereiteten Nachricht an Tatsiana. So bleibt die erste Version ohne Backend und ohne Tracking.</p>
+                <div class="calendly-placeholder">
+                    <strong data-i18n="calendlyTitle">Calendly folgt</strong>
+                    <span data-i18n="calendlyText">Ein direkter Buchungskalender wird ergänzt, sobald der echte Link bereit ist.</span>
+                </div>
+            </div>
+
+            <form class="consultation-form reveal" id="consultation-form">
+                <div class="form-row">
+                    <label for="name" data-i18n="formNameLabel">Name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" required data-i18n-placeholder="formNamePlaceholder" placeholder="Dein Name">
+                </div>
+                <div class="form-row">
+                    <label for="email" data-i18n="formEmailLabel">E-Mail</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required data-i18n-placeholder="formEmailPlaceholder" placeholder="dein.name@example.com">
+                </div>
+                <div class="form-row">
+                    <label for="goal" data-i18n="formGoalLabel">Was möchtest du verbessern?</label>
+                    <select id="goal" name="goal" required>
+                        <option value="" data-i18n="formGoalPlaceholder">Bitte wählen</option>
+                        <option value="Mobility / Bewegungsfreiheit" data-i18n="formGoalOne">Mobility / Bewegungsfreiheit</option>
+                        <option value="Flexibility / Beweglichkeit" data-i18n="formGoalTwo">Flexibility / Beweglichkeit</option>
+                        <option value="Posture / Haltung" data-i18n="formGoalThree">Posture / Haltung</option>
+                        <option value="Return to training / Wiedereinstieg" data-i18n="formGoalFour">Return to training / Wiedereinstieg</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="message" data-i18n="formMessageLabel">Kurze Nachricht</label>
+                    <textarea id="message" name="message" rows="5" required data-i18n-placeholder="formMessagePlaceholder" placeholder="Was fühlt sich gerade eingeschränkt an? Was möchtest du erreichen?"></textarea>
+                </div>
+                <label class="privacy-check">
+                    <input id="privacy" name="privacy" type="checkbox" required>
+                    <span data-i18n="formPrivacyText">Ich habe die Datenschutzerklärung gelesen und bin damit einverstanden, dass meine Angaben zur Kontaktaufnahme verwendet werden.</span>
+                </label>
+                <button class="button button-primary button-full" type="submit" data-i18n="formSubmit">E-Mail vorbereiten</button>
+                <p class="form-helper" id="form-helper" role="status" data-i18n="formHelper">Deine Daten werden nicht auf dieser Website gespeichert.</p>
+            </form>
+        </section>
+
+        <section class="legal-section" aria-label="Legal information">
+            <article class="legal-card" id="impressum">
+                <h2 data-i18n="impressumTitle">Impressum</h2>
+                <p><strong data-i18n="impressumProvider">Angaben gemäß § 5 DDG</strong></p>
+                <p>Tatsiana Rukhlenko<br><span data-i18n="addressPlaceholder">Adresse folgt</span><br>Deutschland</p>
+                <p><strong data-i18n="legalContact">Kontakt</strong><br>
+                    E-Mail: <a href="mailto:tatsiana.rukhlenko@gmail.com">tatsiana.rukhlenko@gmail.com</a><br>
+                    Instagram: <a href="https://www.instagram.com/tatsi_ru/" target="_blank" rel="noopener noreferrer">@tatsi_ru</a>
+                </p>
+                <p><strong>USt-IdNr.:</strong> <span data-i18n="vatPlaceholder">folgt</span></p>
+                <p class="legal-note" data-i18n="impressumNote">Hinweis: Adresse, USt-IdNr. und weitere Pflichtangaben müssen vor dem öffentlichen Launch final geprüft und ergänzt werden.</p>
+            </article>
+
+            <article class="legal-card" id="privacy">
+                <h2 data-i18n="privacyTitle">Datenschutzerklärung</h2>
+                <p data-i18n="privacyIntro">Diese MVP-Version verwendet keine Analytics-Skripte, keine Marketing-Pixel und keine eingebetteten Drittanbieter-Widgets.</p>
+                <p data-i18n="privacyForm">Wenn du das Formular nutzt, öffnet dein E-Mail-Programm eine vorbereitete Nachricht. Die Verarbeitung erfolgt dann über deine E-Mail-App und den E-Mail-Dienst der Empfängerin.</p>
+                <p data-i18n="privacyRights">Du kannst Auskunft, Berichtigung oder Löschung deiner personenbezogenen Daten verlangen. Die finale Datenschutzerklärung muss vor dem Launch rechtlich geprüft werden.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>Tatsiana Rukhlenko</strong>
+            <p data-i18n="footerTagline">Mobility & Fitness Coaching für mehr Bewegungsfreiheit im Alltag.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+            <a href="#impressum" data-i18n="footerImpressum">Impressum</a>
+            <a href="#privacy" data-i18n="footerPrivacy">Datenschutz</a>
+            <a href="mailto:tatsiana.rukhlenko@gmail.com">Email</a>
+            <a href="https://www.instagram.com/tatsi_ru/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </nav>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

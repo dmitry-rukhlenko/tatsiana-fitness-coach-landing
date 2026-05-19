@@ -1,0 +1,14 @@
+# Installed npm packages are restored from package-lock.json.
+node_modules/
+
+# Local operating system files.
+.DS_Store
+
+# Original trainer photos stay local and must not be published.
+original images/
+
+# Old generated draft kept locally for reference.
+index gemini.html
+
+# Temporary screenshots created during manual checks.
+*.png.tmp
