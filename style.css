@@ -698,44 +698,44 @@ p {
 
 .contact-panel {
     display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(360px, 1fr);
-    gap: 34px;
+    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1fr);
+    gap: 26px;
     align-items: center;
     margin-bottom: 24px;
     background: var(--color-mint);
-    padding: 48px 58px;
+    padding: 38px 46px;
 }
 
 .contact-panel-heading h2 {
-    max-width: 560px;
+    max-width: 500px;
     margin-bottom: 0;
-    font-size: clamp(2.1rem, 4vw, 4.1rem);
+    font-size: clamp(1.65rem, 3vw, 2.75rem);
 }
 
 .contact-list {
     display: grid;
-    gap: 22px;
+    gap: 14px;
 }
 
 .contact-row {
     display: grid;
-    grid-template-columns: 44px auto 1fr;
-    gap: 14px;
+    grid-template-columns: 32px auto 1fr;
+    gap: 10px;
     align-items: center;
     width: fit-content;
     max-width: 100%;
-    border-radius: 18px;
+    border-radius: 14px;
     color: var(--color-text);
-    font-size: clamp(1.25rem, 2vw, 1.9rem);
+    font-size: clamp(1rem, 1.45vw, 1.3rem);
     font-weight: 820;
     letter-spacing: 0;
-    padding: 8px 12px;
+    padding: 6px 10px;
     text-decoration: none;
     transition: transform var(--transition), background-color var(--transition);
 }
 
 .contact-row span {
-    font-size: 1.6rem;
+    font-size: 1.25rem;
     transform-origin: center;
     transition: transform var(--transition);
 }
@@ -755,7 +755,7 @@ p {
 
 .contact-row:hover,
 .contact-row:focus-visible {
-    transform: translateX(6px);
+    transform: translateX(4px);
     background: rgba(255, 255, 255, 0.4);
 }
 
@@ -1122,13 +1122,13 @@ p {
     }
 
     .contact-list {
-        gap: 18px;
+        gap: 12px;
     }
 
     .contact-row {
-        grid-template-columns: 34px 1fr;
-        gap: 10px 12px;
-        font-size: 1.18rem;
+        grid-template-columns: 28px 1fr;
+        gap: 8px 10px;
+        font-size: 0.98rem;
     }
 
     .contact-row em {
