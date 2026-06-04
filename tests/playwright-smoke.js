@@ -55,6 +55,35 @@ async function runSmokeTest() {
         throw new Error(`Language switch did not update the hero title: "${englishHero}".`);
     }
 
+    /*
+     * The legal notice is intentionally a separate page.
+     * This catches broken footer links when files are renamed or moved.
+     */
+    const impressumHref = await page.locator('footer a[href="impressum.html"]').getAttribute('href');
+    if (impressumHref !== 'impressum.html') {
+        throw new Error(`Expected footer Impressum link to point to impressum.html, found "${impressumHref}".`);
+    }
+
+    await page.goto(pathToFileURL(path.join(projectRoot, 'impressum.html')).href);
+
+    const impressumTitle = await page.locator('h1').textContent();
+    if (impressumTitle.trim() !== 'Imprint') {
+        throw new Error(`Unexpected Impressum page title: "${impressumTitle}".`);
+    }
+
+    const ddgText = await page.locator('main').textContent();
+    if (!ddgText.includes('Section 5 DDG')) {
+        throw new Error('Impressum page does not mention § 5 DDG.');
+    }
+
+    await page.getByRole('button', { name: 'DE', exact: true }).click();
+    await page.waitForFunction(() => document.documentElement.lang === 'de');
+
+    const germanImpressumTitle = await page.locator('h1').textContent();
+    if (germanImpressumTitle.trim() !== 'Impressum') {
+        throw new Error(`Language switch did not update the Impressum title: "${germanImpressumTitle}".`);
+    }
+
     await browser.close();
     console.log('Playwright smoke test passed.');
 }

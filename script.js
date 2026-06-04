@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /*
         Centralized translation data keeps the HTML clean.
-        Each key matches a data-i18n attribute in index.html.
+        Each key matches a data-i18n attribute in the public HTML pages.
     */
     const translations = {
         de: {
@@ -147,7 +147,35 @@ document.addEventListener('DOMContentLoaded', () => {
             privacyRights: 'Du kannst Auskunft, Berichtigung oder Löschung deiner personenbezogenen Daten verlangen. Die finale Datenschutzerklärung muss vor dem Launch rechtlich geprüft werden.',
             footerTagline: 'Mobility & Fitness Coaching für mehr Bewegungsfreiheit im Alltag.',
             footerImpressum: 'Impressum',
-            footerPrivacy: 'Datenschutz'
+            footerPrivacy: 'Datenschutz',
+            legalHomeLabel: 'Zur Startseite von Tatsiana Rukhlenko',
+            legalPageEyebrow: 'Anbieterkennzeichnung',
+            legalPageTitle: 'Impressum',
+            legalPageIntro: 'Angaben gemäß § 5 DDG. Diese Seite enthält typische Pflichtangaben für den MVP und muss vor dem öffentlichen Launch mit den finalen Daten geprüft und ergänzt werden.',
+            legalProviderHeading: 'Angaben gemäß § 5 DDG',
+            legalCountry: 'Deutschland',
+            legalContactEmailLabel: 'E-Mail:',
+            legalContactInstagramLabel: 'Instagram:',
+            legalContactNote: 'Eine Telefonnummer oder ein weiterer unmittelbarer elektronischer Kontaktweg sollte ergänzt werden, sobald die finalen Kontaktdaten vorliegen.',
+            legalVatHeading: 'Umsatzsteuer',
+            legalVatText: 'Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: folgt',
+            legalResponsibleHeading: 'Verantwortlich für den Inhalt',
+            legalResponsibleNote: 'Falls die Website später journalistisch-redaktionelle Inhalte enthält, muss diese Angabe vor dem Launch nach § 18 Abs. 2 MStV final geprüft werden.',
+            legalOdrHeading: 'EU-Streitschlichtung',
+            legalOdrPrefix: 'Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit:',
+            legalConsumerHeading: 'Verbraucherstreitbeilegung',
+            legalConsumerText: 'Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.',
+            legalContentLiabilityHeading: 'Haftung für Inhalte',
+            legalContentLiabilityText: 'Als Diensteanbieterin sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir bemühen uns, die Inhalte aktuell und korrekt zu halten. Eine Gewähr für Vollständigkeit, Richtigkeit und Aktualität wird jedoch nicht übernommen.',
+            legalLinksLiabilityHeading: 'Haftung für Links',
+            legalLinksLiabilityText: 'Diese Website kann Links zu externen Websites Dritter enthalten, auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte ist der jeweilige Anbieter oder Betreiber der verlinkten Seite verantwortlich. Bei Bekanntwerden von Rechtsverletzungen entfernen wir entsprechende Links zeitnah.',
+            legalCopyrightHeading: 'Urheberrecht',
+            legalCopyrightText: 'Die auf dieser Website erstellten Inhalte, Texte, Bilder und Gestaltungen unterliegen dem deutschen Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung oder sonstige Nutzung außerhalb der Grenzen des Urheberrechts benötigen die vorherige Zustimmung der jeweiligen Rechteinhaberin.',
+            legalPhotoCredit: 'Bildnachweis: Fotos von Tatsiana Rukhlenko beziehungsweise mit Zustimmung für diese Website bereitgestellte Trainerfotos.',
+            legalMvpHeading: 'Hinweis zum MVP',
+            legalMvpText: 'Adresse, Telefonnummer beziehungsweise weiterer Kontaktweg, Umsatzsteuerdaten, Qualifikationen und gegebenenfalls weitere Pflichtangaben müssen vor Veröffentlichung final ergänzt und rechtlich geprüft werden.',
+            legalBackHome: 'Zurück zur Startseite',
+            legalPrivacyLink: 'Datenschutzerklärung'
         },
         en: {
             skipLink: 'Skip to content',
@@ -278,7 +306,35 @@ document.addEventListener('DOMContentLoaded', () => {
             privacyRights: 'You may request access, correction, or deletion of your personal data. The final privacy policy must be legally reviewed before launch.',
             footerTagline: 'Mobility & Fitness Coaching for more freedom of movement in everyday life.',
             footerImpressum: 'Imprint',
-            footerPrivacy: 'Privacy'
+            footerPrivacy: 'Privacy',
+            legalHomeLabel: 'Go to Tatsiana Rukhlenko homepage',
+            legalPageEyebrow: 'Provider information',
+            legalPageTitle: 'Imprint',
+            legalPageIntro: 'Information according to Section 5 DDG. This page contains typical legal notice information for the MVP and must be reviewed and completed with final details before public launch.',
+            legalProviderHeading: 'Information according to Section 5 DDG',
+            legalCountry: 'Germany',
+            legalContactEmailLabel: 'Email:',
+            legalContactInstagramLabel: 'Instagram:',
+            legalContactNote: 'A phone number or another direct electronic contact option should be added once the final contact details are available.',
+            legalVatHeading: 'VAT',
+            legalVatText: 'VAT identification number according to Section 27a of the German VAT Act: to be added',
+            legalResponsibleHeading: 'Responsible for content',
+            legalResponsibleNote: 'If the website later contains journalistic-editorial content, this information must be reviewed before launch according to Section 18(2) MStV.',
+            legalOdrHeading: 'EU dispute resolution',
+            legalOdrPrefix: 'The European Commission provides a platform for online dispute resolution:',
+            legalConsumerHeading: 'Consumer dispute resolution',
+            legalConsumerText: 'We are not obliged and not willing to participate in dispute resolution proceedings before a consumer arbitration board.',
+            legalContentLiabilityHeading: 'Liability for content',
+            legalContentLiabilityText: 'As a service provider, we are responsible for our own content on these pages under general law. We make reasonable efforts to keep the content current and correct. However, no guarantee is given for completeness, accuracy, or timeliness.',
+            legalLinksLiabilityHeading: 'Liability for links',
+            legalLinksLiabilityText: 'This website may contain links to external third-party websites over whose content we have no influence. The respective provider or operator of the linked page is responsible for that third-party content. If we become aware of legal violations, we will remove corresponding links promptly.',
+            legalCopyrightHeading: 'Copyright',
+            legalCopyrightText: 'The content, text, images, and design created for this website are subject to German copyright law. Reproduction, editing, distribution, or other use beyond the limits of copyright law requires prior consent from the respective rights holder.',
+            legalPhotoCredit: 'Photo credit: photos of Tatsiana Rukhlenko or trainer photos provided with permission for this website.',
+            legalMvpHeading: 'MVP note',
+            legalMvpText: 'Address, phone number or another contact option, VAT details, qualifications, and any further mandatory information must be finalized and legally reviewed before publication.',
+            legalBackHome: 'Back to homepage',
+            legalPrivacyLink: 'Privacy Policy'
         }
     };
 
@@ -334,6 +390,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function closeMobileMenu() {
+        if (!menuButton || !siteNav) {
+            return;
+        }
+
         document.body.classList.remove('menu-open');
         siteNav.classList.remove('is-open');
         menuButton.classList.remove('is-open');
@@ -342,6 +402,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function toggleMobileMenu() {
+        if (!menuButton || !siteNav) {
+            return;
+        }
+
         const isOpen = siteNav.classList.toggle('is-open');
         document.body.classList.toggle('menu-open', isOpen);
         menuButton.classList.toggle('is-open', isOpen);
@@ -408,11 +472,13 @@ document.addEventListener('DOMContentLoaded', () => {
         revealElements.forEach((element) => observer.observe(element));
     }
 
-    menuButton.addEventListener('click', toggleMobileMenu);
+    if (menuButton && siteNav) {
+        menuButton.addEventListener('click', toggleMobileMenu);
 
-    siteNav.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', closeMobileMenu);
-    });
+        siteNav.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    }
 
     languageButtons.forEach((button) => {
         button.addEventListener('click', () => {
@@ -421,7 +487,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    consultationForm.addEventListener('submit', handleFormSubmit);
+    if (consultationForm && formHelper) {
+        consultationForm.addEventListener('submit', handleFormSubmit);
+    }
 
     translatePage(getInitialLanguage());
     initializeRevealAnimation();
