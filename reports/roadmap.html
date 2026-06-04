@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap - Tatsiana Rukhlenko Landing</title>
+    <style>
+        :root {
+            --bg: #FAF7F2;
+            --surface: #FFFFFF;
+            --lavender: #EDE1EF;
+            --mint: #D8FFF9;
+            --accent: #B9A3C8;
+            --ink: #26222A;
+            --muted: #62586A;
+            --line: rgba(38, 34, 42, 0.13);
+            --deep: #211D26;
+            --shadow: 0 14px 34px rgba(38, 34, 42, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.55;
+        }
+
+        main {
+            width: min(1160px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 48px 0 72px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+            line-height: 1.08;
+            text-wrap: balance;
+        }
+
+        h1 {
+            max-width: 900px;
+            font-size: clamp(2.4rem, 6vw, 5rem);
+        }
+
+        h2 {
+            font-size: clamp(1.55rem, 3vw, 2.45rem);
+        }
+
+        h3 {
+            font-size: 1.12rem;
+        }
+
+        p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        code {
+            border-radius: 8px;
+            background: rgba(38, 34, 42, 0.08);
+            padding: 2px 6px;
+        }
+
+        .hero {
+            display: grid;
+            gap: 20px;
+            border-radius: 28px;
+            background: var(--deep);
+            color: white;
+            padding: clamp(28px, 5vw, 56px);
+        }
+
+        .hero p {
+            max-width: 760px;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 1.08rem;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .pill {
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+            padding: 8px 12px;
+            font-weight: 800;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 14px;
+            margin: 24px 0 42px;
+        }
+
+        .summary-card,
+        .roadmap-section,
+        .task {
+            border-radius: 20px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+
+        .summary-card {
+            padding: 18px;
+        }
+
+        .summary-card strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        .roadmap {
+            display: grid;
+            gap: 22px;
+        }
+
+        .roadmap-section {
+            overflow: hidden;
+        }
+
+        .section-header {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 16px;
+            align-items: center;
+            border-bottom: 1px solid var(--line);
+            background: var(--lavender);
+            padding: 22px;
+        }
+
+        .section-number {
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--deep);
+            color: white;
+            font-weight: 860;
+        }
+
+        .section-tag {
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.68);
+            color: var(--ink);
+            padding: 6px 10px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .task-list {
+            display: grid;
+            gap: 12px;
+            padding: 18px;
+        }
+
+        .task {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 14px;
+            align-items: start;
+            border: 1px solid var(--line);
+            box-shadow: none;
+            padding: 16px;
+        }
+
+        .task-icon {
+            display: grid;
+            place-items: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--mint);
+            font-size: 1.18rem;
+        }
+
+        .task-title {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .task-number {
+            color: var(--muted);
+            font-size: 0.92rem;
+            font-weight: 820;
+        }
+
+        .badge {
+            border-radius: 999px;
+            padding: 3px 8px;
+            font-size: 0.78rem;
+            font-weight: 820;
+        }
+
+        .badge.p1 {
+            background: var(--deep);
+            color: white;
+        }
+
+        .badge.p2 {
+            background: var(--accent);
+            color: var(--ink);
+        }
+
+        .badge.p3 {
+            background: var(--mint);
+            color: var(--ink);
+        }
+
+        .legal-text {
+            margin-top: 10px;
+            border-radius: 14px;
+            background: var(--bg);
+            color: var(--ink);
+            padding: 12px;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 720px) {
+            .section-header {
+                grid-template-columns: auto 1fr;
+            }
+
+            .section-tag {
+                grid-column: 1 / -1;
+                width: fit-content;
+            }
+
+            .task {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero">
+            <div class="meta">
+                <span class="pill">🗺️ Roadmap</span>
+                <span class="pill">🚀 Before launch</span>
+                <span class="pill">🇩🇪 Germany/EU ready</span>
+            </div>
+            <h1>План развития сайта Tatsiana Rukhlenko</h1>
+            <p>Наглядная версия roadmap: что нужно сделать до публичного запуска, что влияет на заявки, legal, аналитику, SEO и дальнейший рост сайта.</p>
+        </section>
+
+        <section class="summary-grid" aria-label="Roadmap summary">
+            <article class="summary-card">
+                <strong>🔐 Legal first</strong>
+                <p>Сначала закрываем Impressum, Datenschutz, адрес, VAT и квалификации.</p>
+            </article>
+            <article class="summary-card">
+                <strong>📅 Booking next</strong>
+                <p>Потом решаем: Calendly, form service или backend для заявок.</p>
+            </article>
+            <article class="summary-card">
+                <strong>📊 Analytics later</strong>
+                <p>Cloudflare Web Analytics можно добавить как бесплатный privacy-friendly вариант.</p>
+            </article>
+            <article class="summary-card">
+                <strong>🌱 Growth after launch</strong>
+                <p>Отзывы, услуги, блог и SEO-контент добавляем после базового запуска.</p>
+            </article>
+        </section>
+
+        <div class="roadmap">
+            <section class="roadmap-section">
+                <div class="section-header">
+                    <span class="section-number">1</span>
+                    <div>
+                        <h2>Перед публичным запуском</h2>
+                        <p>Самое важное для доверия, законности и готовности сайта.</p>
+                    </div>
+                    <span class="section-tag">🔴 Critical</span>
+                </div>
+                <div class="task-list">
+                    <article class="task">
+                        <span class="task-icon">🏠</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">1.1</span><h3>Заменить <code>Adresse folgt</code></h3><span class="badge p1">P1</span></div>
+                            <p>Добавить реальный рабочий адрес, который нужен для немецкого Impressum.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">🧾</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">1.2</span><h3>Уточнить VAT ID</h3><span class="badge p1">P1</span></div>
+                            <p>Заменить <code>USt-IdNr.: folgt</code> только после подтверждения настоящего VAT ID. Не использовать временное значение <code>123456789</code>.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">🎓</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">1.3</span><h3>Добавить квалификации</h3><span class="badge p1">P1</span></div>
+                            <p>Добавить проверенные данные о квалификациях, сертификатах и обучении Tatsiana.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">⚖️</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">1.4</span><h3>Проверить legal-тексты</h3><span class="badge p1">P1</span></div>
+                            <p>Финально проверить <code>Impressum</code> и <code>Datenschutzerklärung</code> у квалифицированного немецкого legal/privacy специалиста.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">📅</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">1.5</span><h3>Добавить реальную Calendly-ссылку</h3><span class="badge p2">P2</span></div>
+                            <p>Добавить ссылку, когда она будет готова. До этого не показывать Calendly в публичном тексте сайта.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="roadmap-section">
+                <div class="section-header">
+                    <span class="section-number">2</span>
+                    <div>
+                        <h2>Запись на консультацию и формы</h2>
+                        <p>Как человек оставляет заявку и что происходит с его данными.</p>
+                    </div>
+                    <span class="section-tag">🎯 Conversion</span>
+                </div>
+                <div class="task-list">
+                    <article class="task">
+                        <span class="task-icon">🧭</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">2.1</span><h3>Выбрать формат Calendly</h3><span class="badge p2">P2</span></div>
+                            <p>Решить, будет ли Calendly открываться внешней ссылкой или встраиваться прямо на страницу.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">🔐</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">2.2</span><h3>Обновить Datenschutz при embed</h3><span class="badge p1">P1</span></div>
+                            <p>Если Calendly будет встроен на страницу, обновить <code>Datenschutzerklärung</code>, потому что будет загружаться сторонний виджет.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">📨</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">2.3</span><h3>Заменить <code>mailto:</code></h3><span class="badge p2">P2</span></div>
+                            <p>Рассмотреть полноценный form service или backend endpoint вместо текущего email fallback.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">🗄️</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">2.4</span><h3>Документировать хранение данных</h3><span class="badge p2">P2</span></div>
+                            <p>Если используется form service, указать, где хранятся данные формы и как долго они сохраняются.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="roadmap-section">
+                <div class="section-header">
+                    <span class="section-number">3</span>
+                    <div>
+                        <h2>Аналитика и согласие пользователя</h2>
+                        <p>Как измерять заявки и не создавать лишних privacy-рисков.</p>
+                    </div>
+                    <span class="section-tag">📊 Analytics</span>
+                </div>
+                <div class="task-list">
+                    <article class="task">
+                        <span class="task-icon">🧘</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">3.1</span><h3>MVP без tracking</h3><span class="badge p3">Info</span></div>
+                            <p>В MVP сейчас намеренно нет аналитики и трекинга.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">🟠</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">3.2.1</span><h3>Cloudflare Web Analytics</h3><span class="badge p2">P2</span></div>
+                            <p>Бесплатный privacy-friendly вариант аналитики.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">📈</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">3.2.2</span><h3>Plausible, Fathom или Vercel Analytics</h3><span class="badge p3">Option</span></div>
+                            <p>Privacy-friendly варианты для понимания трафика и заявок.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">🎯</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">3.2.3</span><h3>Google Analytics или Meta Pixel</h3><span class="badge p3">Later</span></div>
+                            <p>Использовать только если понадобятся реклама, remarketing или более сложный marketing tracking.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">💻</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">3.3</span><h3>Cloudflare вариант 1</h3><span class="badge p2">P2</span></div>
+                            <p>Если сайт не размещён через Cloudflare Pages, вручную добавить Cloudflare JavaScript snippet перед <code>&lt;/body&gt;</code> в <code>index.html</code> и <code>impressum.html</code> после получения реального <code>data-cf-beacon</code> token.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">🇩🇪</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">3.4</span><h3>Добавить текст в Datenschutzerklärung</h3><span class="badge p1">P1</span></div>
+                            <p>Если добавляется Cloudflare Web Analytics, включить этот раздел и юридически проверить его перед запуском:</p>
+                            <p class="legal-text">Wir verwenden Cloudflare Web Analytics zur anonymisierten Auswertung der Seitennutzung. Cloudflare Web Analytics verwendet keine Cookies und erhebt nach Angaben von Cloudflare keine personenbezogenen Daten der Besucher.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">✅</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">3.5</span><h3>Consent до загрузки инструментов</h3><span class="badge p1">P1</span></div>
+                            <p>Если добавляются analytics, pixels, maps, videos или embedded widgets, реализовать consent до загрузки этих инструментов.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">⚙️</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">3.6</span><h3>Cookie/settings control</h3><span class="badge p2">P2</span></div>
+                            <p>Добавить управление настройками, чтобы пользователь мог позже изменить своё согласие.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="roadmap-section">
+                <div class="section-header">
+                    <span class="section-number">4</span>
+                    <div>
+                        <h2>Развитие контента</h2>
+                        <p>Что добавлять после базового запуска, чтобы сайт рос.</p>
+                    </div>
+                    <span class="section-tag">🌱 Growth</span>
+                </div>
+                <div class="task-list">
+                    <article class="task">
+                        <span class="task-icon">💬</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">4.1</span><h3>Отзывы клиентов</h3><span class="badge p2">P2</span></div>
+                            <p>Добавлять отзывы только с явным разрешением.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">📝</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">4.2</span><h3>Before/after content</h3><span class="badge p3">Careful</span></div>
+                            <p>Добавлять transformation content только с явным письменным согласием.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">📦</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">4.3</span><h3>Детали услуг и пакетов</h3><span class="badge p2">P2</span></div>
+                            <p>Добавить после того, как Tatsiana подтвердит точное предложение.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">🔎</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">4.4</span><h3>Блог или короткие статьи</h3><span class="badge p3">SEO</span></div>
+                            <p>Позже добавить SEO-контент по темам mobility, posture, flexibility и beginner-friendly training.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="roadmap-section">
+                <div class="section-header">
+                    <span class="section-number">5</span>
+                    <div>
+                        <h2>Публикация и инфраструктура</h2>
+                        <p>Где сайт будет жить и что проверить перед запуском.</p>
+                    </div>
+                    <span class="section-tag">🚀 Launch</span>
+                </div>
+                <div class="task-list">
+                    <article class="task">
+                        <span class="task-icon">🏗️</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">5.1</span><h3>Выбрать hosting</h3><span class="badge p1">P1</span></div>
+                            <p>Выбрать static hosting, Vercel, Netlify или другой провайдер.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">🌍</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">5.2</span><h3>Подключить domain и SSL</h3><span class="badge p1">P1</span></div>
+                            <p>Подключить domain, SSL и production metadata.</p>
+                        </div>
+                    </article>
+                    <article class="task">
+                        <span class="task-icon">🧪</span>
+                        <div>
+                            <div class="task-title"><span class="task-number">5.3</span><h3>Финальная проверка</h3><span class="badge p1">P1</span></div>
+                            <p>Перед запуском проверить mobile, desktop, accessibility, language switching и legal footer links.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
