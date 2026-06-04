@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impeccable Critique - Tatsiana Rukhlenko Landing Page</title>
+    <style>
+        :root {
+            --bg: #faf7f2;
+            --surface: #ffffff;
+            --lavender: #ede1ef;
+            --mint: #d8fff9;
+            --ink: #26222a;
+            --muted: #62586a;
+            --line: rgba(38, 34, 42, 0.14);
+            --deep: #211d26;
+            --accent: #7f638f;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.55;
+        }
+
+        main {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 48px 0 72px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0 0 14px;
+            line-height: 1.08;
+        }
+
+        h1 {
+            max-width: 900px;
+            font-size: clamp(2.3rem, 6vw, 4.8rem);
+        }
+
+        h2 {
+            margin-top: 42px;
+            font-size: clamp(1.8rem, 3vw, 2.7rem);
+        }
+
+        h3 {
+            margin-top: 22px;
+            font-size: 1.25rem;
+        }
+
+        p {
+            max-width: 820px;
+            margin: 0 0 14px;
+            color: var(--muted);
+        }
+
+        a {
+            color: var(--ink);
+            font-weight: 750;
+        }
+
+        .hero {
+            display: grid;
+            gap: 22px;
+            border-radius: 28px;
+            background: var(--deep);
+            color: white;
+            padding: clamp(28px, 5vw, 56px);
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .pill {
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 8px 12px;
+            color: white;
+            font-weight: 760;
+        }
+
+        .score-card {
+            display: grid;
+            gap: 10px;
+            border-radius: 22px;
+            background: var(--surface);
+            box-shadow: 0 10px 24px rgba(185, 163, 200, 0.16);
+            padding: 24px;
+        }
+
+        .score-number {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 850;
+            line-height: 1;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 18px;
+            background: var(--surface);
+        }
+
+        th,
+        td {
+            border-bottom: 1px solid var(--line);
+            padding: 14px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: var(--lavender);
+            color: var(--ink);
+        }
+
+        tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin: 18px 0;
+        }
+
+        .card {
+            border-radius: 20px;
+            background: var(--surface);
+            padding: 20px;
+            box-shadow: 0 10px 24px rgba(185, 163, 200, 0.14);
+        }
+
+        .card.mint {
+            background: var(--mint);
+        }
+
+        .card.lavender {
+            background: var(--lavender);
+        }
+
+        .severity {
+            display: inline-block;
+            border-radius: 999px;
+            background: var(--deep);
+            color: white;
+            padding: 3px 10px;
+            font-size: 0.82rem;
+            font-weight: 800;
+        }
+
+        ul,
+        ol {
+            margin-top: 8px;
+            padding-left: 22px;
+            color: var(--muted);
+        }
+
+        li + li {
+            margin-top: 7px;
+        }
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        figure {
+            margin: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--surface);
+            box-shadow: 0 10px 24px rgba(185, 163, 200, 0.14);
+        }
+
+        figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        figcaption {
+            padding: 12px 14px;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .run-notes {
+            border-radius: 20px;
+            background: var(--lavender);
+            padding: 20px;
+        }
+
+        code {
+            border-radius: 8px;
+            background: rgba(38, 34, 42, 0.08);
+            padding: 2px 6px;
+        }
+
+        @media (max-width: 680px) {
+            main {
+                width: min(390px, calc(100% - 28px));
+                padding-top: 24px;
+            }
+
+            th,
+            td {
+                padding: 10px;
+                font-size: 0.92rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero">
+            <div>
+                <h1>Impeccable Critique: Landing Page</h1>
+                <p>Цель: оценить текущий лендинг Tatsiana Rukhlenko как брендовый DE/EN сайт для записи на бесплатную онлайн-консультацию.</p>
+            </div>
+            <div class="meta">
+                <span class="pill">Target: index.html</span>
+                <span class="pill">Slug: index-html</span>
+                <span class="pill">Date: 2026-06-04</span>
+                <span class="pill">Detector: clean</span>
+            </div>
+        </section>
+
+        <section class="score-card" aria-labelledby="score-title">
+            <h2 id="score-title">Design Health Score</h2>
+            <div class="score-number">27/40</div>
+            <p><strong>Rating:</strong> acceptable foundation. Сайт стал заметно лучше после последнего polish: нет горизонтального скролла, Calendly убран из публичного текста, legal placeholders вынесены из главной страницы. Главный риск теперь не визуальный, а conversion flow: запись все еще зависит от email client.</p>
+        </section>
+
+        <h2>Heuristic Scores</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Heuristic</th>
+                    <th>Score</th>
+                    <th>Key Issue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>Visibility of System Status</td><td>3</td><td>Language state, form helper, and privacy note are visible. There is still no true on-site success state after submit because mailto leaves the browser.</td></tr>
+                <tr><td>2</td><td>Match System / Real World</td><td>3</td><td>Mobility and careful non-medical wording fit the audience. Some labels remain mixed-language, for example Nutrition Habits on German page.</td></tr>
+                <tr><td>3</td><td>User Control and Freedom</td><td>3</td><td>Navigation, DE/EN switch, footer legal links, and direct email fallback are available. The booking path still depends on external email behavior.</td></tr>
+                <tr><td>4</td><td>Consistency and Standards</td><td>3</td><td>The design system is now documented and mostly followed. Card repetition still appears in info tiles and services.</td></tr>
+                <tr><td>5</td><td>Error Prevention</td><td>2</td><td>Native required fields help, but mailto can fail silently if no email app is configured.</td></tr>
+                <tr><td>6</td><td>Recognition Rather Than Recall</td><td>3</td><td>Sections and CTAs are understandable. Visitors must still infer exact consultation duration and response expectation.</td></tr>
+                <tr><td>7</td><td>Flexibility and Efficiency</td><td>2</td><td>The form is functional, but not efficient compared with a real booking link or backend form.</td></tr>
+                <tr><td>8</td><td>Aesthetic and Minimalist Design</td><td>3</td><td>Real photography and pastel palette work. The page still has a strong card-grid rhythm that can feel template-like in the middle.</td></tr>
+                <tr><td>9</td><td>Error Recovery</td><td>2</td><td>There is a fallback email link, but no recovery message if the prepared email does not open.</td></tr>
+                <tr><td>10</td><td>Help and Documentation</td><td>3</td><td>FAQ, process, Impressum, privacy, and no-tracking copy are present. Qualifications and final legal details remain placeholders.</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Anti-Patterns Verdict</h2>
+        <div class="grid">
+            <article class="card mint">
+                <h3>LLM Assessment</h3>
+                <p>The page no longer looks instantly AI-generated. The biggest AI tells from the previous run, numbered markers and bulky legal cards on the homepage, are gone. Remaining tell: repeated pastel cards with emoji/icon circles across multiple sections.</p>
+            </article>
+            <article class="card">
+                <h3>Deterministic Scan</h3>
+                <p><code>detect.mjs --json index.html</code> returned <code>[]</code>. No bundled anti-patterns were detected in the current homepage markup.</p>
+            </article>
+            <article class="card lavender">
+                <h3>Visual Overlay</h3>
+                <p>No reliable user-visible overlay was injected in this run. Browser evidence was collected through Playwright screenshots and DOM metrics instead.</p>
+            </article>
+        </div>
+
+        <h2>Overall Impression</h2>
+        <p>The site now feels calm, credible, and aligned with the mobility-first positioning. The strongest assets are the real trainer photography, the non-medical copy, and the bilingual structure. The single biggest opportunity is to make consultation booking feel less like an MVP email workaround and more like a confident personal-first process.</p>
+
+        <h2>What Works</h2>
+        <div class="grid">
+            <article class="card">
+                <h3>Real presence</h3>
+                <p>The hero photo does the right trust work. It makes the page feel like a real coach, not generic fitness stock.</p>
+            </article>
+            <article class="card">
+                <h3>Safer health language</h3>
+                <p>The copy avoids cure promises and keeps the focus on movement freedom, posture, flexibility, control, and routines.</p>
+            </article>
+            <article class="card">
+                <h3>Technical hygiene</h3>
+                <p>No analytics, no tracking scripts, no visible Calendly copy, no console errors, and no horizontal overflow at 390, 817, or 1440 px.</p>
+            </article>
+        </div>
+
+        <h2>Priority Issues</h2>
+        <article class="card">
+            <h3><span class="severity">P1</span> Booking still depends on mailto</h3>
+            <p><strong>Why it matters:</strong> the primary business goal is a free consultation request. If the visitor has no configured email app, the prepared email can fail or feel confusing.</p>
+            <p><strong>Fix:</strong> add either a real booking link when ready or a backend/form service. Until then, add a clearer fallback line near the submit button: “If nothing opens, write directly to …”.</p>
+            <p><strong>Suggested command:</strong> <code>$impeccable harden consultation flow</code></p>
+        </article>
+
+        <article class="card">
+            <h3><span class="severity">P2</span> Card-grid rhythm still dominates the middle</h3>
+            <p><strong>Why it matters:</strong> the page is calmer than before, but info tiles plus service cards still create a familiar generated-landing rhythm.</p>
+            <p><strong>Fix:</strong> keep pastel cards, but make one middle section photo-led or story-led. The services block could become a compact consultation menu instead of six equal cards.</p>
+            <p><strong>Suggested command:</strong> <code>$impeccable layout services section</code></p>
+        </article>
+
+        <article class="card">
+            <h3><span class="severity">P2</span> Mobile form appears late and is long</h3>
+            <p><strong>Why it matters:</strong> mobile users must scroll through many sections before reaching the form. The form itself asks for five required inputs.</p>
+            <p><strong>Fix:</strong> add a secondary compact CTA before services or allow the contact section to jump directly to the form. Later, replace email flow with a booking link.</p>
+            <p><strong>Suggested command:</strong> <code>$impeccable adapt mobile conversion</code></p>
+        </article>
+
+        <article class="card">
+            <h3><span class="severity">P2</span> Trust gaps remain visible in legal and qualifications</h3>
+            <p><strong>Why it matters:</strong> “Address to be added,” VAT placeholders, and certificate placeholders are acceptable in development but are public-launch blockers.</p>
+            <p><strong>Fix:</strong> collect final address, VAT handling, qualifications, phone/direct contact option if required, and legal review before deployment.</p>
+            <p><strong>Suggested command:</strong> <code>$impeccable harden legal trust</code></p>
+        </article>
+
+        <article class="card">
+            <h3><span class="severity">P3</span> Muted text on lavender is slightly low contrast</h3>
+            <p><strong>Why it matters:</strong> measured contrast for muted text on lavender is 4.40:1, slightly below the 4.5:1 baseline for normal text.</p>
+            <p><strong>Fix:</strong> darken muted text a little in lavender sections or use the main text color for body copy there.</p>
+            <p><strong>Suggested command:</strong> <code>$impeccable audit contrast</code></p>
+        </article>
+
+        <h2>Persona Red Flags</h2>
+        <div class="grid">
+            <article class="card">
+                <h3>Jordan, first-time visitor</h3>
+                <p>Jordan understands the offer and sees a calm entry point. Red flag: the exact response time and consultation length are not visible, so the first step still feels slightly undefined.</p>
+            </article>
+            <article class="card">
+                <h3>Casey, distracted mobile user</h3>
+                <p>Casey sees strong mobile CTAs, but the actual form is far down the page and requires several fields. High risk: Casey taps CTA, scans, then leaves before completing the email flow.</p>
+            </article>
+            <article class="card">
+                <h3>Riley, trust-sensitive German visitor</h3>
+                <p>Riley appreciates Impressum and privacy access. Red flag: placeholders for address, VAT, and qualifications signal that the site is not ready for public launch.</p>
+            </article>
+        </div>
+
+        <h2>Browser Evidence</h2>
+        <ul>
+            <li>Desktop 1440: scrollWidth 1440, clientWidth 1440, no console errors.</li>
+            <li>Tablet 817: scrollWidth 817, clientWidth 817, no console errors.</li>
+            <li>Mobile 390: scrollWidth 390, clientWidth 390, no console errors.</li>
+            <li>DE/EN switch updates hero and process copy.</li>
+            <li>Tracking scripts: 0.</li>
+            <li>Visible Calendly copy: false.</li>
+            <li>Required form fields: name, email, goal, message, privacy.</li>
+            <li>Legal page has DDG wording, privacy section, and noindex meta.</li>
+        </ul>
+
+        <div class="screenshots">
+            <figure>
+                <img src="critique-assets/landing-desktop.png" alt="Desktop screenshot of the landing page hero.">
+                <figcaption>Desktop hero, 1440 x 1100.</figcaption>
+            </figure>
+            <figure>
+                <img src="critique-assets/landing-mobile.png" alt="Mobile screenshot of the landing page hero.">
+                <figcaption>Mobile hero, 390 x 900.</figcaption>
+            </figure>
+            <figure>
+                <img src="critique-assets/consultation-mobile.png" alt="Mobile screenshot of the consultation form section.">
+                <figcaption>Mobile consultation form.</figcaption>
+            </figure>
+            <figure>
+                <img src="critique-assets/legal-page.png" alt="Screenshot of the Impressum page.">
+                <figcaption>Legal page and privacy access.</figcaption>
+            </figure>
+        </div>
+
+        <h2>Questions To Decide Next</h2>
+        <ol>
+            <li><strong>Priority:</strong> fix booking reliability first, reduce card-grid repetition first, or finish legal/trust placeholders first?</li>
+            <li><strong>Design direction:</strong> keep current pastel-card style, make services more photo-led, or make the consultation section the stronger visual anchor?</li>
+            <li><strong>Scope:</strong> top 2 conversion fixes only, all P1/P2 issues, or full public-launch hardening?</li>
+        </ol>
+
+        <h2>Run Notes</h2>
+        <div class="run-notes">
+            <ul>
+                <li>Target resolved to <code>index.html</code>; slug <code>index-html</code>.</li>
+                <li>Ignore list: none, <code>.impeccable/critique/ignore.md</code> not present.</li>
+                <li>Assessment independence: degraded, sub-agent tool unavailable in this session, sequential assessment used.</li>
+                <li>CLI detector: clean, <code>[]</code>.</li>
+                <li>Browser visibility: Playwright screenshots and metrics collected from <code>http://127.0.0.1:8080/</code>.</li>
+                <li>Overlay injection: skipped, no reliable mutable Browser overlay path used. Fallback signal: screenshots, DOM metrics, console logs, smoke test.</li>
+                <li>Live server cleanup: no critique-only server started. Existing localhost server was already running from the user-requested preview.</li>
+                <li>Temp-file cleanup: pending at report generation time.</li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

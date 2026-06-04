@@ -34,7 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
             heroLead: 'Kostenlose Online-Beratung für Erwachsene, die mehr Bewegungsfreiheit, bessere Haltung und ein Training suchen, das wirklich in den Alltag passt.',
             heroPrimary: 'Beratung anfragen',
             heroSecondary: 'So läuft es ab',
-            heroNote: 'Calendly folgt später. Bis dahin kannst du deine Anfrage direkt per Formular senden.',
+            heroNote: 'Du kannst deine Anfrage direkt per Formular senden. Tatsiana meldet sich persönlich per E-Mail.',
+            mobileCtaPrimary: 'Anfrage senden',
+            mobileCtaEmail: 'Email',
             trustOneTitle: 'DE / EN',
             trustOneText: 'Beratung auf Deutsch und Englisch',
             trustTwoTitle: 'Mobility first',
@@ -55,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             servicesEyebrow: 'Leistungen',
             servicesTitle: 'Meine Leistungen',
             servicesLead: 'In der kostenlosen Beratung klären wir, welche Richtung für deinen Körper und deinen Alltag sinnvoll ist.',
+            servicesCta: 'Richtung klären',
             mobilityServicesTitle: 'Mobility-Fokus',
             serviceMobilityCheckTitle: 'Mobility Check',
             serviceMobilityCheckText: 'Wir schauen auf Bewegungsfreiheit, Einschränkungen und die nächsten sinnvollen Schritte.',
@@ -67,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             serviceTrainingText: 'Wir besprechen, welche Trainingsform zu deinem Ziel, Level und Alltag passt.',
             serviceOnlineTitle: 'Online Coaching',
             serviceOnlineText: 'Wir klären, ob flexible Online-Begleitung für dich sinnvoll ist und wie sie aussehen könnte.',
-            serviceNutritionTitle: 'Nutrition Habits',
+            serviceNutritionTitle: 'Ernährungsgewohnheiten',
             serviceNutritionText: 'Wir sprechen über einfache Ernährungsgewohnheiten, die Training und Alltag unterstützen können.',
             offerEyebrow: 'Kostenlose Beratung',
             offerTitle: 'Erst verstehen, dann trainieren.',
@@ -81,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             processOneTitle: 'Formular senden',
             processOneText: 'Du beschreibst kurz dein Ziel und wie du am liebsten kontaktiert werden möchtest.',
             processTwoTitle: 'Termin abstimmen',
-            processTwoText: 'Calendly wird später ergänzt. Bis dahin stimmen wir den Termin per E-Mail ab.',
+            processTwoText: 'Ihr stimmt den Termin persönlich per E-Mail ab.',
             processThreeTitle: 'Online sprechen',
             processThreeText: 'Im Gespräch klären wir, was dich bewegt, was dich einschränkt und welche Richtung Sinn ergibt.',
             processFourTitle: 'Nächsten Schritt kennen',
@@ -101,16 +104,21 @@ document.addEventListener('DOMContentLoaded', () => {
             faqThreeQuestion: 'Brauche ich Equipment?',
             faqThreeAnswer: 'Für die erste Beratung nicht. Wenn später ein Training entsteht, wird es an dein Umfeld angepasst: Zuhause, Studio oder einfache Hilfsmittel.',
             faqFourQuestion: 'Wie buche ich aktuell einen Termin?',
-            faqFourAnswer: 'Calendly wird später ergänzt. Im MVP sendet das Formular eine vorbereitete E-Mail, danach wird der Termin direkt abgestimmt.',
+            faqFourAnswer: 'Das Formular bereitet eine E-Mail vor. Danach wird der Termin persönlich abgestimmt.',
             contactEyebrow: 'Kontakt',
             contactTitle: 'Direkt erreichbar für deine erste Frage.',
             contactEmailLabel: 'Email:',
             contactInstagramLabel: 'Instagram:',
             consultEyebrow: 'Kostenlose Online-Beratung',
             consultTitle: 'Erzähl kurz, was dich im Moment einschränkt.',
-            consultLead: 'Das Formular öffnet dein E-Mail-Programm mit einer vorbereiteten Nachricht an Tatsiana. So bleibt die erste Version ohne Backend und ohne Tracking.',
-            calendlyTitle: 'Calendly folgt',
-            calendlyText: 'Ein direkter Buchungskalender wird ergänzt, sobald der echte Link bereit ist.',
+            consultLead: 'Das Formular bereitet eine E-Mail an Tatsiana vor. So bleibt die erste Version persönlich, backend-frei und ohne Tracking.',
+            schedulingTitle: 'Persönliche Terminabstimmung',
+            schedulingText: 'Du sendest die Anfrage per E-Mail. Tatsiana meldet sich direkt zurück, damit ihr Sprache, Zeit und Online-Kanal abstimmen könnt.',
+            responseTitle: 'Nach deiner Anfrage',
+            responseOne: 'Tatsiana liest deine Nachricht und meldet sich persönlich per E-Mail.',
+            responseTwo: 'Ihr stimmt Sprache, Termin und den passenden Online-Kanal direkt ab.',
+            responseThree: 'Wenn dein E-Mail-Programm nicht öffnet, kannst du direkt an Tatsiana schreiben.',
+            responseEmailLink: 'Direkt per E-Mail schreiben',
             formNameLabel: 'Name',
             formNamePlaceholder: 'Dein Name',
             formEmailLabel: 'E-Mail',
@@ -193,7 +201,9 @@ document.addEventListener('DOMContentLoaded', () => {
             heroLead: 'A free online consultation for adults who want better movement, better posture, and training that fits real life.',
             heroPrimary: 'Request consultation',
             heroSecondary: 'How it works',
-            heroNote: 'Calendly will be added later. For now, you can send your request through the form.',
+            heroNote: 'You can send your request directly through the form. Tatsiana replies personally by email.',
+            mobileCtaPrimary: 'Send request',
+            mobileCtaEmail: 'Email',
             trustOneTitle: 'DE / EN',
             trustOneText: 'Consultation in German and English',
             trustTwoTitle: 'Mobility first',
@@ -214,6 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
             servicesEyebrow: 'Services',
             servicesTitle: 'Services',
             servicesLead: 'In the free consultation, we clarify which direction makes sense for your body and everyday routine.',
+            servicesCta: 'Clarify direction',
             mobilityServicesTitle: 'Mobility focus',
             serviceMobilityCheckTitle: 'Mobility Check',
             serviceMobilityCheckText: 'We look at freedom of movement, limitations, and the next useful steps.',
@@ -240,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
             processOneTitle: 'Send the form',
             processOneText: 'You briefly describe your goal and how you prefer to be contacted.',
             processTwoTitle: 'Choose a time',
-            processTwoText: 'Calendly will be added later. Until then, the appointment is arranged by email.',
+            processTwoText: 'You arrange the appointment personally by email.',
             processThreeTitle: 'Talk online',
             processThreeText: 'In the call, we clarify what moves you, what limits you, and which direction makes sense.',
             processFourTitle: 'Know the next step',
@@ -260,16 +271,21 @@ document.addEventListener('DOMContentLoaded', () => {
             faqThreeQuestion: 'Do I need equipment?',
             faqThreeAnswer: 'Not for the first consultation. If training is developed later, it can be adapted to your setting: home, gym, or simple tools.',
             faqFourQuestion: 'How do I book a time right now?',
-            faqFourAnswer: 'Calendly will be added later. In this MVP, the form prepares an email, and the appointment is arranged directly after that.',
+            faqFourAnswer: 'The form prepares an email. The appointment is arranged personally after that.',
             contactEyebrow: 'Contact',
             contactTitle: 'Reach out directly with your first question.',
             contactEmailLabel: 'Email:',
             contactInstagramLabel: 'Instagram:',
             consultEyebrow: 'Free online consultation',
             consultTitle: 'Briefly tell me what limits you right now.',
-            consultLead: 'The form opens your email app with a prepared message to Tatsiana. This keeps the first version backend-free and tracking-free.',
-            calendlyTitle: 'Calendly coming soon',
-            calendlyText: 'A direct booking calendar will be added once the real link is ready.',
+            consultLead: 'The form prepares an email to Tatsiana. This keeps the first version personal, backend-free, and tracking-free.',
+            schedulingTitle: 'Personal scheduling',
+            schedulingText: 'You send the request by email. Tatsiana replies directly so you can agree on language, time, and online channel.',
+            responseTitle: 'After your request',
+            responseOne: 'Tatsiana reads your message and replies personally by email.',
+            responseTwo: 'You agree on language, appointment time, and the right online channel directly.',
+            responseThree: 'If your email app does not open, you can write to Tatsiana directly.',
+            responseEmailLink: 'Write directly by email',
             formNameLabel: 'Name',
             formNamePlaceholder: 'Your name',
             formEmailLabel: 'Email',
@@ -341,7 +357,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuButton = document.querySelector('.menu-toggle');
     const siteNav = document.querySelector('.site-nav');
     const languageButtons = document.querySelectorAll('[data-lang-switch]');
+    const consultationLinks = document.querySelectorAll('a[href="#consultation"]');
     const consultationForm = document.querySelector('#consultation-form');
+    const consultationSection = document.querySelector('#consultation');
     const formHelper = document.querySelector('#form-helper');
 
     function getInitialLanguage() {
@@ -416,6 +434,28 @@ document.addEventListener('DOMContentLoaded', () => {
         menuButton.setAttribute('aria-label', translations[language][labelKey]);
     }
 
+    function scrollToConsultation(event) {
+        /*
+            Native anchor scrolling is kept as the no-JavaScript fallback.
+            With JavaScript enabled, this explicit scroll is more reliable for
+            fixed mobile CTAs and still respects the CSS scroll-padding-top.
+        */
+        if (!consultationSection) {
+            return;
+        }
+
+        event.preventDefault();
+        closeMobileMenu();
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        consultationSection.scrollIntoView({
+            block: 'start',
+            behavior: prefersReducedMotion ? 'auto' : 'smooth'
+        });
+
+        history.pushState(null, '', '#consultation');
+    }
+
     function buildMailtoUrl(formData, language) {
         const dictionary = translations[language] || translations[defaultLanguage];
         const subject = encodeURIComponent(dictionary.mailSubject);
@@ -472,6 +512,28 @@ document.addEventListener('DOMContentLoaded', () => {
         revealElements.forEach((element) => observer.observe(element));
     }
 
+    function initializeMobileConversionBar() {
+        /*
+            The sticky mobile CTA should help while the form is off-screen.
+            Once the visitor reaches the consultation section, we hide the bar so it
+            does not cover form fields or the submit button on small screens.
+        */
+        if (!consultationSection || !('IntersectionObserver' in window)) {
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                document.body.classList.toggle('consultation-in-view', entry.isIntersecting);
+            });
+        }, {
+            rootMargin: '0px 0px -40% 0px',
+            threshold: 0.01
+        });
+
+        observer.observe(consultationSection);
+    }
+
     if (menuButton && siteNav) {
         menuButton.addEventListener('click', toggleMobileMenu);
 
@@ -487,10 +549,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    consultationLinks.forEach((link) => {
+        link.addEventListener('click', scrollToConsultation);
+    });
+
     if (consultationForm && formHelper) {
         consultationForm.addEventListener('submit', handleFormSubmit);
     }
 
     translatePage(getInitialLanguage());
     initializeRevealAnimation();
+    initializeMobileConversionBar();
 });

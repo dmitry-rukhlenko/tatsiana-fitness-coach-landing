@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Website Audit - Tatsiana Rukhlenko</title>
+    <style>
+        :root {
+            --bg: #FAF7F2;
+            --surface: #FFFFFF;
+            --lavender: #EDE1EF;
+            --mint: #D8FFF9;
+            --ink: #26222A;
+            --muted: #62586A;
+            --line: rgba(38, 34, 42, 0.13);
+            --deep: #211D26;
+            --accent: #B9A3C8;
+            --good: #3E8B78;
+            --warn: #A06E2A;
+            --risk: #9C4D62;
+            --shadow: 0 16px 38px rgba(38, 34, 42, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.55;
+        }
+
+        main {
+            width: min(1160px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 48px 0 72px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+            line-height: 1.08;
+            text-wrap: balance;
+        }
+
+        h1 {
+            max-width: 880px;
+            font-size: clamp(2.4rem, 6vw, 5rem);
+        }
+
+        h2 {
+            margin-top: 48px;
+            margin-bottom: 18px;
+            font-size: clamp(1.8rem, 3.5vw, 3rem);
+        }
+
+        h3 {
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        ul,
+        ol {
+            margin: 10px 0 0;
+            padding-left: 22px;
+            color: var(--muted);
+        }
+
+        li + li {
+            margin-top: 8px;
+        }
+
+        code {
+            border-radius: 8px;
+            background: rgba(38, 34, 42, 0.08);
+            padding: 2px 6px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 32px;
+            align-items: center;
+            border-radius: 28px;
+            background: var(--deep);
+            color: white;
+            padding: clamp(28px, 5vw, 56px);
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin-top: 18px;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 1.1rem;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .pill {
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+            padding: 8px 12px;
+            font-weight: 780;
+        }
+
+        .score-ring {
+            display: grid;
+            place-items: center;
+            width: clamp(150px, 18vw, 220px);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: conic-gradient(var(--mint) 0 75.4%, rgba(255,255,255,0.16) 75.4% 100%);
+        }
+
+        .score-ring-inner {
+            display: grid;
+            place-items: center;
+            width: 74%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: var(--deep);
+            text-align: center;
+        }
+
+        .score-number {
+            color: white;
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            font-weight: 880;
+            line-height: 1;
+        }
+
+        .score-label {
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            border-radius: 20px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+            padding: 20px;
+        }
+
+        .card.mint {
+            background: var(--mint);
+        }
+
+        .card.lavender {
+            background: var(--lavender);
+        }
+
+        .card.deep {
+            background: var(--deep);
+            color: white;
+        }
+
+        .card.deep p,
+        .card.deep li {
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .score-row {
+            display: grid;
+            gap: 8px;
+        }
+
+        .score-topline {
+            display: flex;
+            justify-content: space-between;
+            gap: 14px;
+            align-items: baseline;
+        }
+
+        .score-value {
+            color: var(--ink);
+            font-size: 1.3rem;
+            font-weight: 860;
+        }
+
+        .bar {
+            overflow: hidden;
+            height: 12px;
+            border-radius: 999px;
+            background: rgba(38, 34, 42, 0.1);
+        }
+
+        .bar span {
+            display: block;
+            width: var(--score);
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, var(--accent), var(--good));
+        }
+
+        .verdict {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .verdict strong {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--ink);
+            font-size: 1.08rem;
+        }
+
+        .table {
+            overflow: hidden;
+            border-radius: 20px;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border-bottom: 1px solid var(--line);
+            padding: 14px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: var(--lavender);
+        }
+
+        tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .priority {
+            display: inline-block;
+            border-radius: 999px;
+            background: var(--deep);
+            color: white;
+            padding: 3px 9px;
+            font-size: 0.82rem;
+            font-weight: 820;
+        }
+
+        .good {
+            color: var(--good);
+        }
+
+        .warn {
+            color: var(--warn);
+        }
+
+        .risk {
+            color: var(--risk);
+        }
+
+        @media (max-width: 760px) {
+            .hero,
+            .verdict {
+                grid-template-columns: 1fr;
+            }
+
+            .score-ring {
+                justify-self: start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero">
+            <div>
+                <div class="meta">
+                    <span class="pill">📊 Business audit</span>
+                    <span class="pill">🎯 Landing page</span>
+                    <span class="pill">2026-06-04</span>
+                </div>
+                <h1>Аудит сайта Tatsiana Rukhlenko</h1>
+                <p>Сайт уже выглядит как хороший MVP: спокойный современный дизайн, понятная мобильная CTA-панель и чистая техническая база. Для публичного запуска и роста заявок ещё нужно усилить SEO, доверие и измеримость бизнеса.</p>
+            </div>
+            <div class="score-ring" aria-label="Average score 7.5 out of 10">
+                <div class="score-ring-inner">
+                    <div>
+                        <div class="score-number">7.5</div>
+                        <div class="score-label">из 10</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h2>Быстрый вердикт</h2>
+        <section class="verdict">
+            <article class="card mint">
+                <strong>✅ Сильная сторона</strong>
+                <p>Сайт уже хорошо передаёт calm, precise, warm: есть реальные фото, понятный mobility-фокус, аккуратная палитра и неагрессивный тон.</p>
+            </article>
+            <article class="card lavender">
+                <strong>⚠️ Главный риск</strong>
+                <p>Для бизнеса пока мало доверительных доказательств: нет реальных квалификаций, отзывов, точных legal-данных и нормального booking-flow.</p>
+            </article>
+            <article class="card">
+                <strong>🚀 Главная возможность</strong>
+                <p>После добавления Calendly/form backend, schema.org, hreflang и сертификатов сайт может стать полноценной страницей для заявок и локального SEO.</p>
+            </article>
+        </section>
+
+        <h2>Оценки по направлениям</h2>
+        <section class="grid">
+            <article class="card score-row">
+                <div class="score-topline"><h3>🎨 Современный дизайн</h3><span class="score-value">8.2</span></div>
+                <div class="bar"><span style="--score: 82%"></span></div>
+                <p>Визуально спокойно, современно и не похоже на агрессивный фитнес-шаблон. Можно усилить уникальность деталями бренда.</p>
+            </article>
+            <article class="card score-row">
+                <div class="score-topline"><h3>🧭 Навигация</h3><span class="score-value">8.0</span></div>
+                <div class="bar"><span style="--score: 80%"></span></div>
+                <p>Структура понятная, CTA повторяется. На мобильном помогает sticky bar. Можно сократить путь до формы.</p>
+            </article>
+            <article class="card score-row">
+                <div class="score-topline"><h3>📱 Mobile UX</h3><span class="score-value">8.7</span></div>
+                <div class="bar"><span style="--score: 87%"></span></div>
+                <p>Нет горизонтального overflow, tap targets 48px, CTA доступен снизу. Хорошая база для мобильных заявок.</p>
+            </article>
+            <article class="card score-row">
+                <div class="score-topline"><h3>🎯 Конверсия</h3><span class="score-value">7.6</span></div>
+                <div class="bar"><span style="--score: 76%"></span></div>
+                <p>Цель ясная: бесплатная консультация. Но mailto всё ещё создаёт трение, особенно на телефоне.</p>
+            </article>
+            <article class="card score-row">
+                <div class="score-topline"><h3>🔎 SEO</h3><span class="score-value">6.4</span></div>
+                <div class="bar"><span style="--score: 64%"></span></div>
+                <p>Есть title, description, H1, OG. Не хватает canonical, hreflang, structured data, sitemap и SEO-контента.</p>
+            </article>
+            <article class="card score-row">
+                <div class="score-topline"><h3>✍️ Тексты</h3><span class="score-value">8.1</span></div>
+                <div class="bar"><span style="--score: 81%"></span></div>
+                <p>Хороший безопасный tone of voice без медицинских обещаний. Нужно добавить больше конкретики об опыте.</p>
+            </article>
+            <article class="card score-row">
+                <div class="score-topline"><h3>🤝 Доверие</h3><span class="score-value">6.8</span></div>
+                <div class="bar"><span style="--score: 68%"></span></div>
+                <p>Реальные фото и контакты работают. Но placeholders в legal/qualification сильно снижают готовность к запуску.</p>
+            </article>
+            <article class="card score-row">
+                <div class="score-topline"><h3>⚡ Скорость</h3><span class="score-value">8.4</span></div>
+                <div class="bar"><span style="--score: 84%"></span></div>
+                <p>Нет внешних скриптов, изображения умеренные по весу. Можно добавить WebP/AVIF и responsive image sizes.</p>
+            </article>
+            <article class="card score-row">
+                <div class="score-topline"><h3>♿ Доступность</h3><span class="score-value">8.0</span></div>
+                <div class="bar"><span style="--score: 80%"></span></div>
+                <p>Есть labels, skip link, contrast fix, keyboard-friendly controls. Нужно связать privacy-текст с реальной ссылкой.</p>
+            </article>
+            <article class="card score-row">
+                <div class="score-topline"><h3>📈 Измеримость бизнеса</h3><span class="score-value">5.2</span></div>
+                <div class="bar"><span style="--score: 52%"></span></div>
+                <p>Нет analytics по privacy-причинам, это ок для MVP. Но владелец бизнеса пока не видит источники и конверсии.</p>
+            </article>
+        </section>
+
+        <h2>Технические факты</h2>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Параметр</th>
+                        <th>Результат</th>
+                        <th>Комментарий</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Тесты</td>
+                        <td class="good">✅ Passed</td>
+                        <td><code>npm test</code> прошёл, Playwright smoke test passed.</td>
+                    </tr>
+                    <tr>
+                        <td>AI/design detector</td>
+                        <td class="good">✅ []</td>
+                        <td>Impeccable detector не нашёл явных автоматических anti-patterns.</td>
+                    </tr>
+                    <tr>
+                        <td>External scripts</td>
+                        <td class="good">0</td>
+                        <td>Нет Google Fonts, analytics, pixels, embedded widgets.</td>
+                    </tr>
+                    <tr>
+                        <td>Images</td>
+                        <td>4 на странице</td>
+                        <td>Hero eager, остальные lazy. Общий вес локальных web-изображений около 1.2 MB.</td>
+                    </tr>
+                    <tr>
+                        <td>SEO basics</td>
+                        <td class="warn">Partial</td>
+                        <td>Есть title/description/OG/H1, нет canonical/hreflang/schema.org.</td>
+                    </tr>
+                    <tr>
+                        <td>Legal readiness</td>
+                        <td class="risk">Not launch-ready</td>
+                        <td>Есть Impressum/Privacy page, но адрес, VAT ID и часть данных остаются placeholder.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Приоритеты для владельца бизнеса</h2>
+        <section class="grid">
+            <article class="card deep">
+                <h3><span class="priority">P1</span> Закрыть доверие и legal</h3>
+                <ul>
+                    <li>Заполнить адрес и финальные юридические данные.</li>
+                    <li>Добавить реальные сертификаты и квалификации.</li>
+                    <li>Проверить Impressum/Privacy перед публичным запуском.</li>
+                </ul>
+            </article>
+            <article class="card">
+                <h3><span class="priority">P1</span> Упростить запись</h3>
+                <ul>
+                    <li>Добавить Calendly или нормальную форму вместо mailto.</li>
+                    <li>Сделать событие заявки измеримым.</li>
+                    <li>Оставить email как fallback.</li>
+                </ul>
+            </article>
+            <article class="card lavender">
+                <h3><span class="priority">P2</span> Усилить SEO</h3>
+                <ul>
+                    <li>Добавить canonical и hreflang для DE/EN.</li>
+                    <li>Добавить structured data: Person, LocalBusiness/ProfessionalService.</li>
+                    <li>Подготовить sitemap и robots после домена.</li>
+                </ul>
+            </article>
+            <article class="card mint">
+                <h3><span class="priority">P2</span> Добавить social proof</h3>
+                <ul>
+                    <li>Отзывы клиентов только с разрешением.</li>
+                    <li>Короткая история опыта Tatsiana.</li>
+                    <li>Более конкретное описание формата консультации.</li>
+                </ul>
+            </article>
+        </section>
+
+        <h2>Итог</h2>
+        <article class="card">
+            <p><strong>Средняя оценка: 7.5 / 10.</strong> Это хороший, аккуратный MVP, который уже можно показывать для внутреннего согласования. Для публичной рекламы и органического SEO сайт ещё рано запускать без юридических данных, booking-flow, schema.org и измерения заявок.</p>
+        </article>
+    </main>
+</body>
+</html>

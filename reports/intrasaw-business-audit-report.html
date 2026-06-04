@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бизнес-аудит сайта IntraSAW: дизайн, навигация, SEO и рост</title>
+    <style>
+        /* Report tokens make the visual system consistent and easy to tune. */
+        :root {
+            --bg: #f4f7fb;
+            --panel: #ffffff;
+            --ink: #172033;
+            --muted: #657184;
+            --line: #dce3ee;
+            --blue: #2855d9;
+            --blue-strong: #17389a;
+            --cyan: #0e7490;
+            --green: #147a4a;
+            --yellow: #b25c00;
+            --red: #b42318;
+            --soft-blue: #e8efff;
+            --soft-cyan: #e5f7fb;
+            --soft-green: #e8f6ef;
+            --soft-yellow: #fff4dc;
+            --soft-red: #ffe8e6;
+            --shadow: 0 14px 38px rgba(23, 32, 51, 0.09);
+            --radius: 16px;
+            --container: 1180px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(circle at 12% 0%, rgba(40, 85, 217, 0.12), transparent 34%),
+                radial-gradient(circle at 92% 10%, rgba(14, 116, 144, 0.12), transparent 30%),
+                var(--bg);
+            color: var(--ink);
+            font-family: "Avenir Next", "Segoe UI", Arial, sans-serif;
+            line-height: 1.58;
+        }
+
+        a {
+            color: var(--blue-strong);
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+            line-height: 1.12;
+            text-wrap: balance;
+        }
+
+        h1 {
+            max-width: 13ch;
+            font-size: clamp(2.35rem, 6vw, 5rem);
+            letter-spacing: -0.025em;
+        }
+
+        h2 {
+            font-size: clamp(1.55rem, 3vw, 2.4rem);
+        }
+
+        h3 {
+            font-size: 1.1rem;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .page {
+            width: min(var(--container), calc(100% - 32px));
+            margin: 0 auto;
+            padding: 28px 0 64px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+            gap: 24px;
+            align-items: stretch;
+            padding: 34px;
+            border: 1px solid rgba(40, 85, 217, 0.16);
+            border-radius: 22px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(232, 239, 255, 0.92));
+            box-shadow: var(--shadow);
+        }
+
+        .eyebrow {
+            margin-bottom: 12px;
+            color: var(--blue-strong);
+            font-size: 0.92rem;
+            font-weight: 780;
+        }
+
+        .lead {
+            max-width: 72ch;
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 1.08rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            width: fit-content;
+            border-radius: 999px;
+            padding: 7px 11px;
+            background: var(--soft-blue);
+            color: var(--blue-strong);
+            font-size: 0.88rem;
+            font-weight: 780;
+        }
+
+        .score-panel {
+            display: grid;
+            gap: 16px;
+            align-content: center;
+            padding: 26px;
+            border-radius: 18px;
+            background: #111827;
+            color: #ffffff;
+        }
+
+        .score-number {
+            font-size: clamp(4rem, 9vw, 6rem);
+            font-weight: 860;
+            line-height: 0.95;
+        }
+
+        .score-panel p {
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .meter {
+            height: 12px;
+            overflow: hidden;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+        .meter span {
+            display: block;
+            width: 43%;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #ef4444, #f59e0b);
+        }
+
+        .section {
+            margin-top: 28px;
+            padding: 26px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.94);
+            box-shadow: var(--shadow);
+        }
+
+        .section-header {
+            display: grid;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            max-width: 76ch;
+            color: var(--muted);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: var(--panel);
+            padding: 17px;
+        }
+
+        .card strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1.1rem;
+        }
+
+        .muted {
+            color: var(--muted);
+        }
+
+        .score-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+            gap: 18px;
+            align-items: center;
+        }
+
+        .bars {
+            display: grid;
+            gap: 12px;
+        }
+
+        .bar-row {
+            display: grid;
+            grid-template-columns: minmax(160px, 0.9fr) minmax(0, 1fr) 52px;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .bar-label {
+            font-weight: 740;
+        }
+
+        .bar-track {
+            height: 12px;
+            overflow: hidden;
+            border-radius: 999px;
+            background: #e9edf5;
+        }
+
+        .bar-fill {
+            display: block;
+            height: 100%;
+            border-radius: inherit;
+        }
+
+        .fill-red {
+            background: linear-gradient(90deg, #ef4444, #f97316);
+        }
+
+        .fill-yellow {
+            background: linear-gradient(90deg, #f59e0b, #eab308);
+        }
+
+        .fill-blue {
+            background: linear-gradient(90deg, #2563eb, #06b6d4);
+        }
+
+        .radar-card {
+            display: grid;
+            place-items: center;
+            min-height: 360px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: linear-gradient(180deg, #ffffff, #f7faff);
+            padding: 16px;
+        }
+
+        .radar {
+            width: min(100%, 360px);
+            height: auto;
+        }
+
+        .screens {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(220px, 360px);
+            gap: 18px;
+            align-items: start;
+        }
+
+        .shot {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: var(--panel);
+        }
+
+        .shot figcaption {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--line);
+            font-weight: 780;
+        }
+
+        .severity {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            margin-bottom: 10px;
+            border-radius: 999px;
+            padding: 5px 10px;
+            font-size: 0.78rem;
+            font-weight: 800;
+        }
+
+        .p1 {
+            background: var(--soft-red);
+            color: var(--red);
+        }
+
+        .p2 {
+            background: var(--soft-yellow);
+            color: var(--yellow);
+        }
+
+        .ok {
+            background: var(--soft-green);
+            color: var(--green);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: var(--panel);
+        }
+
+        th,
+        td {
+            padding: 13px 14px;
+            border-bottom: 1px solid var(--line);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #edf3ff;
+            font-size: 0.92rem;
+        }
+
+        tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .callout {
+            margin-top: 16px;
+            border-radius: 14px;
+            background: var(--soft-cyan);
+            padding: 16px;
+            color: #164e63;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 12px;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 42px minmax(0, 1fr);
+            gap: 12px;
+            align-items: start;
+        }
+
+        .step-number {
+            display: grid;
+            place-items: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--soft-blue);
+            color: var(--blue-strong);
+            font-weight: 820;
+        }
+
+        .footer {
+            margin-top: 24px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 860px) {
+            .hero,
+            .score-grid,
+            .screens {
+                grid-template-columns: 1fr;
+            }
+
+            .hero,
+            .section {
+                padding: 22px;
+            }
+
+            .bar-row {
+                grid-template-columns: 1fr;
+                gap: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <section class="hero">
+            <div>
+                <p class="eyebrow">📈 Бизнес-аудит сайта • IntraSAW</p>
+                <h1>Что сайт сейчас дает бизнесу, и что он теряет</h1>
+                <p class="lead">
+                    Я посмотрел сайт с точки зрения современного дизайна, удобства навигации, SEO, мобильного UX,
+                    доверия, скорости, формы обратной связи и ценности для владельца бизнеса.
+                    Вывод простой: экспертиза сильная, упаковка заметно отстает.
+                </p>
+                <div class="hero-actions">
+                    <span class="chip">🎯 Главная цель: больше доверия</span>
+                    <span class="chip">🔎 Главный риск: SEO + mobile</span>
+                    <span class="chip">🛠️ Лучший путь: static site или глубокая чистка Joomla</span>
+                </div>
+            </div>
+            <aside class="score-panel" aria-label="Средняя оценка сайта">
+                <div class="score-number">4.3/10</div>
+                <div class="meter" aria-hidden="true"><span></span></div>
+                <p>
+                    Средняя оценка по 10 бизнес-критериям. Сайт не сломан, но сейчас он выглядит как архив,
+                    а не как современная экспертная витрина.
+                </p>
+            </aside>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>🧭 Executive summary</h2>
+                <p>Если объяснять по-человечески: сайт содержит полезные материалы, но не помогает быстро понять, почему именно этому эксперту стоит доверять и что делать дальше.</p>
+            </div>
+            <div class="grid">
+                <article class="card">
+                    <strong>✅ Сильная сторона</strong>
+                    <p class="muted">Тематика очень конкретная: SAW/BAW, MATLAB, ADS, C/C++/Fortran. Это не пустой маркетинг, а реальная техническая ниша.</p>
+                </article>
+                <article class="card">
+                    <strong>⚠️ Главная проблема</strong>
+                    <p class="muted">Первое впечатление устаревшее: шаблон Joomla, крупный hero, пестрые карточки, слабая мобильная адаптация.</p>
+                </article>
+                <article class="card">
+                    <strong>💸 Бизнес-эффект</strong>
+                    <p class="muted">Потенциальный клиент может увидеть экспертизу, но не сразу понимает: это консультации, софт, исследовательский архив или набор downloads.</p>
+                </article>
+                <article class="card">
+                    <strong>🚀 Лучший следующий шаг</strong>
+                    <p class="muted">Починить SEO/URL/mobile срочно, затем решить: оставить Joomla или перенести сайт в статическую версию с Pagefind и формой.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>📊 Оценки по 10-балльной шкале</h2>
+                <p>Оценка 10 означает современный, понятный и хорошо работающий сайт для своей бизнес-задачи. Здесь средняя оценка: 4.3/10.</p>
+            </div>
+            <div class="score-grid">
+                <div class="bars" aria-label="Оценки по категориям">
+                    <div class="bar-row"><span class="bar-label">🎨 Современный дизайн</span><span class="bar-track"><span class="bar-fill fill-red" style="width: 40%;"></span></span><strong>4/10</strong></div>
+                    <div class="bar-row"><span class="bar-label">🧭 Навигация</span><span class="bar-track"><span class="bar-fill fill-yellow" style="width: 50%;"></span></span><strong>5/10</strong></div>
+                    <div class="bar-row"><span class="bar-label">📱 Mobile UX</span><span class="bar-track"><span class="bar-fill fill-red" style="width: 30%;"></span></span><strong>3/10</strong></div>
+                    <div class="bar-row"><span class="bar-label">🔎 SEO</span><span class="bar-track"><span class="bar-fill fill-red" style="width: 40%;"></span></span><strong>4/10</strong></div>
+                    <div class="bar-row"><span class="bar-label">⚡ Скорость</span><span class="bar-track"><span class="bar-fill fill-red" style="width: 40%;"></span></span><strong>4/10</strong></div>
+                    <div class="bar-row"><span class="bar-label">📩 Лидогенерация</span><span class="bar-track"><span class="bar-fill fill-yellow" style="width: 50%;"></span></span><strong>5/10</strong></div>
+                    <div class="bar-row"><span class="bar-label">🔐 GDPR/privacy</span><span class="bar-track"><span class="bar-fill fill-red" style="width: 30%;"></span></span><strong>3/10</strong></div>
+                    <div class="bar-row"><span class="bar-label">💬 Ясность оффера</span><span class="bar-track"><span class="bar-fill fill-yellow" style="width: 50%;"></span></span><strong>5/10</strong></div>
+                    <div class="bar-row"><span class="bar-label">🧱 Техподдержка</span><span class="bar-track"><span class="bar-fill fill-red" style="width: 40%;"></span></span><strong>4/10</strong></div>
+                    <div class="bar-row"><span class="bar-label">🤝 Доверие</span><span class="bar-track"><span class="bar-fill fill-yellow" style="width: 50%;"></span></span><strong>5/10</strong></div>
+                </div>
+                <div class="radar-card">
+                    <svg class="radar" viewBox="0 0 420 420" role="img" aria-label="Инфографика оценок сайта IntraSAW">
+                        <title>Инфографика оценок сайта IntraSAW</title>
+                        <circle cx="210" cy="210" r="150" fill="none" stroke="#dce3ee" stroke-width="2"></circle>
+                        <circle cx="210" cy="210" r="110" fill="none" stroke="#dce3ee" stroke-width="2"></circle>
+                        <circle cx="210" cy="210" r="70" fill="none" stroke="#dce3ee" stroke-width="2"></circle>
+                        <circle cx="210" cy="210" r="30" fill="none" stroke="#dce3ee" stroke-width="2"></circle>
+                        <line x1="210" y1="40" x2="210" y2="210" stroke="#dce3ee"></line>
+                        <line x1="372" y1="157" x2="210" y2="210" stroke="#dce3ee"></line>
+                        <line x1="310" y1="348" x2="210" y2="210" stroke="#dce3ee"></line>
+                        <line x1="110" y1="348" x2="210" y2="210" stroke="#dce3ee"></line>
+                        <line x1="48" y1="157" x2="210" y2="210" stroke="#dce3ee"></line>
+                        <polygon points="210,142 291,184 250,265 160,265 129,184" fill="rgba(40,85,217,0.24)" stroke="#2855d9" stroke-width="3"></polygon>
+                        <circle cx="210" cy="142" r="5" fill="#2855d9"></circle>
+                        <circle cx="291" cy="184" r="5" fill="#2855d9"></circle>
+                        <circle cx="250" cy="265" r="5" fill="#2855d9"></circle>
+                        <circle cx="160" cy="265" r="5" fill="#2855d9"></circle>
+                        <circle cx="129" cy="184" r="5" fill="#2855d9"></circle>
+                        <text x="210" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="#172033">Design 4</text>
+                        <text x="390" y="154" text-anchor="middle" font-size="14" font-weight="700" fill="#172033">SEO 4</text>
+                        <text x="326" y="377" text-anchor="middle" font-size="14" font-weight="700" fill="#172033">Leads 5</text>
+                        <text x="94" y="377" text-anchor="middle" font-size="14" font-weight="700" fill="#172033">Mobile 3</text>
+                        <text x="28" y="154" text-anchor="middle" font-size="14" font-weight="700" fill="#172033">Nav 5</text>
+                        <text x="210" y="214" text-anchor="middle" font-size="28" font-weight="850" fill="#172033">4.3</text>
+                        <text x="210" y="238" text-anchor="middle" font-size="13" fill="#657184">average</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>🖼️ Что видно на скриншотах</h2>
+                <p>Скриншоты важны, потому что именно так сайт воспринимает живой посетитель: не как список HTML-тегов, а как первый экран, навигацию и карточки.</p>
+            </div>
+            <div class="screens">
+                <figure class="shot">
+                    <figcaption>💻 Desktop</figcaption>
+                    <img src="assets/intrasaw-desktop.png" alt="Desktop screenshot of IntraSAW homepage">
+                </figure>
+                <figure class="shot">
+                    <figcaption>📱 Mobile</figcaption>
+                    <img src="assets/intrasaw-mobile.png" alt="Mobile screenshot of IntraSAW homepage">
+                </figure>
+            </div>
+            <div class="callout">
+                <strong>Главное наблюдение:</strong> desktop выглядит устаревшим, но терпимым. Mobile уже проблемный: поиск и шапка забирают слишком много места, а hero-заголовок слишком крупный.
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>🔍 Подробный разбор</h2>
+                <p>Ниже каждый критерий продублирован текстом, чтобы владельцу бизнеса было понятно, что именно исправлять и зачем.</p>
+            </div>
+            <div class="grid">
+                <article class="card">
+                    <span class="severity p2">4/10 • 🎨 Дизайн</span>
+                    <h3>Сайт выглядит старше своей экспертизы</h3>
+                    <p class="muted">Техническая тема серьезная, но визуально сайт напоминает старый шаблон: пестрые заголовки, inline styles, тяжелый hero и простые карточки.</p>
+                </article>
+                <article class="card">
+                    <span class="severity p2">5/10 • 🧭 Навигация</span>
+                    <h3>Меню есть, но путь пользователя неясен</h3>
+                    <p class="muted">About, Research, Downloads и Contact логичны. Но пользователь не понимает, что делать первым: читать биографию, искать PDFs или отправлять сообщение.</p>
+                </article>
+                <article class="card">
+                    <span class="severity p1">3/10 • 📱 Mobile</span>
+                    <h3>Первый экран перегружен</h3>
+                    <p class="muted">80px headline на mobile, видимый search и высокий hero делают страницу тяжелой для чтения на телефоне.</p>
+                </article>
+                <article class="card">
+                    <span class="severity p1">4/10 • 🔎 SEO</span>
+                    <h3>Есть база, но много потерь</h3>
+                    <p class="muted">Title и description есть, но нет canonical, sitemap содержит 404, а многие страницы используют общий hero H1 вместо конкретного H1 страницы.</p>
+                </article>
+                <article class="card">
+                    <span class="severity p2">4/10 • ⚡ Скорость</span>
+                    <h3>Для почти статичного сайта слишком много динамики</h3>
+                    <p class="muted">Joomla отдает session cookie и no-cache, грузятся Google Analytics, jQuery, Joomla scripts, ConvertForms и reCAPTCHA на контактных страницах.</p>
+                </article>
+                <article class="card">
+                    <span class="severity p2">5/10 • 📩 Лидогенерация</span>
+                    <h3>Форма есть, но бизнес-сценарий слабый</h3>
+                    <p class="muted">Contact/Feedback форма работает как идея, но homepage не ведет к ней достаточно уверенно. Нет четкого “request consultation / discuss project”.</p>
+                </article>
+                <article class="card">
+                    <span class="severity p1">3/10 • 🔐 GDPR/privacy</span>
+                    <h3>Риск выше среднего</h3>
+                    <p class="muted">На сайте есть форма, reCAPTCHA, Google Analytics и session cookie. Для Германии/EU нужна аккуратная Datenschutzerklärung и consent-логика.</p>
+                </article>
+                <article class="card">
+                    <span class="severity p2">5/10 • 💬 Оффер</span>
+                    <h3>Экспертиза видна, предложение не собрано</h3>
+                    <p class="muted">Понятно, что автор силен в SAW/BAW modeling. Менее понятно, что именно он предлагает бизнесу: consulting, software, design support, research help или downloads.</p>
+                </article>
+                <article class="card">
+                    <span class="severity p2">4/10 • 🧱 Поддержка</span>
+                    <h3>Joomla избыточна для текущего формата</h3>
+                    <p class="muted">Если сайт редко обновляется, static HTML/Astro + Pagefind + form service будет проще, быстрее и безопаснее.</p>
+                </article>
+                <article class="card">
+                    <span class="severity p2">5/10 • 🤝 Доверие</span>
+                    <h3>Есть имя, опыт и материалы, но мало упаковки доверия</h3>
+                    <p class="muted">Нужны более заметные credentials, selected publications, case examples, clearer biography, contact promise и clean professional presentation.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>🚨 Самые важные находки для владельца бизнеса</h2>
+                <p>Это не “косметика”. Эти пункты влияют на доверие, заявки, SEO и вероятность, что посетитель останется на сайте.</p>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Проблема</th>
+                        <th>Почему это важно</th>
+                        <th>Что сделать</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>📱 Слабый mobile first screen</td>
+                        <td>Многие посетители смотрят сайт с телефона. Если первый экран неудобен, они уходят раньше, чем увидят экспертизу.</td>
+                        <td>Уменьшить hero, спрятать поиск, сделать один четкий CTA.</td>
+                    </tr>
+                    <tr>
+                        <td>🔎 Sitemap содержит 404</td>
+                        <td>Поисковик получает сигнал небрежности, а посетитель может попасть на ошибку.</td>
+                        <td>Удалить битый URL или настроить 301 redirect.</td>
+                    </tr>
+                    <tr>
+                        <td>🧭 Ссылки `layout=edit`</td>
+                        <td>Они выглядят как служебные Joomla-ссылки и могут путать поисковики и людей.</td>
+                        <td>Сделать clean URLs для материалов и перенаправления.</td>
+                    </tr>
+                    <tr>
+                        <td>📩 Форма + reCAPTCHA + Analytics</td>
+                        <td>Это сбор персональных данных. Для Германии/EU это зона GDPR/DSGVO.</td>
+                        <td>Добавить privacy policy, consent, понятную подпись под формой.</td>
+                    </tr>
+                    <tr>
+                        <td>💬 Нет четкой бизнес-цели</td>
+                        <td>Сайт показывает знания, но не превращает интерес в действие.</td>
+                        <td>Сформулировать: “consulting”, “SAW/BAW modeling support”, “ADS/MATLAB integration help”.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>🛠️ План улучшений</h2>
+                <p>План разделен на быстрые победы и более глубокую переработку.</p>
+            </div>
+            <div class="timeline">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <div class="card">
+                        <strong>🚑 Срочно: SEO и технические ошибки</strong>
+                        <p class="muted">Убрать 404 из sitemap, заменить `layout=edit` URL, добавить canonical, исправить structured data image.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <div class="card">
+                        <strong>📱 Срочно: mobile hero и header</strong>
+                        <p class="muted">Сделать первый экран спокойнее: меньше headline, компактнее шапка, поиск не должен доминировать.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <div class="card">
+                        <strong>🎯 Бизнес-упаковка</strong>
+                        <p class="muted">Добавить ясный offer: кому помогает IntraSAW, какую проблему решает, что человек получает после контакта.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <div class="card">
+                        <strong>🔐 GDPR/DSGVO</strong>
+                        <p class="muted">Datenschutzerklärung, consent для Analytics/reCAPTCHA, подпись под формой, понятное хранение данных.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <span class="step-number">5</span>
+                    <div class="card">
+                        <strong>🚀 Решение по платформе</strong>
+                        <p class="muted">Если контент редко меняется, перевести на static site. Если автор часто правит материалы через админку, оставить Joomla, но переписать шаблон и настройки.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>⚖️ Joomla или static HTML?</h2>
+                <p>Для владельца бизнеса это вопрос не вкуса, а стоимости поддержки, безопасности и скорости изменений.</p>
+            </div>
+            <div class="grid">
+                <article class="card">
+                    <span class="severity ok">✅ Static site подходит</span>
+                    <h3>Если сайт обновляется редко</h3>
+                    <p class="muted">Главная, About, Research, Downloads, PDF, SEO, sitemap и structured data отлично переносятся в static HTML/Astro.</p>
+                </article>
+                <article class="card">
+                    <span class="severity p2">⚠️ Нужны замены</span>
+                    <h3>Форма и поиск</h3>
+                    <p class="muted">Форму можно сделать через Formspree/Netlify Forms/serverless endpoint. Поиск можно убрать или заменить на Pagefind.</p>
+                </article>
+                <article class="card">
+                    <span class="severity p2">⚠️ Joomla оставить</span>
+                    <h3>Если нужна админка</h3>
+                    <p class="muted">Если автор часто сам добавляет публикации, lectures и PDFs, Joomla можно оставить, но придется серьезно чистить шаблон, URLs, cache и privacy.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2>🧾 Данные, на которых основан отчет</h2>
+                <p>Это не только субъективная дизайн-критика. Были проверены HTML, sitemap, robots, страницы контакта, поиск и скриншоты.</p>
+            </div>
+            <div class="grid">
+                <article class="card">
+                    <strong>🌐 Главная</strong>
+                    <p class="muted">Title/description есть, но нет canonical и Open Graph на главной.</p>
+                </article>
+                <article class="card">
+                    <strong>🗺️ Sitemap</strong>
+                    <p class="muted">Найден 404 URL `/about/testimonials`, при этом меню ведет на похожий, но другой адрес testimonials.</p>
+                </article>
+                <article class="card">
+                    <strong>📩 Contact/Feedback</strong>
+                    <p class="muted">Есть ConvertForms, reCAPTCHA invisible, CSRF token, honeypot, поля имени/email/телефона/сообщения.</p>
+                </article>
+                <article class="card">
+                    <strong>🔎 Search</strong>
+                    <p class="muted">Используется Joomla com_finder с advanced search и suggestions endpoint.</p>
+                </article>
+                <article class="card">
+                    <strong>⚡ Resources</strong>
+                    <p class="muted">На homepage было 27-28 requests, включая 8 stylesheets, 11 scripts, Google Analytics и jQuery CDN.</p>
+                </article>
+                <article class="card">
+                    <strong>📱 Screenshots</strong>
+                    <p class="muted">Desktop и mobile скриншоты сохранены в assets этого отчета.</p>
+                </article>
+            </div>
+        </section>
+
+        <p class="footer">
+            ✨ Итог: сайт стоит не “немного подкрасить”, а переупаковать вокруг бизнес-задачи: показать экспертизу, объяснить предложение, упростить контакт и убрать технические SEO/GDPR риски.
+        </p>
+    </main>
+</body>
+</html>

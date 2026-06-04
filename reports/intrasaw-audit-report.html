@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аудит сайта IntraSAW: дизайн, SEO, UX и техническое качество</title>
+    <style>
+        /* Base tokens keep the report easy to restyle from one place. */
+        :root {
+            --bg: #f6f7fb;
+            --panel: #ffffff;
+            --ink: #172033;
+            --muted: #5d6678;
+            --line: #d9deea;
+            --brand: #2f5cff;
+            --brand-dark: #1737a6;
+            --good: #127a4a;
+            --warn: #a45b00;
+            --bad: #b42318;
+            --soft-blue: #e8eeff;
+            --soft-green: #e8f6ef;
+            --soft-warn: #fff2db;
+            --soft-bad: #ffe9e7;
+            --shadow: 0 10px 30px rgba(23, 32, 51, 0.08);
+            --radius: 14px;
+            --container: 1180px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: "Avenir Next", "Segoe UI", Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--brand-dark);
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .page {
+            width: min(var(--container), calc(100% - 32px));
+            margin: 0 auto;
+            padding: 28px 0 56px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+            gap: 28px;
+            align-items: stretch;
+            padding: 34px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: linear-gradient(135deg, #ffffff 0%, #eef2ff 100%);
+            box-shadow: var(--shadow);
+        }
+
+        .eyebrow {
+            margin: 0 0 10px;
+            color: var(--brand-dark);
+            font-size: 0.92rem;
+            font-weight: 760;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+            line-height: 1.12;
+            text-wrap: balance;
+        }
+
+        h1 {
+            max-width: 12ch;
+            font-size: clamp(2.2rem, 6vw, 4.8rem);
+            letter-spacing: -0.025em;
+        }
+
+        h2 {
+            font-size: clamp(1.55rem, 3vw, 2.25rem);
+        }
+
+        h3 {
+            font-size: 1.12rem;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .hero-lead {
+            max-width: 72ch;
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 1.08rem;
+        }
+
+        .score-card {
+            display: grid;
+            align-content: center;
+            gap: 14px;
+            padding: 24px;
+            border-radius: 12px;
+            background: var(--ink);
+            color: #fff;
+        }
+
+        .score-number {
+            font-size: clamp(3rem, 7vw, 5rem);
+            font-weight: 840;
+            line-height: 0.95;
+        }
+
+        .score-label {
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .meta-grid,
+        .stats-grid,
+        .issue-grid,
+        .source-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .section {
+            margin-top: 28px;
+            padding: 26px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--panel);
+            box-shadow: var(--shadow);
+        }
+
+        .section-header {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+
+        .section-header p {
+            max-width: 72ch;
+            color: var(--muted);
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            width: fit-content;
+            border-radius: 999px;
+            padding: 6px 10px;
+            background: var(--soft-blue);
+            color: var(--brand-dark);
+            font-size: 0.88rem;
+            font-weight: 760;
+        }
+
+        .fact,
+        .issue,
+        .source-card {
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: #fff;
+            padding: 16px;
+        }
+
+        .fact strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 1.35rem;
+        }
+
+        .fact span,
+        .issue p,
+        .source-card p,
+        .note {
+            color: var(--muted);
+        }
+
+        .priority {
+            display: inline-flex;
+            margin-bottom: 10px;
+            border-radius: 999px;
+            padding: 4px 9px;
+            font-size: 0.78rem;
+            font-weight: 780;
+        }
+
+        .p1 {
+            background: var(--soft-bad);
+            color: var(--bad);
+        }
+
+        .p2 {
+            background: var(--soft-warn);
+            color: var(--warn);
+        }
+
+        .good {
+            background: var(--soft-green);
+            color: var(--good);
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(220px, 360px);
+            gap: 18px;
+            align-items: start;
+        }
+
+        .screenshot-card {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: #fff;
+        }
+
+        .screenshot-card header {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--line);
+            font-weight: 780;
+        }
+
+        .screenshot-card img {
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: #fff;
+        }
+
+        th,
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--line);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #edf1fb;
+            font-size: 0.92rem;
+        }
+
+        tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .callout {
+            margin-top: 16px;
+            border-left: 4px solid var(--brand);
+            border-radius: 10px;
+            background: var(--soft-blue);
+            padding: 14px 16px;
+        }
+
+        .footer {
+            margin-top: 28px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 820px) {
+            .hero,
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 24px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .section-header {
+                display: grid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <section class="hero" aria-labelledby="report-title">
+            <div>
+                <p class="eyebrow">🔎 Аудит сайта • https://intrasaw.com/</p>
+                <h1 id="report-title">IntraSAW: дизайн, SEO, UX и техкачество</h1>
+                <p class="hero-lead">
+                    Отчет собран по живой главной странице, `robots.txt`, `sitemap.xml`, HTML-метаданным,
+                    скриншотам desktop/mobile и проверке страниц из sitemap. Дата проверки: 4 июня 2026.
+                </p>
+            </div>
+            <aside class="score-card" aria-label="Итоговая оценка">
+                <div class="score-number">21/40</div>
+                <p class="score-label">⚠️ Сайт работает, но выглядит устаревшим и теряет SEO/UX-возможности.</p>
+                <span class="pill">Главный приоритет: mobile + SEO</span>
+            </aside>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2>📌 Короткий вывод</h2>
+                    <p>Самая большая проблема не в содержании, а в упаковке: сильная техническая экспертиза подана как старый шаблонный Joomla-сайт.</p>
+                </div>
+            </div>
+            <div class="meta-grid">
+                <article class="fact">
+                    <strong>✅ Что уже хорошо</strong>
+                    <span>Есть конкретная ниша: SAW/BAW, MATLAB, ADS, C/C++/Fortran, CAD-интеграция.</span>
+                </article>
+                <article class="fact">
+                    <strong>⚠️ Главный UX-риск</strong>
+                    <span>На mobile первый экран перегружен: поиск, меню и 80px hero-heading конкурируют за место.</span>
+                </article>
+                <article class="fact">
+                    <strong>🚨 Главный SEO-риск</strong>
+                    <span>Sitemap содержит 404 URL, на страницах нет canonical, а карточки ведут на `layout=edit` URL.</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2>🖼️ Скриншоты</h2>
+                    <p>Эти изображения показывают реальные проблемы визуальной и адаптивной верстки.</p>
+                </div>
+            </div>
+            <div class="screenshot-grid">
+                <figure class="screenshot-card">
+                    <header>💻 Desktop, 1440px</header>
+                    <img src="assets/intrasaw-desktop.png" alt="Desktop screenshot of the IntraSAW homepage.">
+                </figure>
+                <figure class="screenshot-card">
+                    <header>📱 Mobile, 390px</header>
+                    <img src="assets/intrasaw-mobile.png" alt="Mobile screenshot of the IntraSAW homepage.">
+                </figure>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2>📊 Факты проверки</h2>
+                    <p>Цифры ниже помогают отличить субъективное впечатление от измеримых сигналов.</p>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <article class="fact">
+                    <strong>27-28</strong>
+                    <span>запросов на главной странице в browser-прогоне.</span>
+                </article>
+                <article class="fact">
+                    <strong>8 CSS</strong>
+                    <span>таблиц стилей загружается на главной.</span>
+                </article>
+                <article class="fact">
+                    <strong>11 JS</strong>
+                    <span>скриптов, включая jQuery, Joomla, Google Tag Manager и Analytics.</span>
+                </article>
+                <article class="fact">
+                    <strong>34</strong>
+                    <span>элемента с inline-style на главной странице.</span>
+                </article>
+                <article class="fact">
+                    <strong>404</strong>
+                    <span>страница `/about/testimonials` указана в sitemap, но не открывается.</span>
+                </article>
+                <article class="fact">
+                    <strong>0</strong>
+                    <span>canonical tags на проверенных страницах.</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2>🚦 Оценка по UX-эвристикам</h2>
+                    <p>4 балла означает сильное современное решение. Здесь большинство проблем связано с иерархией, мобильной адаптацией и ясностью действий.</p>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Эвристика</th>
+                        <th>Оценка</th>
+                        <th>Ключевая проблема</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Статус системы</td><td>2/4</td><td>Поиск и раскрывающиеся меню понятны, но нет ясного основного сценария.</td></tr>
+                    <tr><td>Соответствие ожиданиям</td><td>2/4</td><td>Технические термины есть, но формат сайта не похож на современный expert/service сайт.</td></tr>
+                    <tr><td>Контроль пользователя</td><td>2/4</td><td>Навигация есть, но CTA ведут на странные query/edit URL.</td></tr>
+                    <tr><td>Консистентность</td><td>1/4</td><td>Inline-style, разные цвета заголовков, разные визуальные правила карточек.</td></tr>
+                    <tr><td>Предотвращение ошибок</td><td>2/4</td><td>В sitemap есть 404, а robots запрещает URL, на которые ведут карточки.</td></tr>
+                    <tr><td>Узнавание вместо памяти</td><td>2/4</td><td>Три карточки понятны, но `Learn more ...` не объясняет, куда ведет ссылка.</td></tr>
+                    <tr><td>Эффективность</td><td>2/4</td><td>Search доступен, но занимает слишком много места на mobile.</td></tr>
+                    <tr><td>Минимализм</td><td>2/4</td><td>Фон, герой, карточки и цвета спорят друг с другом.</td></tr>
+                    <tr><td>Восстановление ошибок</td><td>2/4</td><td>404 существует, но sitemap продолжает предлагать эту страницу поисковикам.</td></tr>
+                    <tr><td>Помощь и документация</td><td>2/4</td><td>Downloads есть, но homepage плохо объясняет, что делать новому посетителю.</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2>🔥 Приоритетные проблемы</h2>
+                    <p>Исправлять лучше сверху вниз. P1 сильнее влияет на результат, чем P2.</p>
+                </div>
+            </div>
+            <div class="issue-grid">
+                <article class="issue">
+                    <span class="priority p1">P1 • 📱 Mobile</span>
+                    <h3>Hero не адаптируется к маленькому экрану</h3>
+                    <p>На mobile заголовок остается 80px, поиск занимает много места, а первый экран ощущается обрезанным.</p>
+                    <div class="callout"><strong>Что сделать:</strong> перевести размеры в `clamp()`, спрятать поиск в кнопку на mobile, сократить hero-высоту.</div>
+                </article>
+                <article class="issue">
+                    <span class="priority p1">P1 • 🔍 SEO</span>
+                    <h3>Нет canonical и неполный social metadata</h3>
+                    <p>Без canonical поисковики хуже понимают главный URL страницы. Без OG/Twitter карточки ссылок выглядят бедно в соцсетях и мессенджерах.</p>
+                    <div class="callout"><strong>Что сделать:</strong> добавить canonical, `og:title`, `og:description`, `og:image`, Twitter Card для ключевых страниц.</div>
+                </article>
+                <article class="issue">
+                    <span class="priority p1">P1 • 🧭 URL</span>
+                    <h3>CTA ведут на `layout=edit` страницы</h3>
+                    <p>Ссылки карточек используют Joomla edit-layout query URL, которые выглядят как служебные и запрещены в robots.txt.</p>
+                    <div class="callout"><strong>Что сделать:</strong> создать чистые публичные URL и поставить 301 redirects со старых query URL.</div>
+                </article>
+                <article class="issue">
+                    <span class="priority p2">P2 • 🎨 Design</span>
+                    <h3>Визуальная система устарела</h3>
+                    <p>Пурпурная шапка, серый hero, бледный patterned background и разноцветные карточки выглядят несобранно.</p>
+                    <div class="callout"><strong>Что сделать:</strong> определить единые tokens: цвет, типографика, отступы, карточки, кнопки.</div>
+                </article>
+                <article class="issue">
+                    <span class="priority p2">P2 • ⚡ Performance</span>
+                    <h3>Страница почти статическая, но не кэшируется</h3>
+                    <p>HTTP-заголовки отдают `no-store/no-cache`, при этом сайт загружает много Joomla/analytics ресурсов.</p>
+                    <div class="callout"><strong>Что сделать:</strong> включить cache для публичных страниц и статических ассетов, убрать лишний JS.</div>
+                </article>
+                <article class="issue">
+                    <span class="priority p2">P2 • 🧩 Content</span>
+                    <h3>Неясна главная бизнес-цель</h3>
+                    <p>Пользователь видит технологии, но не понимает: это личный профиль, консалтинг, программа, архив или software/toolbox.</p>
+                    <div class="callout"><strong>Что сделать:</strong> добавить один главный CTA и четкий блок “What IntraSAW offers”.</div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2>🔎 SEO-аудит</h2>
+                    <p>Основные SEO-проблемы связаны не с отсутствием текста, а со структурой URL, H1 и metadata.</p>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Проверка</th>
+                        <th>Статус</th>
+                        <th>Комментарий</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Title</td><td><span class="priority good">✅ Есть</span></td><td>На страницах есть title, но часть формулировок можно усилить под intent.</td></tr>
+                    <tr><td>Description</td><td><span class="priority good">✅ Есть</span></td><td>Описание присутствует на большинстве страниц, кроме 404.</td></tr>
+                    <tr><td>Canonical</td><td><span class="priority p1">🚨 Нет</span></td><td>На проверенных страницах canonical отсутствует.</td></tr>
+                    <tr><td>Open Graph</td><td><span class="priority p2">⚠️ Частично</span></td><td>На главной `og:title`, `og:description`, `og:image` отсутствуют.</td></tr>
+                    <tr><td>Sitemap</td><td><span class="priority p1">🚨 Ошибка</span></td><td>`/about/testimonials` находится в sitemap, но отвечает 404.</td></tr>
+                    <tr><td>H1</td><td><span class="priority p2">⚠️ Слабый</span></td><td>Многие страницы используют H1 героя “IntraSAW — SAW & BAW Simulation Platform”, а не тему страницы.</td></tr>
+                    <tr><td>Structured data</td><td><span class="priority p2">⚠️ Ошибка</span></td><td>`Person.image` указывает на homepage, а не на реальный image URL.</td></tr>
+                    <tr><td>Robots</td><td><span class="priority p2">⚠️ Проверить</span></td><td>Robots запрещает `layout=edit`, но homepage ссылается на такие URL.</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2>🛠️ Рекомендуемый план работ</h2>
+                    <p>Порядок выбран так, чтобы быстро убрать самые дорогие ошибки.</p>
+                </div>
+            </div>
+            <div class="issue-grid">
+                <article class="issue">
+                    <span class="priority p1">1 • Срочно</span>
+                    <h3>Починить sitemap и URL</h3>
+                    <p>Удалить 404 из sitemap, заменить `layout=edit` ссылки, добавить redirects и canonical.</p>
+                </article>
+                <article class="issue">
+                    <span class="priority p1">2 • Срочно</span>
+                    <h3>Исправить mobile hero</h3>
+                    <p>Сделать мобильный первый экран читабельным: меньше заголовок, меньше search, понятнее CTA.</p>
+                </article>
+                <article class="issue">
+                    <span class="priority p2">3 • Важно</span>
+                    <h3>Собрать дизайн-систему</h3>
+                    <p>Убрать inline styles и задать единые компоненты для hero, карточек, кнопок, footer.</p>
+                </article>
+                <article class="issue">
+                    <span class="priority p2">4 • Важно</span>
+                    <h3>Оптимизировать загрузку</h3>
+                    <p>Настроить cache, убрать лишний JS, проверить consent для Google Analytics.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <div>
+                    <h2>📚 Источники и артефакты</h2>
+                    <p>Использованные данные проверки.</p>
+                </div>
+            </div>
+            <div class="source-grid">
+                <article class="source-card">
+                    <h3>🌐 Главная страница</h3>
+                    <p><a href="https://intrasaw.com/">https://intrasaw.com/</a></p>
+                </article>
+                <article class="source-card">
+                    <h3>🤖 Robots.txt</h3>
+                    <p><a href="https://intrasaw.com/robots.txt">https://intrasaw.com/robots.txt</a></p>
+                </article>
+                <article class="source-card">
+                    <h3>🗺️ Sitemap</h3>
+                    <p><a href="https://intrasaw.com/sitemap.xml">https://intrasaw.com/sitemap.xml</a></p>
+                </article>
+                <article class="source-card">
+                    <h3>🧪 Skills</h3>
+                    <p>Использованы `$impeccable critique` и `$find-skills`. Отдельный SEO skill найден, но не установлен из-за низкого install-count.</p>
+                </article>
+            </div>
+        </section>
+
+        <p class="footer">
+            ✨ Отчет подготовлен как статический HTML-файл. Его можно открыть в браузере без dev-server.
+        </p>
+    </main>
+</body>
+</html>

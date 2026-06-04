@@ -8,7 +8,7 @@ This roadmap lists work that should happen after the static MVP is reviewed.
 - Replace `USt-IdNr.: folgt` only after the real VAT ID is confirmed. Do not use the temporary `123456789` value.
 - Add verified qualification and certification details.
 - Have the final `Impressum` and `Datenschutzerklärung` reviewed by a qualified German legal/privacy source.
-- Replace the Calendly placeholder with the real booking link.
+- Add a real Calendly booking link when it is ready. Keep Calendly out of visible website copy until the booking flow actually exists.
 
 ## Booking And Forms
 

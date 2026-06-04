@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <!--
         Keep the page dependency-free for the MVP:
@@ -69,7 +69,7 @@
                     <a class="button button-primary" href="#consultation" data-i18n="heroPrimary">Beratung anfragen</a>
                     <a class="button button-secondary" href="#process" data-i18n="heroSecondary">So läuft es ab</a>
                 </div>
-                <p class="hero-note" data-i18n="heroNote">Calendly folgt später. Bis dahin kannst du deine Anfrage direkt per Formular senden.</p>
+                <p class="hero-note" data-i18n="heroNote">Du kannst deine Anfrage direkt per Formular senden. Tatsiana meldet sich persönlich per E-Mail.</p>
             </div>
 
             <div class="hero-media reveal" aria-label="Tatsiana Rukhlenko portrait">
@@ -107,19 +107,19 @@
                 <p data-i18n="forYouLead">Der erste Schritt ist keine harte Challenge. Es ist ein klares Gespräch darüber, was dich im Alltag einschränkt und welche Trainingsrichtung sinnvoll ist.</p>
             </div>
 
-            <div class="benefit-grid">
-                <article class="benefit-card reveal">
-                    <span class="card-number">01</span>
+            <div class="situation-panel reveal">
+                <article class="situation-item">
+                    <span class="situation-icon" aria-hidden="true">↔</span>
                     <h3 data-i18n="benefitOneTitle">Mehr Bewegungsfreiheit</h3>
                     <p data-i18n="benefitOneText">Für Menschen, die sich im Rücken, in Hüfte, Schultern oder Nacken oft eingeschränkt fühlen.</p>
                 </article>
-                <article class="benefit-card reveal">
-                    <span class="card-number">02</span>
+                <article class="situation-item">
+                    <span class="situation-icon" aria-hidden="true">↑</span>
                     <h3 data-i18n="benefitTwoTitle">Bessere Haltung</h3>
                     <p data-i18n="benefitTwoText">Für alle, die viel sitzen und wieder stabiler, aufrechter und bewusster trainieren möchten.</p>
                 </article>
-                <article class="benefit-card reveal">
-                    <span class="card-number">03</span>
+                <article class="situation-item">
+                    <span class="situation-icon" aria-hidden="true">↺</span>
                     <h3 data-i18n="benefitThreeTitle">Sicherer Wiedereinstieg</h3>
                     <p data-i18n="benefitThreeText">Für Erwachsene, die nach einer Pause wieder anfangen wollen und einen ruhigen, nachvollziehbaren Plan brauchen.</p>
                 </article>
@@ -127,51 +127,69 @@
         </section>
 
         <section class="content-section services-section" id="services">
-            <div class="section-heading section-heading-centered reveal">
-                <p class="eyebrow" data-i18n="servicesEyebrow">Leistungen</p>
-                <h2 data-i18n="servicesTitle">Meine Leistungen</h2>
-                <p data-i18n="servicesLead">In der kostenlosen Beratung klären wir, welche Richtung für deinen Körper und deinen Alltag sinnvoll ist.</p>
-            </div>
-
-            <div class="services-group reveal">
-                <h3 data-i18n="mobilityServicesTitle">Mobility-Fokus</h3>
-                <div class="services-grid">
-                    <article class="service-card">
-                        <span class="service-icon" aria-hidden="true">🔎</span>
-                        <h4 data-i18n="serviceMobilityCheckTitle">Mobility Check</h4>
-                        <p data-i18n="serviceMobilityCheckText">Wir schauen auf Bewegungsfreiheit, Einschränkungen und die nächsten sinnvollen Schritte.</p>
-                    </article>
-                    <article class="service-card">
-                        <span class="service-icon" aria-hidden="true">🧍</span>
-                        <h4 data-i18n="servicePostureTitle">Haltung & Beweglichkeit</h4>
-                        <p data-i18n="servicePostureText">Ein ruhiger Fokus auf Haltung, Körpergefühl und mehr Kontrolle in alltäglicher Bewegung.</p>
-                    </article>
-                    <article class="service-card">
-                        <span class="service-icon" aria-hidden="true">🌱</span>
-                        <h4 data-i18n="serviceRestartTitle">Wiedereinstieg</h4>
-                        <p data-i18n="serviceRestartText">Für Erwachsene, die nach einer Pause strukturiert und ohne Überforderung starten möchten.</p>
-                    </article>
+            <div class="services-layout">
+                <div class="services-feature reveal">
+                    <div class="services-feature-copy">
+                        <p class="eyebrow" data-i18n="servicesEyebrow">Leistungen</p>
+                        <h2 data-i18n="servicesTitle">Meine Leistungen</h2>
+                        <p data-i18n="servicesLead">In der kostenlosen Beratung klären wir, welche Richtung für deinen Körper und deinen Alltag sinnvoll ist.</p>
+                        <a class="button button-primary" href="#consultation" data-i18n="servicesCta">Richtung klären</a>
+                    </div>
+                    <div class="services-feature-media" aria-hidden="true">
+                        <img src="images/tatsiana-about.jpg" width="933" height="1400" loading="lazy" alt="">
+                    </div>
                 </div>
-            </div>
 
-            <div class="services-group reveal">
-                <h3 data-i18n="consultationTopicsTitle">Themen der Beratung</h3>
-                <div class="services-grid">
-                    <article class="service-card">
-                        <span class="service-icon" aria-hidden="true">🏋️</span>
-                        <h4 data-i18n="serviceTrainingTitle">Training</h4>
-                        <p data-i18n="serviceTrainingText">Wir besprechen, welche Trainingsform zu deinem Ziel, Level und Alltag passt.</p>
-                    </article>
-                    <article class="service-card">
-                        <span class="service-icon" aria-hidden="true">💻</span>
-                        <h4 data-i18n="serviceOnlineTitle">Online Coaching</h4>
-                        <p data-i18n="serviceOnlineText">Wir klären, ob flexible Online-Begleitung für dich sinnvoll ist und wie sie aussehen könnte.</p>
-                    </article>
-                    <article class="service-card">
-                        <span class="service-icon" aria-hidden="true">🥗</span>
-                        <h4 data-i18n="serviceNutritionTitle">Nutrition Habits</h4>
-                        <p data-i18n="serviceNutritionText">Wir sprechen über einfache Ernährungsgewohnheiten, die Training und Alltag unterstützen können.</p>
-                    </article>
+                <div class="services-menu reveal" aria-label="Consultation topics">
+                    <div class="service-menu-group">
+                        <h3 data-i18n="mobilityServicesTitle">Mobility-Fokus</h3>
+                        <article class="service-topic">
+                            <span class="service-topic-icon" aria-hidden="true">🔎</span>
+                            <div>
+                                <h4 data-i18n="serviceMobilityCheckTitle">Mobility Check</h4>
+                                <p data-i18n="serviceMobilityCheckText">Wir schauen auf Bewegungsfreiheit, Einschränkungen und die nächsten sinnvollen Schritte.</p>
+                            </div>
+                        </article>
+                        <article class="service-topic">
+                            <span class="service-topic-icon" aria-hidden="true">🧍</span>
+                            <div>
+                                <h4 data-i18n="servicePostureTitle">Haltung & Beweglichkeit</h4>
+                                <p data-i18n="servicePostureText">Ein ruhiger Fokus auf Haltung, Körpergefühl und mehr Kontrolle in alltäglicher Bewegung.</p>
+                            </div>
+                        </article>
+                        <article class="service-topic">
+                            <span class="service-topic-icon" aria-hidden="true">🌱</span>
+                            <div>
+                                <h4 data-i18n="serviceRestartTitle">Wiedereinstieg</h4>
+                                <p data-i18n="serviceRestartText">Für Erwachsene, die nach einer Pause strukturiert und ohne Überforderung starten möchten.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="service-menu-group">
+                        <h3 data-i18n="consultationTopicsTitle">Themen der Beratung</h3>
+                        <article class="service-topic">
+                            <span class="service-topic-icon" aria-hidden="true">🏋️</span>
+                            <div>
+                                <h4 data-i18n="serviceTrainingTitle">Training</h4>
+                                <p data-i18n="serviceTrainingText">Wir besprechen, welche Trainingsform zu deinem Ziel, Level und Alltag passt.</p>
+                            </div>
+                        </article>
+                        <article class="service-topic">
+                            <span class="service-topic-icon" aria-hidden="true">💻</span>
+                            <div>
+                                <h4 data-i18n="serviceOnlineTitle">Online Coaching</h4>
+                                <p data-i18n="serviceOnlineText">Wir klären, ob flexible Online-Begleitung für dich sinnvoll ist und wie sie aussehen könnte.</p>
+                            </div>
+                        </article>
+                        <article class="service-topic">
+                            <span class="service-topic-icon" aria-hidden="true">🥗</span>
+                            <div>
+                                <h4 data-i18n="serviceNutritionTitle">Ernährungsgewohnheiten</h4>
+                                <p data-i18n="serviceNutritionText">Wir sprechen über einfache Ernährungsgewohnheiten, die Training und Alltag unterstützen können.</p>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
@@ -208,7 +226,7 @@
                 <article class="process-step reveal">
                     <span>2</span>
                     <h3 data-i18n="processTwoTitle">Termin abstimmen</h3>
-                    <p data-i18n="processTwoText">Calendly wird später ergänzt. Bis dahin stimmen wir den Termin per E-Mail ab.</p>
+                    <p data-i18n="processTwoText">Ihr stimmt den Termin persönlich per E-Mail ab.</p>
                 </article>
                 <article class="process-step reveal">
                     <span>3</span>
@@ -260,7 +278,7 @@
                 </details>
                 <details class="faq-item reveal">
                     <summary data-i18n="faqFourQuestion">Wie buche ich aktuell einen Termin?</summary>
-                    <p data-i18n="faqFourAnswer">Calendly wird später ergänzt. Im MVP sendet das Formular eine vorbereitete E-Mail, danach wird der Termin direkt abgestimmt.</p>
+                    <p data-i18n="faqFourAnswer">Das Formular bereitet eine E-Mail vor. Danach wird der Termin persönlich abgestimmt.</p>
                 </details>
             </div>
         </section>
@@ -288,10 +306,19 @@
             <div class="consultation-copy reveal">
                 <p class="eyebrow" data-i18n="consultEyebrow">Kostenlose Online-Beratung</p>
                 <h2 data-i18n="consultTitle">Erzähl kurz, was dich im Moment einschränkt.</h2>
-                <p data-i18n="consultLead">Das Formular öffnet dein E-Mail-Programm mit einer vorbereiteten Nachricht an Tatsiana. So bleibt die erste Version ohne Backend und ohne Tracking.</p>
-                <div class="calendly-placeholder">
-                    <strong data-i18n="calendlyTitle">Calendly folgt</strong>
-                    <span data-i18n="calendlyText">Ein direkter Buchungskalender wird ergänzt, sobald der echte Link bereit ist.</span>
+                <p data-i18n="consultLead">Das Formular bereitet eine E-Mail an Tatsiana vor. So bleibt die erste Version persönlich, backend-frei und ohne Tracking.</p>
+                <div class="scheduling-note">
+                    <strong data-i18n="schedulingTitle">Persönliche Terminabstimmung</strong>
+                    <span data-i18n="schedulingText">Du sendest die Anfrage per E-Mail. Tatsiana meldet sich direkt zurück, damit ihr Sprache, Zeit und Online-Kanal abstimmen könnt.</span>
+                </div>
+                <div class="response-card">
+                    <strong data-i18n="responseTitle">Nach deiner Anfrage</strong>
+                    <ul>
+                        <li data-i18n="responseOne">Tatsiana liest deine Nachricht und meldet sich persönlich per E-Mail.</li>
+                        <li data-i18n="responseTwo">Ihr stimmt Sprache, Termin und den passenden Online-Kanal direkt ab.</li>
+                        <li data-i18n="responseThree">Wenn dein E-Mail-Programm nicht öffnet, kannst du direkt an Tatsiana schreiben.</li>
+                    </ul>
+                    <a href="mailto:tatsiana.rukhlenko@gmail.com" data-i18n="responseEmailLink">Direkt per E-Mail schreiben</a>
                 </div>
             </div>
 
@@ -326,28 +353,19 @@
                 <p class="form-helper" id="form-helper" role="status" data-i18n="formHelper">Deine Daten werden nicht auf dieser Website gespeichert.</p>
             </form>
         </section>
-
-        <section class="legal-section" aria-label="Legal information">
-            <article class="legal-card" id="impressum">
-                <h2 data-i18n="impressumTitle">Impressum</h2>
-                <p><strong data-i18n="impressumProvider">Angaben gemäß § 5 DDG</strong></p>
-                <p>Tatsiana Rukhlenko<br><span data-i18n="addressPlaceholder">Adresse folgt</span><br>Deutschland</p>
-                <p><strong data-i18n="legalContact">Kontakt</strong><br>
-                    E-Mail: <a href="mailto:tatsiana.rukhlenko@gmail.com">tatsiana.rukhlenko@gmail.com</a><br>
-                    Instagram: <a href="https://www.instagram.com/tatsi_ru/" target="_blank" rel="noopener noreferrer">@tatsi_ru</a>
-                </p>
-                <p><strong>USt-IdNr.:</strong> <span data-i18n="vatPlaceholder">folgt</span></p>
-                <p class="legal-note" data-i18n="impressumNote">Hinweis: Adresse, USt-IdNr. und weitere Pflichtangaben müssen vor dem öffentlichen Launch final geprüft und ergänzt werden.</p>
-            </article>
-
-            <article class="legal-card" id="privacy">
-                <h2 data-i18n="privacyTitle">Datenschutzerklärung</h2>
-                <p data-i18n="privacyIntro">Diese MVP-Version verwendet keine Analytics-Skripte, keine Marketing-Pixel und keine eingebetteten Drittanbieter-Widgets.</p>
-                <p data-i18n="privacyForm">Wenn du das Formular nutzt, öffnet dein E-Mail-Programm eine vorbereitete Nachricht. Die Verarbeitung erfolgt dann über deine E-Mail-App und den E-Mail-Dienst der Empfängerin.</p>
-                <p data-i18n="privacyRights">Du kannst Auskunft, Berichtigung oder Löschung deiner personenbezogenen Daten verlangen. Die finale Datenschutzerklärung muss vor dem Launch rechtlich geprüft werden.</p>
-            </article>
-        </section>
     </main>
+
+    <!--
+        Mobile visitors often decide while scrolling, not only inside the hero.
+        This compact bottom bar keeps the main conversion action reachable on touch screens.
+    -->
+    <aside class="mobile-conversion-bar" aria-label="Mobile consultation actions">
+        <a class="mobile-conversion-primary" href="#consultation" data-i18n="mobileCtaPrimary">Anfrage senden</a>
+        <a class="mobile-conversion-secondary" href="mailto:tatsiana.rukhlenko@gmail.com" aria-label="Email Tatsiana Rukhlenko">
+            <span aria-hidden="true">📧</span>
+            <span data-i18n="mobileCtaEmail">Email</span>
+        </a>
+    </aside>
 
     <footer class="site-footer">
         <div>
@@ -356,7 +374,7 @@
         </div>
         <nav aria-label="Footer navigation">
             <a href="impressum.html" data-i18n="footerImpressum">Impressum</a>
-            <a href="#privacy" data-i18n="footerPrivacy">Datenschutz</a>
+            <a href="impressum.html#privacy" data-i18n="footerPrivacy">Datenschutz</a>
             <a href="mailto:tatsiana.rukhlenko@gmail.com">Email</a>
             <a href="https://www.instagram.com/tatsi_ru/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </nav>
