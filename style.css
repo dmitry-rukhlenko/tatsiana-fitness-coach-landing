@@ -705,6 +705,11 @@ p {
     object-position: 52% 45%;
 }
 
+#offer .split-media img {
+    transform: scale(1.12);
+    transform-origin: 58% 42%;
+}
+
 .about-media img {
     object-position: 48% 48%;
 }
