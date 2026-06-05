@@ -25,7 +25,7 @@ async function runSmokeTest() {
         infoTiles: document.querySelectorAll('.info-tile').length,
         situationItems: document.querySelectorAll('.situation-item').length,
         serviceTopics: document.querySelectorAll('.service-topic').length,
-        serviceMenuGroups: document.querySelectorAll('.service-menu-group').length,
+        servicesImages: document.querySelectorAll('#services .services-feature-media img').length,
         contactRows: document.querySelectorAll('.contact-row').length,
         legalSections: document.querySelectorAll('.legal-section').length,
         trackingScripts: [...document.scripts].filter((script) => {
@@ -46,8 +46,8 @@ async function runSmokeTest() {
         throw new Error(`Expected 6 service topics, found ${counts.serviceTopics}.`);
     }
 
-    if (counts.serviceMenuGroups !== 2) {
-        throw new Error(`Expected 2 service menu groups, found ${counts.serviceMenuGroups}.`);
+    if (counts.servicesImages !== 1) {
+        throw new Error(`Expected 1 image-led services visual, found ${counts.servicesImages}.`);
     }
 
     if (counts.contactRows !== 2) {

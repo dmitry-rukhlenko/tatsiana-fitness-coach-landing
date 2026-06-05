@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Section Variants - Tatsiana Rukhlenko</title>
+    <style>
+        :root {
+            --bg: #FAF7F2;
+            --surface: #FFFFFF;
+            --lavender: #EDE1EF;
+            --mint: #D8FFF9;
+            --accent: #B9A3C8;
+            --ink: #26222A;
+            --muted: #62586A;
+            --line: rgba(38, 34, 42, 0.13);
+            --deep: #211D26;
+            --shadow: 0 14px 34px rgba(38, 34, 42, 0.1);
+            --font: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--font);
+            line-height: 1.55;
+        }
+
+        main {
+            width: min(1180px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 46px 0 72px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin: 0;
+            line-height: 1.08;
+            text-wrap: balance;
+        }
+
+        h1 {
+            max-width: 940px;
+            font-size: clamp(2.4rem, 5.5vw, 4.8rem);
+        }
+
+        h2 {
+            font-size: clamp(2.15rem, 4vw, 4.1rem);
+        }
+
+        h3 {
+            font-size: 1.12rem;
+        }
+
+        h4 {
+            font-size: clamp(1.12rem, 1.6vw, 1.42rem);
+        }
+
+        p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero {
+            display: grid;
+            gap: 18px;
+            border-radius: 28px;
+            background: var(--deep);
+            color: white;
+            padding: clamp(28px, 5vw, 56px);
+        }
+
+        .hero p {
+            max-width: 820px;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 1.08rem;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .pill {
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+            padding: 8px 12px;
+            font-weight: 800;
+        }
+
+        .variant {
+            margin-top: 34px;
+            border-radius: 28px;
+            background: rgba(255, 255, 255, 0.62);
+            box-shadow: var(--shadow);
+            padding: clamp(20px, 3vw, 32px);
+        }
+
+        .variant-label {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .variant-label strong {
+            font-size: 1.1rem;
+        }
+
+        .tag {
+            border-radius: 999px;
+            background: var(--lavender);
+            color: var(--ink);
+            padding: 5px 10px;
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+
+        .button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 48px;
+            border-radius: 999px;
+            background: var(--deep);
+            color: white;
+            padding: 0 22px;
+            font-weight: 840;
+            text-decoration: none;
+            width: fit-content;
+        }
+
+        .eyebrow {
+            color: #7F638F;
+            font-weight: 820;
+        }
+
+        .topic {
+            display: grid;
+            gap: 8px;
+            min-width: 0;
+        }
+
+        .topic-icon {
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--bg);
+            font-size: 1.35rem;
+        }
+
+        /* Variant 1 -------------------------------------------------------- */
+
+        .v1 {
+            display: grid;
+            grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .v1-intro {
+            display: grid;
+            align-content: center;
+            gap: 18px;
+            border-radius: 22px;
+            background: var(--mint);
+            padding: clamp(28px, 5vw, 52px);
+        }
+
+        .v1-topics {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .v1 .topic {
+            border-radius: 18px;
+            background: white;
+            padding: 20px;
+        }
+
+        /* Variant 2 -------------------------------------------------------- */
+
+        .v2 {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .v2-content {
+            display: grid;
+            gap: 16px;
+            border-radius: 22px;
+            background: white;
+            padding: clamp(26px, 4vw, 46px);
+        }
+
+        .v2-topics {
+            display: grid;
+            gap: 0;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+        }
+
+        .v2 .topic {
+            grid-template-columns: 52px minmax(0, 1fr);
+            gap: 16px;
+            align-items: start;
+            padding: 18px;
+            border-top: 1px solid var(--line);
+        }
+
+        .v2 .topic:first-child {
+            border-top: 0;
+        }
+
+        .v2-photo {
+            min-height: 560px;
+            overflow: hidden;
+            border-radius: 22px;
+        }
+
+        /* Variant 3 -------------------------------------------------------- */
+
+        .v3 {
+            display: grid;
+            gap: 22px;
+        }
+
+        .v3-header {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.55fr);
+            gap: 22px;
+            align-items: end;
+        }
+
+        .v3-title {
+            display: grid;
+            gap: 16px;
+        }
+
+        .v3-proof {
+            border-radius: 20px;
+            background: var(--lavender);
+            padding: 22px;
+        }
+
+        .v3-topics {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .v3 .topic {
+            border-radius: 20px;
+            background: white;
+            padding: 22px;
+        }
+
+        /* Variant 4 -------------------------------------------------------- */
+
+        .v4 {
+            display: grid;
+            grid-template-columns: minmax(260px, 0.52fr) minmax(0, 1fr);
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .v4-photo {
+            min-height: 620px;
+            overflow: hidden;
+            border-radius: 22px;
+        }
+
+        .v4-content {
+            display: grid;
+            gap: 18px;
+            border-radius: 22px;
+            background: var(--lavender);
+            padding: clamp(26px, 4vw, 48px);
+        }
+
+        .v4-topics {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .v4 .topic {
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.72);
+            padding: 18px;
+        }
+
+        @media (max-width: 820px) {
+            .v1,
+            .v2,
+            .v3-header,
+            .v4 {
+                grid-template-columns: 1fr;
+            }
+
+            .v1-topics,
+            .v3-topics,
+            .v4-topics {
+                grid-template-columns: 1fr;
+            }
+
+            .v2-photo,
+            .v4-photo {
+                min-height: 420px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero">
+            <div class="meta">
+                <span class="pill">🧩 Services section</span>
+                <span class="pill">4 variants</span>
+                <span class="pill">calm · precise · warm</span>
+            </div>
+            <h1>Варианты блока “Meine Leistungen”</h1>
+            <p>Сайт пока не меняется. Это отдельная страница-пример, чтобы выбрать направление: более компактно, более доверительно, более карточно или более image-led.</p>
+        </section>
+
+        <section class="variant">
+            <div class="variant-label">
+                <strong>Вариант 1: компактный обзор</strong>
+                <span class="tag">самый понятный</span>
+                <span class="tag">меньше фото</span>
+            </div>
+            <div class="v1">
+                <div class="v1-intro">
+                    <p class="eyebrow">Leistungen</p>
+                    <h2>Womit wir starten können</h2>
+                    <p>In der kostenlosen Beratung klären wir, welche Richtung für deinen Körper und deinen Alltag sinnvoll ist.</p>
+                    <a class="button" href="#consultation">Richtung klären</a>
+                </div>
+                <div class="v1-topics">
+                    <article class="topic"><span class="topic-icon">🔎</span><h4>Mobility Check</h4><p>Bewegungsfreiheit, Einschränkungen und nächste sinnvolle Schritte.</p></article>
+                    <article class="topic"><span class="topic-icon">🧍</span><h4>Haltung & Beweglichkeit</h4><p>Körpergefühl, Haltung und mehr Kontrolle in alltäglicher Bewegung.</p></article>
+                    <article class="topic"><span class="topic-icon">🌱</span><h4>Wiedereinstieg</h4><p>Ruhig starten nach einer Pause, mit Struktur und ohne Überforderung.</p></article>
+                    <article class="topic"><span class="topic-icon">💻</span><h4>Online Coaching</h4><p>Klärung, ob flexible Online-Begleitung zu deinem Alltag passt.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="variant">
+            <div class="variant-label">
+                <strong>Вариант 2: доверие через фото</strong>
+                <span class="tag">ближе к человеку</span>
+                <span class="tag">мягче</span>
+            </div>
+            <div class="v2">
+                <div class="v2-content">
+                    <p class="eyebrow">Leistungen</p>
+                    <h2>Ein ruhiger Blick auf deinen nächsten Schritt</h2>
+                    <p>Die Beratung ist kein fertiges Paket. Sie hilft dir zu verstehen, welche Trainingsrichtung gerade wirklich Sinn ergibt.</p>
+                    <div class="v2-topics">
+                        <article class="topic"><span class="topic-icon">🔎</span><div><h4>Mobility Check</h4><p>Was bewegt sich frei, was fühlt sich eingeschränkt an?</p></div></article>
+                        <article class="topic"><span class="topic-icon">🧍</span><div><h4>Haltung & Kontrolle</h4><p>Mehr Körpergefühl für Alltag, Training und Routinen.</p></div></article>
+                        <article class="topic"><span class="topic-icon">🌱</span><div><h4>Wiedereinstieg</h4><p>Ein Start, der nicht überfordert und trotzdem konkret bleibt.</p></div></article>
+                    </div>
+                    <a class="button" href="#consultation">Kostenlose Anfrage senden</a>
+                </div>
+                <div class="v2-photo">
+                    <img src="../images/tatsiana-about-handstand.jpg" alt="Tatsiana macht einen Handstand im Park.">
+                </div>
+            </div>
+        </section>
+
+        <section class="variant">
+            <div class="variant-label">
+                <strong>Вариант 3: экспертный блок</strong>
+                <span class="tag">больше структуры</span>
+                <span class="tag">хорошо для SEO</span>
+            </div>
+            <div class="v3">
+                <div class="v3-header">
+                    <div class="v3-title">
+                        <p class="eyebrow">Mobility-Fokus</p>
+                        <h2>Beratungsthemen, die deinen Alltag leichter machen</h2>
+                    </div>
+                    <div class="v3-proof">
+                        <h3>Keine pauschalen Programme</h3>
+                        <p>Wir starten mit deinem Körper, deinem Alltag und deinem Ziel.</p>
+                    </div>
+                </div>
+                <div class="v3-topics">
+                    <article class="topic"><span class="topic-icon">🔎</span><h4>Mobility Check</h4><p>Bewegungsfreiheit und sinnvolle nächste Schritte.</p></article>
+                    <article class="topic"><span class="topic-icon">🧍</span><h4>Posture & Flexibility</h4><p>Haltung, Beweglichkeit und Körperkontrolle.</p></article>
+                    <article class="topic"><span class="topic-icon">🌱</span><h4>Return to Training</h4><p>Wiedereinstieg mit Struktur und Ruhe.</p></article>
+                    <article class="topic"><span class="topic-icon">🏋️</span><h4>Training</h4><p>Welche Trainingsform passt zu Level und Alltag?</p></article>
+                    <article class="topic"><span class="topic-icon">💻</span><h4>Online Coaching</h4><p>Ob flexible Online-Begleitung sinnvoll ist.</p></article>
+                    <article class="topic"><span class="topic-icon">🥗</span><h4>Nutrition Habits</h4><p>Einfache Gewohnheiten, die Training unterstützen.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="variant">
+            <div class="variant-label">
+                <strong>Вариант 4: image-led</strong>
+                <span class="tag">самый визуальный</span>
+                <span class="tag">больше premium</span>
+            </div>
+            <div class="v4">
+                <div class="v4-photo">
+                    <img src="../images/tatsiana-mobility.jpg" alt="Tatsiana zeigt eine Mobility-Pose im Park.">
+                </div>
+                <div class="v4-content">
+                    <p class="eyebrow">Leistungen</p>
+                    <h2>Bewegung verstehen, bevor Training beginnt</h2>
+                    <p>In der Beratung schauen wir auf Beweglichkeit, Haltung, Kontrolle und deinen realistischen nächsten Schritt.</p>
+                    <div class="v4-topics">
+                        <article class="topic"><span class="topic-icon">🔎</span><h4>Check</h4><p>Was braucht mehr Freiheit?</p></article>
+                        <article class="topic"><span class="topic-icon">🧍</span><h4>Haltung</h4><p>Wie fühlt sich dein Körper im Alltag?</p></article>
+                        <article class="topic"><span class="topic-icon">🌱</span><h4>Start</h4><p>Wie beginnst du ohne Druck?</p></article>
+                        <article class="topic"><span class="topic-icon">💻</span><h4>Online</h4><p>Welche Begleitung passt?</p></article>
+                    </div>
+                    <a class="button" href="#consultation">Beratung anfragen</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
