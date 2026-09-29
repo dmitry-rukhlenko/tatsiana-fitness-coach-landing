@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Демо вариантов · Tatsiana Rukhlenko</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root { --bg:#F6F3EE; --ink:#221E24; --muted:#5C555F; --line:rgba(34,30,36,.12); --accent:#B5485C; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:"Onest","Segoe UI",Helvetica,Arial,sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased; }
+main { width:min(880px, calc(100% - 40px)); margin:0 auto; padding:clamp(48px,8vw,96px) 0 80px; }
+h1 { font-size:clamp(2rem,4.5vw,3rem); line-height:1.05; margin:0 0 12px; letter-spacing:-.01em; }
+.lead { color:var(--muted); font-size:1.1rem; max-width:60ch; margin:0 0 40px; }
+.list { display:grid; gap:14px; }
+.card { display:grid; grid-template-columns:56px 1fr auto; gap:20px; align-items:center; padding:22px 24px; border:1px solid var(--line); border-radius:14px; background:#fff; color:inherit; text-decoration:none; transition:transform 200ms cubic-bezier(.22,1,.36,1), border-color 200ms ease; }
+.card:hover { transform:translateY(-2px); border-color:var(--ink); }
+.card:active { transform:scale(.985); }
+.badge { width:56px; height:56px; border-radius:50%; display:grid; place-items:center; font-weight:800; font-size:1.3rem; background:var(--ink); color:var(--bg); }
+.badge.c { background:var(--accent); color:#fff; }
+.badge.k { background:#E3E8DB; color:var(--ink); font-size:1rem; }
+.card h2 { margin:0 0 4px; font-size:1.2rem; }
+.card p { margin:0; color:var(--muted); font-size:.96rem; }
+.arrow { color:var(--muted); font-size:1.4rem; }
+.note { margin-top:40px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:.92rem; max-width:64ch; }
+@media (max-width:600px){ .card{ grid-template-columns:44px 1fr; } .arrow{ display:none; } .badge{ width:44px; height:44px; font-size:1.1rem; } }
+</style>
+</head>
+<body>
+<main>
+    <h1>Демо вариантов редизайна</h1>
+    <p class="lead">Каждая страница открывает сайт целиком. Панель внизу переключает между вариантами. Все шрифты и библиотеки лежат локально, внешних запросов нет.</p>
+    <div class="list">
+        <a class="card" href="a/">
+            <span class="badge">A</span>
+            <span><h2>Тихая хореография</h2><p>Текущий дизайн и палитра. Новое движение, SVG-иконки вместо эмодзи, убраны рамки с тенями и лишние подписи. Только CSS и немного JS.</p></span>
+            <span class="arrow">→</span>
+        </a>
+        <a class="card" href="b/">
+            <span class="badge">B</span>
+            <span><h2>Скролл как история</h2><p>Всё из A плюс параллакс героя, закреплённое фото в оффере с тезисами, линия процесса по мере прокрутки, плавный скролл на Lenis.</p></span>
+            <span class="arrow">→</span>
+        </a>
+        <a class="card" href="c/">
+            <span class="badge c">C</span>
+            <span><h2>Редакционный, с характером</h2><p>Новый арт-дирекшн: фото на весь экран, чередование цветных сцен, маски-раскрытия, бегущая строка, пятно света за курсором. GSAP и Lenis, WebP.</p></span>
+            <span class="arrow">→</span>
+        </a>
+        <a class="card" href="compositions.html">
+            <span class="badge k">1·2·3</span>
+            <span><h2>Три композиции первого экрана</h2><p>Демо по промптам: журнальная, типографическая и фото-композиция, режим ч/б без анимаций для выбора.</p></span>
+            <span class="arrow">→</span>
+        </a>
+    </div>
+    <p class="note">Открывать через локальный сервер из корня проекта, иначе не подгрузятся фото и шрифты: <code>python3 -m http.server 8765</code>, затем http://localhost:8765/demo/</p>
+</main>
+</body>
+</html>

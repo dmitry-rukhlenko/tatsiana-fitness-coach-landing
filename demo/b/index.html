@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!--
+        Keep the page dependency-free for the MVP:
+        no analytics, no tracking pixels, no external font files, and no cookie banner.
+    -->
+    <title>Tatsiana Rukhlenko | Mobility & Fitness Coaching</title>
+    <meta name="description" content="Kostenlose Online-Beratung mit Tatsiana Rukhlenko: Mobility, Bewegungsfreiheit, Haltung und alltagstaugliches Training.">
+    <meta property="og:title" content="Tatsiana Rukhlenko | Mobility & Fitness Coaching">
+    <meta property="og:description" content="Mehr Bewegungsfreiheit, bessere Körperkontrolle und ein Trainingsansatz, der zu deinem Alltag passt.">
+    <meta property="og:image" content="../../images/tatsiana-hero.jpg">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#FAF7F2">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../demo-nav.css">
+    <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+    <!--
+        Skip links help keyboard and screen-reader users jump directly to the useful content.
+        They are visually hidden until focused.
+    -->
+    <a class="skip-link" href="#main" data-i18n="skipLink">Zum Inhalt springen</a>
+
+    <header class="site-header" id="top">
+        <div class="header-inner">
+            <a class="brand" href="#top" aria-label="Tatsiana Rukhlenko home">
+                <span class="brand-mark" aria-hidden="true">TR</span>
+                <span>Tatsiana Rukhlenko</span>
+            </a>
+
+            <!-- The aria-expanded value is updated in script.js when the mobile menu opens. -->
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-i18n-aria-label="menuOpenLabel">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+                <a href="#for-you" data-i18n="navForYou">Für wen</a>
+                <a href="#offer" data-i18n="navOffer">Beratung</a>
+                <a href="#services" data-i18n="navServices">Leistungen</a>
+                <a href="#about" data-i18n="navAbout">Über Tatsiana</a>
+                <a href="#faq" data-i18n="navFaq">FAQ</a>
+                <a href="#contact" data-i18n="navContact">Kontakt</a>
+                <a class="nav-cta" href="#consultation" data-i18n="navCta">Kostenlose Beratung</a>
+            </nav>
+
+            <!--
+                The language buttons do not reload the page.
+                JavaScript swaps copy using data-i18n attributes and stores the choice locally.
+            -->
+            <div class="language-switcher" aria-label="Language selector">
+                <button class="language-button is-active" type="button" data-lang-switch="de" aria-pressed="true">DE</button>
+                <button class="language-button" type="button" data-lang-switch="en" aria-pressed="false">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero section-panel">
+            <div class="hero-copy">
+                <p class="eyebrow" data-enter style="--i:0" data-i18n="heroEyebrow">Mobility & Fitness Coaching</p>
+                <h1 data-i18n="heroTitle">Freier bewegen. Stärker trainieren. Besser fühlen.</h1>
+                <p class="hero-lead" data-enter style="--i:4" data-i18n="heroLead">Kostenlose Online-Beratung für Erwachsene, die mehr Bewegungsfreiheit, bessere Haltung und ein Training suchen, das wirklich in den Alltag passt.</p>
+                <div class="hero-actions" data-enter style="--i:5">
+                    <a class="button button-primary" href="#consultation" data-i18n="heroPrimary">Beratung anfragen</a>
+                    <a class="button button-secondary" href="#process" data-i18n="heroSecondary">So läuft es ab</a>
+                </div>
+                <p class="hero-note" data-enter style="--i:6" data-i18n="heroNote">Du kannst deine Anfrage direkt per Formular senden. Tatsiana meldet sich persönlich per E-Mail.</p>
+            </div>
+
+            <div class="hero-media" aria-label="Tatsiana Rukhlenko portrait">
+                <img src="../../images/tatsiana-hero.jpg" width="1200" height="1800" fetchpriority="high" alt="Tatsiana Rukhlenko steht in Sportkleidung im warmen Abendlicht auf einer Wiese.">
+            </div>
+        </section>
+
+        <section class="info-tiles" aria-label="Key coaching details">
+            <article class="info-tile reveal" style="--i:0">
+                <span class="tile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9l-3 3 3 3M9 5l3-3 3 3M15 19l-3 3-3-3M19 9l3 3-3 3M2 12h20M12 2v20"/></svg></span>
+                <h3 data-i18n="trustTwoTitle">Mobility first</h3>
+                <p data-i18n="trustTwoText">Beweglichkeit, Haltung und Kontrolle</p>
+            </article>
+            <article class="info-tile reveal" style="--i:1">
+                <span class="tile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M5 19l.6 1.6L7.2 21l-1.6.6L5 23l-.6-1.4L2.8 21l1.6-.4z"/></svg></span>
+                <h3 data-i18n="trustThreeTitle">Individuell</h3>
+                <p data-i18n="trustThreeText">Dein Startpunkt, Alltag und Ziel zählen</p>
+            </article>
+            <article class="info-tile reveal" style="--i:2">
+                <span class="tile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12.5V17c3 3 9 3 12 0v-4.5"/></svg></span>
+                <h3 data-i18n="trustFourTitle">Qualifikationen</h3>
+                <p data-i18n="trustFourText">Details folgen vor dem Launch</p>
+            </article>
+            <article class="info-tile reveal" style="--i:3">
+                <span class="tile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></span>
+                <h3 data-i18n="trustOneTitle">DE / EN</h3>
+                <p data-i18n="trustOneText">Beratung auf Deutsch und Englisch</p>
+            </article>
+        </section>
+
+        <section class="content-section" id="for-you">
+            <div class="section-heading reveal">
+                <h2 data-i18n="forYouTitle">Für Erwachsene, die sich nicht mehr steif durch den Tag bewegen wollen.</h2>
+                <p data-i18n="forYouLead">Der erste Schritt ist keine harte Challenge. Es ist ein klares Gespräch darüber, was dich im Alltag einschränkt und welche Trainingsrichtung sinnvoll ist.</p>
+            </div>
+
+            <div class="situation-panel">
+                <article class="situation-item reveal" style="--i:0">
+                    <span class="situation-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M4 12h16"/></svg></span>
+                    <h3 data-i18n="benefitOneTitle">Mehr Bewegungsfreiheit</h3>
+                    <p data-i18n="benefitOneText">Für Menschen, die sich im Rücken, in Hüfte, Schultern oder Nacken oft eingeschränkt fühlen.</p>
+                </article>
+                <article class="situation-item reveal" style="--i:1">
+                    <span class="situation-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></span>
+                    <h3 data-i18n="benefitTwoTitle">Bessere Haltung</h3>
+                    <p data-i18n="benefitTwoText">Für alle, die viel sitzen und wieder stabiler, aufrechter und bewusster trainieren möchten.</p>
+                </article>
+                <article class="situation-item reveal" style="--i:2">
+                    <span class="situation-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/></svg></span>
+                    <h3 data-i18n="benefitThreeTitle">Sicherer Wiedereinstieg</h3>
+                    <p data-i18n="benefitThreeText">Für Erwachsene, die nach einer Pause wieder anfangen wollen und einen ruhigen, nachvollziehbaren Plan brauchen.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-section services-section" id="services">
+            <div class="services-layout">
+                <div class="services-feature-media reveal" aria-hidden="true">
+                    <img src="../../images/tatsiana-mobility.jpg" width="933" height="1400" loading="lazy" alt="">
+                </div>
+
+                <div class="services-feature reveal">
+                    <div class="services-feature-copy">
+                        <h2 data-i18n="servicesTitle">Meine Leistungen</h2>
+                        <p data-i18n="servicesLead">In der kostenlosen Beratung schauen wir auf Beweglichkeit, Haltung, Kontrolle und deinen realistischen nächsten Schritt.</p>
+                    </div>
+
+                    <div class="services-menu" aria-label="Consultation topics">
+                        <article class="service-topic reveal" style="--i:0">
+                            <span class="service-topic-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+                            <div>
+                                <h4 data-i18n="serviceMobilityCheckTitle">Mobility Check</h4>
+                                <p data-i18n="serviceMobilityCheckText">Bewegungsfreiheit und sinnvolle nächste Schritte.</p>
+                            </div>
+                        </article>
+                        <article class="service-topic reveal" style="--i:1">
+                            <span class="service-topic-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="6" r="4"/><path d="M6 22v-4a6 6 0 0 1 12 0v4"/></svg></span>
+                            <div>
+                                <h4 data-i18n="servicePostureTitle">Posture & Flexibility</h4>
+                                <p data-i18n="servicePostureText">Haltung, Beweglichkeit und Körperkontrolle.</p>
+                            </div>
+                        </article>
+                        <article class="service-topic reveal" style="--i:2">
+                            <span class="service-topic-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20h10"/><path d="M10 20c0-4-3-7-6-9 3 0 6 1 6 4M14 20c0-6 3-9 7-11-4 0-7 2-7 6"/></svg></span>
+                            <div>
+                                <h4 data-i18n="serviceRestartTitle">Return to Training</h4>
+                                <p data-i18n="serviceRestartText">Wiedereinstieg mit Struktur und Ruhe.</p>
+                            </div>
+                        </article>
+                        <article class="service-topic reveal" style="--i:3">
+                            <span class="service-topic-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 6.5l11 11M21 21l-1-1M3 3l1 1M18 22l4-4M2 6l4-4M3 10l7-7M14 21l7-7"/></svg></span>
+                            <div>
+                                <h4 data-i18n="serviceTrainingTitle">Training</h4>
+                                <p data-i18n="serviceTrainingText">Welche Trainingsform passt zu Level und Alltag?</p>
+                            </div>
+                        </article>
+                        <article class="service-topic reveal" style="--i:4">
+                            <span class="service-topic-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20"/></svg></span>
+                            <div>
+                                <h4 data-i18n="serviceOnlineTitle">Online Coaching</h4>
+                                <p data-i18n="serviceOnlineText">Ob flexible Online-Begleitung sinnvoll ist.</p>
+                            </div>
+                        </article>
+                        <article class="service-topic reveal" style="--i:5">
+                            <span class="service-topic-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.5 5-6.5"/></svg></span>
+                            <div>
+                                <h4 data-i18n="serviceNutritionTitle">Nutrition Habits</h4>
+                                <p data-i18n="serviceNutritionText">Einfache Gewohnheiten, die Training unterstützen.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <a class="button button-primary" href="#consultation" data-i18n="servicesCta">Beratung anfragen</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="split-section section-panel offer-story" id="offer">
+            <div class="beats" id="beats">
+                <div class="beat active">
+                    <p class="eyebrow" data-i18n="offerEyebrow">Kostenlose Beratung</p>
+                    <h2 data-i18n="offerTitle">Erst verstehen, dann trainieren.</h2>
+                    <p data-i18n="offerText">In der kostenlosen Online-Beratung sprechen wir über deinen Alltag, deine Bewegungseinschränkungen, dein Trainingslevel und deinen nächsten realistischen Schritt. Danach weißt du klarer, welche Art Training zu dir passt.</p>
+                </div>
+                <div class="beat">
+                    <span class="beat-index" aria-hidden="true">1 / 3</span>
+                    <h3 data-i18n="offerPointOne">Keine pauschalen Versprechen</h3>
+                </div>
+                <div class="beat">
+                    <span class="beat-index" aria-hidden="true">2 / 3</span>
+                    <h3 data-i18n="offerPointTwo">Kein Druck, direkt ein Programm zu kaufen</h3>
+                </div>
+                <div class="beat">
+                    <span class="beat-index" aria-hidden="true">3 / 3</span>
+                    <h3 data-i18n="offerPointThree">Ein ruhiger Blick auf Ziel, Körpergefühl und Routinen</h3>
+                    <a class="button button-primary" href="#consultation" data-i18n="offerCta">Kostenlose Anfrage senden</a>
+                </div>
+            </div>
+            <div class="split-media offer-sticky">
+                <img src="../../images/tatsiana-offer.jpg" width="2000" height="3000" loading="lazy" alt="Tatsiana Rukhlenko sitzt draußen auf einer Steinmauer und macht eine Mobility-Übung.">
+            </div>
+        </section>
+
+        <section class="content-section process-section" id="process">
+            <div class="section-heading reveal">
+                <h2 data-i18n="processTitle">Von der Anfrage zum klaren nächsten Schritt.</h2>
+            </div>
+
+            <div class="process-grid reveal">
+                <article class="process-step reveal" style="--i:0">
+                    <span>1</span>
+                    <h3 data-i18n="processOneTitle">Formular senden</h3>
+                    <p data-i18n="processOneText">Du beschreibst kurz dein Ziel und wie du am liebsten kontaktiert werden möchtest.</p>
+                </article>
+                <article class="process-step reveal" style="--i:1">
+                    <span>2</span>
+                    <h3 data-i18n="processTwoTitle">Termin abstimmen</h3>
+                    <p data-i18n="processTwoText">Ihr stimmt den Termin persönlich per E-Mail ab.</p>
+                </article>
+                <article class="process-step reveal" style="--i:2">
+                    <span>3</span>
+                    <h3 data-i18n="processThreeTitle">Online sprechen</h3>
+                    <p data-i18n="processThreeText">Im Gespräch klären wir, was dich bewegt, was dich einschränkt und welche Richtung Sinn ergibt.</p>
+                </article>
+                <article class="process-step reveal" style="--i:3">
+                    <span>4</span>
+                    <h3 data-i18n="processFourTitle">Nächsten Schritt kennen</h3>
+                    <p data-i18n="processFourText">Du bekommst eine klare Empfehlung, ohne medizinische Diagnose oder unrealistische Versprechen.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="about-section section-panel" id="about">
+            <div class="about-copy reveal">
+                <h2 data-i18n="aboutTitle">Training soll sich nach mehr Freiheit anfühlen, nicht nach mehr Druck.</h2>
+                <p data-i18n="aboutTextOne">Tatsiana Rukhlenko arbeitet mit Menschen, die ihren Körper wieder bewusster bewegen möchten: stärker, flexibler und mit mehr Vertrauen in alltägliche Bewegung.</p>
+                <p data-i18n="aboutTextTwo">Die Beratung ist der Startpunkt. Sie hilft, Ziele zu sortieren, Einschränkungen vorsichtig einzuordnen und einen Trainingsweg zu finden, der nicht überfordert.</p>
+                <div class="placeholder-note">
+                    <strong data-i18n="certTitle">Qualifikationen</strong>
+                    <span data-i18n="certText">Zertifikate und genaue Ausbildungsdetails folgen vor dem öffentlichen Launch.</span>
+                </div>
+            </div>
+            <div class="about-media reveal">
+                <img src="../../images/tatsiana-about-handstand.jpg" width="933" height="1400" loading="lazy" alt="Tatsiana Rukhlenko macht einen Handstand auf einer Steinmauer im Park.">
+            </div>
+        </section>
+
+        <section class="content-section faq-section" id="faq">
+            <div class="section-heading reveal">
+                <h2 data-i18n="faqTitle">Häufige Fragen vor der ersten Beratung.</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item reveal" style="--i:0">
+                    <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faqOneQuestion">Ist das nur für sportliche Menschen?</span><span class="faq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button>
+                    <div class="faq-a"><div><p data-i18n="faqOneAnswer">Nein. Die Beratung ist besonders sinnvoll, wenn du einen verständlichen Einstieg suchst und wissen möchtest, wie du ohne Überforderung anfangen kannst.</p></div></div>
+                </div>
+                <div class="faq-item reveal" style="--i:1">
+                    <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faqTwoQuestion">Geht es um Schmerzbehandlung?</span><span class="faq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button>
+                    <div class="faq-a"><div><p data-i18n="faqTwoAnswer">Nein. Das Coaching ersetzt keine medizinische Diagnose oder Therapie. Wir sprechen vorsichtig über Bewegungseinschränkungen und alltagstaugliche Trainingsmöglichkeiten.</p></div></div>
+                </div>
+                <div class="faq-item reveal" style="--i:2">
+                    <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faqThreeQuestion">Brauche ich Equipment?</span><span class="faq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button>
+                    <div class="faq-a"><div><p data-i18n="faqThreeAnswer">Für die erste Beratung nicht. Wenn später ein Training entsteht, wird es an dein Umfeld angepasst: Zuhause, Studio oder einfache Hilfsmittel.</p></div></div>
+                </div>
+                <div class="faq-item reveal" style="--i:3">
+                    <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faqFourQuestion">Wie buche ich aktuell einen Termin?</span><span class="faq-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></button>
+                    <div class="faq-a"><div><p data-i18n="faqFourAnswer">Das Formular bereitet eine E-Mail vor. Danach wird der Termin persönlich abgestimmt.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-panel section-panel reveal" id="contact" aria-label="Contact details">
+            <div class="contact-panel-heading">
+                <h2 data-i18n="contactTitle">Direkt erreichbar für deine erste Frage.</h2>
+            </div>
+            <div class="contact-list">
+                <a class="contact-row" href="mailto:tatsiana.rukhlenko@gmail.com">
+                    <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></span>
+                    <strong data-i18n="contactEmailLabel">Email:</strong>
+                    <em>tatsiana.rukhlenko@gmail.com</em>
+                </a>
+                <a class="contact-row" href="https://www.instagram.com/tatsi_ru/" target="_blank" rel="noopener noreferrer">
+                    <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span>
+                    <strong data-i18n="contactInstagramLabel">Instagram:</strong>
+                    <em>@tatsi_ru</em>
+                </a>
+            </div>
+        </section>
+
+        <section class="consultation-section" id="consultation">
+            <div class="consultation-copy reveal">
+                <h2 data-i18n="consultTitle">Erzähl kurz, was dich im Moment einschränkt.</h2>
+                <p data-i18n="consultLead">Das Formular bereitet eine E-Mail an Tatsiana vor. So bleibt die erste Version persönlich, backend-frei und ohne Tracking.</p>
+                <div class="scheduling-note">
+                    <strong data-i18n="schedulingTitle">Persönliche Terminabstimmung</strong>
+                    <span data-i18n="schedulingText">Du sendest die Anfrage per E-Mail. Tatsiana meldet sich direkt zurück, damit ihr Sprache, Zeit und Online-Kanal abstimmen könnt.</span>
+                </div>
+                <div class="response-card">
+                    <strong data-i18n="responseTitle">Nach deiner Anfrage</strong>
+                    <ul>
+                        <li data-i18n="responseOne">Tatsiana liest deine Nachricht und meldet sich persönlich per E-Mail.</li>
+                        <li data-i18n="responseTwo">Ihr stimmt Sprache, Termin und den passenden Online-Kanal direkt ab.</li>
+                        <li data-i18n="responseThree">Wenn dein E-Mail-Programm nicht öffnet, kannst du direkt an Tatsiana schreiben.</li>
+                    </ul>
+                    <a href="mailto:tatsiana.rukhlenko@gmail.com" data-i18n="responseEmailLink">Direkt per E-Mail schreiben</a>
+                </div>
+            </div>
+
+            <form class="consultation-form reveal" id="consultation-form">
+                <div class="form-row">
+                    <label for="name" data-i18n="formNameLabel">Name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" required data-i18n-placeholder="formNamePlaceholder" placeholder="Dein Name">
+                </div>
+                <div class="form-row">
+                    <label for="email" data-i18n="formEmailLabel">E-Mail</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required data-i18n-placeholder="formEmailPlaceholder" placeholder="dein.name@example.com">
+                </div>
+                <div class="form-row">
+                    <label for="goal" data-i18n="formGoalLabel">Was möchtest du verbessern?</label>
+                    <select id="goal" name="goal" required>
+                        <option value="" data-i18n="formGoalPlaceholder">Bitte wählen</option>
+                        <option value="Mobility / Bewegungsfreiheit" data-i18n="formGoalOne">Mobility / Bewegungsfreiheit</option>
+                        <option value="Flexibility / Beweglichkeit" data-i18n="formGoalTwo">Flexibility / Beweglichkeit</option>
+                        <option value="Posture / Haltung" data-i18n="formGoalThree">Posture / Haltung</option>
+                        <option value="Return to training / Wiedereinstieg" data-i18n="formGoalFour">Return to training / Wiedereinstieg</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="message" data-i18n="formMessageLabel">Kurze Nachricht</label>
+                    <textarea id="message" name="message" rows="5" required data-i18n-placeholder="formMessagePlaceholder" placeholder="Was fühlt sich gerade eingeschränkt an? Was möchtest du erreichen?"></textarea>
+                </div>
+                <label class="privacy-check">
+                    <input id="privacy" name="privacy" type="checkbox" required>
+                    <span data-i18n="formPrivacyText">Ich habe die Datenschutzerklärung gelesen und bin damit einverstanden, dass meine Angaben zur Kontaktaufnahme verwendet werden.</span>
+                </label>
+                <button class="button button-primary button-full" type="submit" data-i18n="formSubmit">E-Mail vorbereiten</button>
+                <p class="form-helper" id="form-helper" role="status" data-i18n="formHelper">Deine Daten werden nicht auf dieser Website gespeichert.</p>
+            </form>
+        </section>
+    </main>
+
+    <!--
+        Mobile visitors often decide while scrolling, not only inside the hero.
+        This compact bottom bar keeps the main conversion action reachable on touch screens.
+    -->
+    <aside class="mobile-conversion-bar" aria-label="Mobile consultation actions">
+        <a class="mobile-conversion-primary" href="#consultation" data-i18n="mobileCtaPrimary">Anfrage senden</a>
+        <a class="mobile-conversion-secondary" href="mailto:tatsiana.rukhlenko@gmail.com" aria-label="Email Tatsiana Rukhlenko">
+            <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></span>
+            <span data-i18n="mobileCtaEmail">Email</span>
+        </a>
+    </aside>
+
+    <footer class="site-footer">
+        <div>
+            <strong>Tatsiana Rukhlenko</strong>
+            <p data-i18n="footerTagline">Mobility & Fitness Coaching für mehr Bewegungsfreiheit im Alltag.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+            <a href="impressum.html" data-i18n="footerImpressum">Impressum</a>
+            <a href="impressum.html#privacy" data-i18n="footerPrivacy">Datenschutz</a>
+            <a href="mailto:tatsiana.rukhlenko@gmail.com">Email</a>
+            <a href="https://www.instagram.com/tatsi_ru/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </nav>
+    </footer>
+
+
+    <nav class="demo-nav" aria-label="Демо-варианты">
+        <a href="../a/"><b>A</b><span>Тихая хореография</span></a>
+        <a href="../b/" ><b>B</b><span>Скролл как история</span></a>
+        <a href="../c/" ><b>C</b><span>Редакционный</span></a>
+        <a href="../compositions.html"><b>1·2·3</b><span>Композиции</span></a>
+    </nav>
+    <script src="script.js"></script>
+    <script src="../lib/lenis.min.js"></script>
+    <script src="motion.js"></script>
+</body>
+</html>

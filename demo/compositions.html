@@ -1,0 +1,1171 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tatsiana Rukhlenko · Demo der Neugestaltung</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+/* ==========================================================================
+   Demo page: three hero compositions, one shared page body, motion toggle.
+   Self-hosted fonts (no external requests), photos from ../images.
+   ========================================================================== */
+
+:root {
+    /* Palette taken from the photos: warm evening light, grass, the rose top. */
+    --bg: #F6F3EE;
+    --surface: #FFFFFF;
+    --ink: #221E24;
+    --muted: #5C555F;
+    --line: rgba(34, 30, 36, 0.12);
+    --accent: #B5485C;
+    --accent-ink: #8E3446;
+    --sage: #E3E8DB;
+    --deep: #1E1A21;
+    --deep-muted: #B9B2BC;
+
+    --font-body: "Onest", "Segoe UI", Helvetica, Arial, sans-serif;
+    --font-display: "Onest", "Segoe UI", Helvetica, Arial, sans-serif;
+
+    --container: 1200px;
+    --gutter: clamp(16px, 4vw, 40px);
+    --section: clamp(72px, 10vw, 140px);
+    --header-h: 72px;
+
+    --radius: 14px;
+    --radius-photo: 18px;
+
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Magazine composition switches the display face to a serif. */
+.page[data-hero="magazine"] {
+    --font-display: "Piazzolla", Georgia, "Times New Roman", serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-h) + 16px);
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; }
+
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    margin: 0;
+    text-wrap: balance;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+}
+.page[data-hero="magazine"] h1,
+.page[data-hero="magazine"] h2 { letter-spacing: 0; font-weight: 500; }
+
+p { margin: 0; text-wrap: pretty; }
+.muted { color: var(--muted); }
+.measure { max-width: 60ch; }
+
+.container {
+    width: min(var(--container), calc(100% - 2 * var(--gutter)));
+    margin-inline: auto;
+}
+
+/* Buttons ----------------------------------------------------------------- */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 50px;
+    padding: 0 24px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 150ms var(--ease-out), background-color 180ms var(--ease), border-color 180ms var(--ease), color 180ms var(--ease);
+}
+.button:active { transform: scale(0.96); }
+.button-primary { background: var(--accent); color: #fff; }
+.button-secondary { background: transparent; color: var(--ink); border-color: var(--ink); }
+.button-light { background: #fff; color: var(--ink); }
+@media (hover: hover) and (pointer: fine) {
+    .button-primary:hover { background: var(--accent-ink); }
+    .button-secondary:hover { background: var(--ink); color: var(--bg); }
+    .button-light:hover { background: var(--bg); }
+}
+.button:focus-visible, a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* Header ------------------------------------------------------------------ */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    min-height: var(--header-h);
+    background: rgba(246, 243, 238, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 200ms var(--ease);
+}
+.site-header.scrolled { border-bottom-color: var(--line); }
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: var(--header-h);
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+}
+.brand-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--bg);
+    display: grid;
+    place-items: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.site-nav {
+    display: flex;
+    gap: 26px;
+    font-weight: 500;
+    color: var(--muted);
+}
+.site-nav a { text-decoration: none; transition: color 160ms var(--ease); }
+@media (hover: hover) and (pointer: fine) { .site-nav a:hover { color: var(--ink); } }
+.header-actions { display: flex; align-items: center; gap: 12px; }
+.lang {
+    display: inline-flex;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 3px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.lang span { padding: 5px 10px; border-radius: 999px; color: var(--muted); }
+.lang span.on { background: var(--ink); color: var(--bg); }
+.header-cta { min-height: 42px; padding: 0 18px; font-size: 0.95rem; }
+@media (max-width: 900px) {
+    .site-nav, .header-cta { display: none; }
+}
+
+/* Hero: shared ------------------------------------------------------------ */
+
+.hero { display: none; }
+.page[data-hero="magazine"] .hero--magazine,
+.page[data-hero="type"] .hero--type,
+.page[data-hero="photo"] .hero--photo { display: block; }
+
+.hero-lead { font-size: 1.15rem; max-width: 46ch; }
+.hero-note { font-size: 0.9rem; color: var(--muted); max-width: 46ch; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero h1 .line { display: block; }
+
+.photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-photo);
+    background: var(--sage);
+    margin: 0;
+}
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    outline: 1px solid rgba(0, 0, 0, 0.08);
+    outline-offset: -1px;
+}
+
+/* Hero 1: magazine, asymmetric ------------------------------------------- */
+
+.hero--magazine .hero-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 24px;
+    padding-block: clamp(40px, 6vw, 80px) clamp(48px, 7vw, 96px);
+}
+.hero--magazine h1 {
+    grid-column: 1 / 8;
+    grid-row: 1;
+    font-size: clamp(2.6rem, 5.6vw, 5.2rem);
+    line-height: 1.02;
+}
+.hero--magazine .hero-photo {
+    grid-column: 8 / 13;
+    grid-row: 1 / 3;
+    aspect-ratio: 4 / 5;
+    margin-top: clamp(24px, 6vw, 96px);
+    max-height: 640px;
+}
+.hero--magazine .hero-text {
+    grid-column: 1 / 6;
+    grid-row: 2;
+    align-self: end;
+    display: grid;
+    gap: 22px;
+    margin-top: clamp(28px, 4vw, 56px);
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+}
+.hero--magazine .hero-caption {
+    grid-column: 8 / 13;
+    grid-row: 3;
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+@media (max-width: 900px) {
+    .hero--magazine .hero-grid { grid-template-columns: 1fr; }
+    .hero--magazine h1,
+    .hero--magazine .hero-photo,
+    .hero--magazine .hero-text,
+    .hero--magazine .hero-caption { grid-column: 1; grid-row: auto; }
+    .hero--magazine .hero-photo { margin-top: 28px; aspect-ratio: 4 / 5; max-height: none; }
+    .hero--magazine .hero-text { margin-top: 24px; }
+}
+
+/* Hero 2: typographic, dominant headline ---------------------------------- */
+
+.hero--type .hero-inner {
+    padding-block: clamp(40px, 6vw, 88px) clamp(48px, 7vw, 96px);
+}
+.hero--type h1 {
+    font-size: clamp(2.9rem, 8.2vw, 6rem);
+    font-weight: 800;
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    max-width: 14ch;
+}
+.hero--type .hero-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: end;
+    margin-top: clamp(28px, 4vw, 56px);
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+}
+.hero--type .hero-text { display: grid; gap: 22px; }
+.hero--type .hero-side {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-self: end;
+}
+.hero--type .hero-portrait {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    flex: none;
+}
+.hero--type .hero-portrait img { object-position: 50% 12%; }
+.hero--type .hero-side p { font-size: 0.95rem; max-width: 22ch; }
+@media (max-width: 900px) {
+    .hero--type .hero-row { grid-template-columns: 1fr; }
+    .hero--type .hero-side { justify-self: start; }
+}
+
+/* Hero 3: photo-led, large image ----------------------------------------- */
+
+.hero--photo .hero-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 72px);
+    align-items: center;
+}
+.hero--photo .hero-photo {
+    aspect-ratio: auto;
+    height: clamp(520px, 84vh, 860px);
+    border-radius: 0 var(--radius-photo) var(--radius-photo) 0;
+    margin-left: calc(50% - 50vw);
+    width: calc(100% + 50vw - 50%);
+}
+.hero--photo .hero-photo img { object-position: 50% 22%; }
+.hero--photo .hero-text {
+    display: grid;
+    gap: 24px;
+    padding-block: 40px;
+}
+.hero--photo h1 {
+    font-size: clamp(2.4rem, 4.4vw, 4rem);
+    font-weight: 700;
+}
+@media (max-width: 900px) {
+    .hero--photo .hero-split { grid-template-columns: 1fr; gap: 0; }
+    .hero--photo .hero-photo {
+        height: 62vh;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        border-radius: 0;
+    }
+    .hero--photo .hero-photo img { object-position: 50% 30%; }
+    .hero--photo .hero-text { padding-block: 32px 24px; }
+}
+
+/* Section scaffolding ---------------------------------------------------- */
+
+.section { padding-block: var(--section); }
+.section-head { display: grid; gap: 18px; margin-bottom: clamp(36px, 5vw, 64px); }
+.section h2 { font-size: clamp(1.9rem, 3.4vw, 3rem); max-width: 22ch; }
+.section-lead { font-size: 1.1rem; max-width: 58ch; }
+
+.two-col {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(32px, 6vw, 96px);
+    align-items: start;
+}
+.two-col .sticky { position: sticky; top: calc(var(--header-h) + 32px); }
+@media (max-width: 900px) {
+    .two-col { grid-template-columns: 1fr; }
+    .two-col .sticky { position: static; }
+}
+
+/* Für wen: a typographic list, not cards ---------------------------------- */
+
+.audience-list { display: grid; }
+.audience-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    padding-block: 28px;
+    border-top: 1px solid var(--line);
+}
+.audience-item:last-child { border-bottom: 1px solid var(--line); }
+.audience-item h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); }
+.audience-item p { max-width: 48ch; }
+
+/* Leistungen: photo + hairline menu -------------------------------------- */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(32px, 6vw, 80px);
+    align-items: stretch;
+}
+.services-photo { aspect-ratio: 3 / 4; align-self: start; position: sticky; top: calc(var(--header-h) + 32px); }
+.services-photo img { object-position: 50% 20%; }
+.topic-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 40px;
+    margin-top: 8px;
+}
+.topic {
+    padding-block: 22px;
+    border-top: 1px solid var(--line);
+    display: grid;
+    gap: 6px;
+}
+.topic h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: transform 220ms var(--ease-out), color 220ms var(--ease);
+}
+.topic p { color: var(--muted); font-size: 0.98rem; }
+@media (hover: hover) and (pointer: fine) {
+    .topic:hover h3 { transform: translateX(6px); color: var(--accent); }
+}
+.services-copy { display: grid; gap: 18px; }
+.services-copy .button { justify-self: start; margin-top: 12px; }
+@media (max-width: 900px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .services-photo { position: static; aspect-ratio: 4 / 5; max-height: 460px; }
+    .topic-list { grid-template-columns: 1fr; }
+}
+
+/* Beratung: pinned photo, scrolling beats --------------------------------- */
+
+.offer { background: var(--sage); }
+.offer-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(32px, 6vw, 96px);
+    align-items: start;
+}
+.offer-photo {
+    position: sticky;
+    top: calc(var(--header-h) + 24px);
+    height: calc(100vh - var(--header-h) - 48px);
+    max-height: 760px;
+}
+.offer-photo img { object-position: 50% 40%; }
+.beats { display: grid; }
+.beat {
+    min-height: 58vh;
+    display: grid;
+    align-content: center;
+    gap: 16px;
+    padding-block: 32px;
+    transition: opacity 500ms var(--ease), transform 500ms var(--ease-out);
+}
+.beat h2, .beat h3 { max-width: 16ch; }
+.beat h3 { font-size: clamp(1.7rem, 3vw, 2.6rem); }
+.beat p { max-width: 44ch; }
+.beat-index {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+}
+.motion .beat:not(.active) { opacity: 0.28; transform: translateY(8px); }
+.beat .button { justify-self: start; margin-top: 8px; }
+@media (max-width: 900px) {
+    .offer-grid { grid-template-columns: 1fr; }
+    .offer-photo { position: static; height: auto; aspect-ratio: 4 / 5; max-height: 520px; }
+    .beat { min-height: 0; padding-block: 24px; }
+    .motion .beat:not(.active) { opacity: 1; transform: none; }
+}
+
+/* Ablauf: a real sequence with a drawn line ------------------------------- */
+
+.steps {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px;
+    padding-top: 36px;
+}
+.steps::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 12px;
+    height: 2px;
+    background: var(--line);
+}
+.steps::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 12px;
+    height: 2px;
+    background: var(--accent);
+    transform-origin: left center;
+    transform: scaleX(0);
+}
+.motion .steps.in::after { transition: transform 1400ms var(--ease-out) 150ms; transform: scaleX(1); }
+.page:not(.motion) .steps::after { transform: scaleX(1); }
+.step { display: grid; gap: 10px; position: relative; }
+.step-num {
+    position: absolute;
+    top: -36px;
+    left: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    display: grid;
+    place-items: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.step h3 { font-size: 1.3rem; font-weight: 600; }
+.step p { color: var(--muted); font-size: 0.98rem; }
+@media (max-width: 900px) {
+    .steps { grid-template-columns: 1fr; padding-top: 0; padding-left: 40px; gap: 28px; }
+    .steps::before, .steps::after { left: 12px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; transform-origin: top center; }
+    .motion .steps.in::after { transform: scaleY(1); }
+    .page:not(.motion) .steps::after { transform: scaleY(1); }
+    .steps::after { transform: scaleY(0); }
+    .step-num { top: 0; left: -40px; }
+}
+
+/* Über Tatsiana: one large photo, one statement --------------------------- */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: clamp(32px, 6vw, 96px);
+    align-items: end;
+}
+.about-photo { aspect-ratio: 4 / 5; max-height: 760px; }
+.about-photo img { transition: transform 900ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .about-photo:hover img { transform: scale(1.03); } }
+.about-copy { display: grid; gap: 22px; padding-bottom: 24px; }
+.about-copy h2 { font-size: clamp(1.9rem, 3.2vw, 2.8rem); }
+.page[data-hero="magazine"] .about-copy h2 { font-style: italic; }
+.about-note {
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+.about-note strong { color: var(--ink); display: block; margin-bottom: 4px; }
+@media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .about-photo { max-height: 520px; }
+}
+
+/* FAQ: accordion with animated rows -------------------------------------- */
+
+.faq-list { display: grid; }
+.faq-item { border-top: 1px solid var(--line); }
+.faq-item:last-child { border-bottom: 1px solid var(--line); }
+.faq-q {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 0;
+    background: none;
+    border: 0;
+    color: inherit;
+    text-align: left;
+    font-size: 1.15rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.faq-q .chev {
+    flex: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    display: grid;
+    place-items: center;
+    transition: transform 260ms var(--ease-out), background-color 200ms var(--ease);
+}
+.faq-q .chev svg { width: 14px; height: 14px; }
+.faq-item.open .chev { transform: rotate(45deg); background: var(--ink); color: var(--bg); }
+.faq-a {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 320ms var(--ease-out);
+}
+.faq-a > div { overflow: hidden; }
+.faq-a p { padding-bottom: 24px; max-width: 60ch; color: var(--muted); }
+.faq-item.open .faq-a { grid-template-rows: 1fr; }
+
+/* Kontakt + Formular: the dark close ------------------------------------- */
+
+.consult { background: var(--deep); color: #fff; }
+.consult-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(32px, 6vw, 96px);
+    align-items: start;
+}
+.consult-copy { display: grid; gap: 22px; }
+.consult-copy h2 { font-size: clamp(2rem, 3.6vw, 3.2rem); line-height: 1.12; }
+.consult-copy p { color: var(--deep-muted); max-width: 46ch; }
+.contact-lines { display: grid; gap: 8px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.14); }
+.contact-lines a { color: #fff; text-decoration: none; font-size: 1.15rem; font-weight: 600; }
+.contact-lines a span { color: var(--deep-muted); font-weight: 400; font-size: 0.95rem; display: block; }
+@media (hover: hover) and (pointer: fine) { .contact-lines a:hover { text-decoration: underline; text-underline-offset: 4px; } }
+.form {
+    background: var(--surface);
+    color: var(--ink);
+    border-radius: var(--radius);
+    padding: clamp(22px, 3vw, 36px);
+    display: grid;
+    gap: 16px;
+}
+.field { display: grid; gap: 6px; }
+.field label { font-weight: 600; font-size: 0.95rem; }
+.field input, .field select, .field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    color: var(--ink);
+    transition: border-color 180ms var(--ease), box-shadow 180ms var(--ease);
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(181, 72, 92, 0.18);
+}
+.field ::placeholder { color: #7A7380; }
+.check { display: flex; gap: 12px; align-items: flex-start; font-size: 0.92rem; color: var(--muted); }
+.check input { margin-top: 5px; accent-color: var(--accent); }
+.form .button { width: 100%; }
+.form-helper { font-size: 0.88rem; color: var(--muted); text-align: center; }
+@media (max-width: 900px) { .consult-grid { grid-template-columns: 1fr; } }
+
+/* Footer ------------------------------------------------------------------ */
+
+.site-footer { padding-block: 32px 120px; font-size: 0.92rem; color: var(--muted); }
+.footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+.footer-inner nav { display: flex; gap: 20px; }
+.footer-inner a { text-decoration: none; }
+
+/* Motion: entrances, reveals, parallax ----------------------------------- */
+
+@keyframes enter {
+    from { opacity: 0; transform: translateY(18px); filter: blur(6px); }
+    to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+@keyframes photo-in {
+    from { clip-path: inset(100% 0 0 0); }
+    to { clip-path: inset(0 0 0 0); }
+}
+@keyframes photo-in-left {
+    from { clip-path: inset(0 100% 0 0); }
+    to { clip-path: inset(0 0 0 0); }
+}
+@keyframes photo-zoom {
+    from { transform: scale(1.08); }
+    to { transform: scale(1); }
+}
+
+/* Hero entrance only runs when JS marked the hero active with motion on. */
+.motion .hero.is-active [data-enter] {
+    animation: enter 820ms var(--ease-out) both;
+    animation-delay: calc(var(--i, 0) * 90ms);
+}
+.motion .hero.is-active .hero-photo {
+    animation: photo-in 1000ms var(--ease-out) both;
+    animation-delay: 220ms;
+}
+.motion .hero--photo.is-active .hero-photo { animation-name: photo-in-left; }
+.motion .hero.is-active .hero-photo img {
+    animation: photo-zoom 1400ms var(--ease-out) both;
+    animation-delay: 220ms;
+}
+
+/* Scroll reveals: hidden state exists only when JS + motion are present. */
+.js.motion [data-reveal] {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+    transition-delay: calc(var(--i, 0) * 60ms);
+}
+.js.motion [data-reveal].in { opacity: 1; transform: none; }
+
+/* Parallax on the hero photo, native scroll-driven animation where supported. */
+@supports (animation-timeline: scroll()) {
+    @keyframes parallax {
+        to { transform: translateY(-9%); }
+    }
+    .motion .hero .hero-photo img { height: 112%; }
+    .motion .hero.is-active.settled .hero-photo img {
+        animation: parallax linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 90vh;
+    }
+}
+
+/* Motion off and reduced motion: everything visible, nothing moves. */
+.page:not(.motion) *,
+.page:not(.motion) *::before,
+.page:not(.motion) *::after {
+    animation: none !important;
+    transition: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .page *, .page *::before, .page *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+    .js.motion [data-reveal] { opacity: 1; transform: none; }
+    .motion .beat:not(.active) { opacity: 1; transform: none; }
+    .steps::after { transform: none !important; }
+}
+
+/* Black-and-white review mode (prompt 2: judge composition, not color). */
+.page.bw { filter: grayscale(1); }
+
+/* Demo controls ----------------------------------------------------------- */
+
+.demo-bar {
+    position: fixed;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px;
+    border-radius: 999px;
+    background: rgba(30, 26, 33, 0.92);
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    font-size: 0.85rem;
+    max-width: calc(100vw - 24px);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.demo-bar .group { display: flex; gap: 2px; padding: 2px; border-radius: 999px; background: rgba(255,255,255,0.08); }
+.demo-bar button {
+    border: 0;
+    background: transparent;
+    color: rgba(255,255,255,0.75);
+    padding: 8px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background-color 160ms var(--ease), color 160ms var(--ease);
+}
+.demo-bar button[aria-pressed="true"] { background: #fff; color: var(--deep); }
+.demo-bar .sep { width: 1px; height: 22px; background: rgba(255,255,255,0.18); }
+@media (max-width: 640px) {
+    .demo-bar { bottom: 8px; font-size: 0.78rem; }
+    .demo-bar button { padding: 7px 9px; }
+}
+</style>
+</head>
+<body>
+
+<div class="page motion" data-hero="magazine" id="page">
+
+<header class="site-header" id="header">
+    <div class="container header-inner">
+        <a class="brand" href="#top"><span class="brand-mark">TR</span><span>Tatsiana Rukhlenko</span></a>
+        <nav class="site-nav" aria-label="Hauptnavigation">
+            <a href="#for-you">Für wen</a>
+            <a href="#services">Leistungen</a>
+            <a href="#offer">Beratung</a>
+            <a href="#process">Ablauf</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+        <div class="header-actions">
+            <div class="lang" aria-label="Sprache"><span class="on">DE</span><span>EN</span></div>
+            <a class="button button-primary header-cta" href="#consultation">Kostenlose Beratung</a>
+        </div>
+    </div>
+</header>
+
+<main id="top">
+
+<!-- Hero 1: magazine -->
+<section class="hero hero--magazine" aria-label="Einführung">
+    <div class="container hero-grid">
+        <h1>
+            <span class="line" data-enter style="--i:0">Freier bewegen.</span>
+            <span class="line" data-enter style="--i:1">Stärker trainieren.</span>
+            <span class="line" data-enter style="--i:2">Besser fühlen.</span>
+        </h1>
+        <figure class="photo hero-photo">
+            <img src="../images/tatsiana-hero.jpg" width="1200" height="1800" alt="Tatsiana Rukhlenko steht in Sportkleidung im warmen Abendlicht auf einer Wiese." fetchpriority="high">
+        </figure>
+        <div class="hero-text">
+            <p class="hero-lead" data-enter style="--i:3">Kostenlose Online-Beratung für Erwachsene, die mehr Bewegungsfreiheit, bessere Haltung und ein Training suchen, das wirklich in den Alltag passt.</p>
+            <div class="hero-actions" data-enter style="--i:4">
+                <a class="button button-primary" href="#consultation">Beratung anfragen</a>
+                <a class="button button-secondary" href="#process">So läuft es ab</a>
+            </div>
+            <p class="hero-note" data-enter style="--i:5">Anfrage per Formular. Tatsiana meldet sich persönlich per E-Mail.</p>
+        </div>
+        <p class="hero-caption" data-enter style="--i:5">Tatsiana Rukhlenko · Mobility & Fitness Coaching · online, auf Deutsch und Englisch</p>
+    </div>
+</section>
+
+<!-- Hero 2: typographic -->
+<section class="hero hero--type" aria-label="Einführung">
+    <div class="container hero-inner">
+        <h1>
+            <span class="line" data-enter style="--i:0">Freier bewegen.</span>
+            <span class="line" data-enter style="--i:1">Stärker trainieren.</span>
+            <span class="line" data-enter style="--i:2">Besser fühlen.</span>
+        </h1>
+        <div class="hero-row">
+            <div class="hero-text">
+                <p class="hero-lead" data-enter style="--i:3">Kostenlose Online-Beratung für Erwachsene, die mehr Bewegungsfreiheit, bessere Haltung und ein Training suchen, das wirklich in den Alltag passt.</p>
+                <div class="hero-actions" data-enter style="--i:4">
+                    <a class="button button-primary" href="#consultation">Beratung anfragen</a>
+                    <a class="button button-secondary" href="#process">So läuft es ab</a>
+                </div>
+            </div>
+            <div class="hero-side" data-enter style="--i:4">
+                <figure class="photo hero-portrait hero-photo">
+                    <img src="../images/tatsiana-hero.jpg" width="1200" height="1800" alt="Tatsiana Rukhlenko" fetchpriority="high">
+                </figure>
+                <p class="muted">Tatsiana Rukhlenko, Mobility & Fitness Coach. Beratung auf Deutsch und Englisch.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hero 3: photo-led -->
+<section class="hero hero--photo" aria-label="Einführung">
+    <div class="container hero-split">
+        <figure class="photo hero-photo">
+            <img src="../images/tatsiana-hero.jpg" width="1200" height="1800" alt="Tatsiana Rukhlenko steht in Sportkleidung im warmen Abendlicht auf einer Wiese." fetchpriority="high">
+        </figure>
+        <div class="hero-text">
+            <h1>
+                <span class="line" data-enter style="--i:0">Freier bewegen.</span>
+                <span class="line" data-enter style="--i:1">Stärker trainieren.</span>
+                <span class="line" data-enter style="--i:2">Besser fühlen.</span>
+            </h1>
+            <p class="hero-lead" data-enter style="--i:3">Kostenlose Online-Beratung für Erwachsene, die mehr Bewegungsfreiheit, bessere Haltung und ein Training suchen, das wirklich in den Alltag passt.</p>
+            <div class="hero-actions" data-enter style="--i:4">
+                <a class="button button-primary" href="#consultation">Beratung anfragen</a>
+                <a class="button button-secondary" href="#process">So läuft es ab</a>
+            </div>
+            <p class="hero-note" data-enter style="--i:5">Anfrage per Formular. Tatsiana meldet sich persönlich per E-Mail.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Für wen -->
+<section class="section" id="for-you">
+    <div class="container two-col">
+        <div class="sticky section-head" style="margin-bottom:0">
+            <h2 data-reveal>Für Erwachsene, die sich nicht mehr steif durch den Tag bewegen wollen.</h2>
+            <p class="section-lead muted" data-reveal style="--i:1">Der erste Schritt ist keine harte Challenge. Es ist ein klares Gespräch darüber, was dich im Alltag einschränkt und welche Trainingsrichtung sinnvoll ist.</p>
+        </div>
+        <div class="audience-list">
+            <article class="audience-item" data-reveal style="--i:0">
+                <h3>Mehr Bewegungsfreiheit</h3>
+                <p class="muted">Für Menschen, die sich im Rücken, in Hüfte, Schultern oder Nacken oft eingeschränkt fühlen.</p>
+            </article>
+            <article class="audience-item" data-reveal style="--i:1">
+                <h3>Bessere Haltung</h3>
+                <p class="muted">Für alle, die viel sitzen und wieder stabiler, aufrechter und bewusster trainieren möchten.</p>
+            </article>
+            <article class="audience-item" data-reveal style="--i:2">
+                <h3>Sicherer Wiedereinstieg</h3>
+                <p class="muted">Für Erwachsene, die nach einer Pause wieder anfangen wollen und einen ruhigen, nachvollziehbaren Plan brauchen.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Leistungen -->
+<section class="section" id="services" style="padding-top:0">
+    <div class="container services-grid">
+        <figure class="photo services-photo" data-reveal>
+            <img src="../images/tatsiana-mobility.jpg" width="933" height="1400" loading="lazy" alt="Tatsiana Rukhlenko in Sportkleidung vor grünen Bäumen.">
+        </figure>
+        <div class="services-copy">
+            <h2 data-reveal>Worüber wir in der Beratung sprechen</h2>
+            <p class="section-lead muted" data-reveal style="--i:1">Beweglichkeit, Haltung, Kontrolle und dein realistischer nächster Schritt.</p>
+            <div class="topic-list">
+                <article class="topic" data-reveal style="--i:0"><h3>Mobility Check</h3><p>Bewegungsfreiheit und sinnvolle nächste Schritte.</p></article>
+                <article class="topic" data-reveal style="--i:1"><h3>Posture & Flexibility</h3><p>Haltung, Beweglichkeit und Körperkontrolle.</p></article>
+                <article class="topic" data-reveal style="--i:2"><h3>Return to Training</h3><p>Wiedereinstieg mit Struktur und Ruhe.</p></article>
+                <article class="topic" data-reveal style="--i:3"><h3>Training</h3><p>Welche Trainingsform passt zu Level und Alltag?</p></article>
+                <article class="topic" data-reveal style="--i:4"><h3>Online Coaching</h3><p>Ob flexible Online-Begleitung sinnvoll ist.</p></article>
+                <article class="topic" data-reveal style="--i:5"><h3>Nutrition Habits</h3><p>Einfache Gewohnheiten, die Training unterstützen.</p></article>
+            </div>
+            <a class="button button-primary" href="#consultation" data-reveal style="--i:6">Beratung anfragen</a>
+        </div>
+    </div>
+</section>
+
+<!-- Beratung: pinned -->
+<section class="section offer" id="offer">
+    <div class="container offer-grid">
+        <figure class="photo offer-photo">
+            <img src="../images/tatsiana-offer.jpg" width="2000" height="3000" loading="lazy" alt="Tatsiana Rukhlenko sitzt draußen auf einer Steinmauer und macht eine Mobility-Übung.">
+        </figure>
+        <div class="beats" id="beats">
+            <div class="beat active">
+                <h2>Erst verstehen, dann trainieren.</h2>
+                <p>In der kostenlosen Online-Beratung sprechen wir über deinen Alltag, deine Bewegungseinschränkungen, dein Trainingslevel und deinen nächsten realistischen Schritt.</p>
+            </div>
+            <div class="beat">
+                <span class="beat-index">1 von 3</span>
+                <h3>Keine pauschalen Versprechen</h3>
+                <p>Wir schauen auf deinen Körper und deinen Alltag, nicht auf ein Programm von der Stange.</p>
+            </div>
+            <div class="beat">
+                <span class="beat-index">2 von 3</span>
+                <h3>Kein Druck, direkt ein Programm zu kaufen</h3>
+                <p>Die Beratung ist ein Gespräch. Was danach passiert, entscheidest du in Ruhe.</p>
+            </div>
+            <div class="beat">
+                <span class="beat-index">3 von 3</span>
+                <h3>Ein ruhiger Blick auf Ziel, Körpergefühl und Routinen</h3>
+                <p>Danach weißt du klarer, welche Art Training zu dir passt.</p>
+                <a class="button button-primary" href="#consultation">Kostenlose Anfrage senden</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ablauf -->
+<section class="section" id="process">
+    <div class="container">
+        <div class="section-head">
+            <h2 data-reveal>Von der Anfrage zum klaren nächsten Schritt.</h2>
+        </div>
+        <div class="steps" id="steps" data-reveal>
+            <article class="step" data-reveal style="--i:1"><span class="step-num">1</span><h3>Formular senden</h3><p>Du beschreibst kurz dein Ziel und wie du am liebsten kontaktiert werden möchtest.</p></article>
+            <article class="step" data-reveal style="--i:2"><span class="step-num">2</span><h3>Termin abstimmen</h3><p>Ihr stimmt den Termin persönlich per E-Mail ab.</p></article>
+            <article class="step" data-reveal style="--i:3"><span class="step-num">3</span><h3>Online sprechen</h3><p>Im Gespräch klären wir, was dich bewegt, was dich einschränkt und welche Richtung Sinn ergibt.</p></article>
+            <article class="step" data-reveal style="--i:4"><span class="step-num">4</span><h3>Nächsten Schritt kennen</h3><p>Du bekommst eine klare Empfehlung, ohne medizinische Diagnose oder unrealistische Versprechen.</p></article>
+        </div>
+    </div>
+</section>
+
+<!-- Über Tatsiana -->
+<section class="section" id="about" style="padding-top:0">
+    <div class="container about-grid">
+        <figure class="photo about-photo" data-reveal>
+            <img src="../images/tatsiana-about-handstand.jpg" width="933" height="1400" loading="lazy" alt="Tatsiana Rukhlenko macht einen Handstand auf einer Steinmauer im Park.">
+        </figure>
+        <div class="about-copy">
+            <h2 data-reveal>Training soll sich nach mehr Freiheit anfühlen, nicht nach mehr Druck.</h2>
+            <p data-reveal style="--i:1">Tatsiana Rukhlenko arbeitet mit Menschen, die ihren Körper wieder bewusster bewegen möchten: stärker, flexibler und mit mehr Vertrauen in alltägliche Bewegung.</p>
+            <p class="muted" data-reveal style="--i:2">Die Beratung ist der Startpunkt. Sie hilft, Ziele zu sortieren, Einschränkungen vorsichtig einzuordnen und einen Trainingsweg zu finden, der nicht überfordert.</p>
+            <div class="about-note" data-reveal style="--i:3">
+                <strong>Qualifikationen</strong>
+                Zertifikate und genaue Ausbildungsdetails folgen vor dem öffentlichen Launch.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-top:0">
+    <div class="container two-col">
+        <div class="sticky">
+            <h2 data-reveal>Häufige Fragen vor der ersten Beratung.</h2>
+        </div>
+        <div class="faq-list" id="faq-list">
+            <div class="faq-item" data-reveal style="--i:0">
+                <button class="faq-q" aria-expanded="false">Ist das nur für sportliche Menschen?<span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 1v12M1 7h12"/></svg></span></button>
+                <div class="faq-a"><div><p>Nein. Die Beratung ist besonders sinnvoll, wenn du einen verständlichen Einstieg suchst und wissen möchtest, wie du ohne Überforderung anfangen kannst.</p></div></div>
+            </div>
+            <div class="faq-item" data-reveal style="--i:1">
+                <button class="faq-q" aria-expanded="false">Geht es um Schmerzbehandlung?<span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 1v12M1 7h12"/></svg></span></button>
+                <div class="faq-a"><div><p>Nein. Das Coaching ersetzt keine medizinische Diagnose oder Therapie. Wir sprechen vorsichtig über Bewegungseinschränkungen und alltagstaugliche Trainingsmöglichkeiten.</p></div></div>
+            </div>
+            <div class="faq-item" data-reveal style="--i:2">
+                <button class="faq-q" aria-expanded="false">Brauche ich Equipment?<span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 1v12M1 7h12"/></svg></span></button>
+                <div class="faq-a"><div><p>Für die erste Beratung nicht. Wenn später ein Training entsteht, wird es an dein Umfeld angepasst: Zuhause, Studio oder einfache Hilfsmittel.</p></div></div>
+            </div>
+            <div class="faq-item" data-reveal style="--i:3">
+                <button class="faq-q" aria-expanded="false">Wie buche ich aktuell einen Termin?<span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 1v12M1 7h12"/></svg></span></button>
+                <div class="faq-a"><div><p>Das Formular bereitet eine E-Mail vor. Danach wird der Termin persönlich abgestimmt.</p></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Kontakt + Formular -->
+<section class="section consult" id="consultation">
+    <div class="container consult-grid">
+        <div class="consult-copy">
+            <h2 data-reveal>Erzähl kurz, was dich im Moment einschränkt.</h2>
+            <p data-reveal style="--i:1">Das Formular bereitet eine E-Mail an Tatsiana vor. Sie meldet sich persönlich zurück, damit ihr Sprache, Termin und Online-Kanal abstimmen könnt. Deine Daten werden nicht auf dieser Website gespeichert.</p>
+            <div class="contact-lines" data-reveal style="--i:2">
+                <a href="mailto:tatsiana.rukhlenko@gmail.com"><span>E-Mail</span>tatsiana.rukhlenko@gmail.com</a>
+                <a href="https://www.instagram.com/tatsi_ru/" target="_blank" rel="noopener noreferrer"><span>Instagram</span>@tatsi_ru</a>
+            </div>
+        </div>
+        <form class="form" id="form" data-reveal style="--i:1" novalidate>
+            <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Dein Name"></div>
+            <div class="field"><label for="email">E-Mail</label><input id="email" name="email" type="email" autocomplete="email" placeholder="dein.name@example.com"></div>
+            <div class="field"><label for="goal">Was möchtest du verbessern?</label>
+                <select id="goal" name="goal">
+                    <option value="">Bitte wählen</option>
+                    <option>Mobility / Bewegungsfreiheit</option>
+                    <option>Flexibility / Beweglichkeit</option>
+                    <option>Posture / Haltung</option>
+                    <option>Return to training / Wiedereinstieg</option>
+                </select>
+            </div>
+            <div class="field"><label for="message">Kurze Nachricht</label><textarea id="message" name="message" rows="4" placeholder="Was fühlt sich gerade eingeschränkt an? Was möchtest du erreichen?"></textarea></div>
+            <label class="check"><input type="checkbox" id="privacy"><span>Ich habe die Datenschutzerklärung gelesen und bin damit einverstanden, dass meine Angaben zur Kontaktaufnahme verwendet werden.</span></label>
+            <button class="button button-primary" type="submit">E-Mail vorbereiten</button>
+            <p class="form-helper" id="form-helper">Demo: das Formular sendet nichts.</p>
+        </form>
+    </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <div><strong style="color:var(--ink)">Tatsiana Rukhlenko</strong> · Mobility & Fitness Coaching für mehr Bewegungsfreiheit im Alltag.</div>
+        <nav aria-label="Rechtliches"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="https://www.instagram.com/tatsi_ru/">Instagram</a></nav>
+    </div>
+</footer>
+
+</div><!-- /.page -->
+
+<!-- Demo controls (Russian labels: for the reviewer, not the site visitor) -->
+<div class="demo-bar" role="toolbar" aria-label="Демо-переключатели">
+    <div class="group" id="hero-switch">
+        <button type="button" data-hero="magazine" aria-pressed="true">Журнальная</button>
+        <button type="button" data-hero="type" aria-pressed="false">Типографическая</button>
+        <button type="button" data-hero="photo" aria-pressed="false">Фото</button>
+    </div>
+    <span class="sep"></span>
+    <button type="button" id="toggle-motion" aria-pressed="true">Анимация</button>
+    <button type="button" id="toggle-bw" aria-pressed="false">Ч/Б</button>
+</div>
+
+<script>
+(function () {
+    'use strict';
+
+    const page = document.getElementById('page');
+    const header = document.getElementById('header');
+    const heroButtons = Array.from(document.querySelectorAll('#hero-switch button'));
+    const motionButton = document.getElementById('toggle-motion');
+    const bwButton = document.getElementById('toggle-bw');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const state = Object.assign(
+        { hero: 'magazine', motion: !reduced, bw: false },
+        readState()
+    );
+
+    function readState() {
+        try { return JSON.parse(localStorage.getItem('tr-demo') || '{}'); } catch (e) { return {}; }
+    }
+    function saveState() {
+        try { localStorage.setItem('tr-demo', JSON.stringify(state)); } catch (e) { /* private mode */ }
+    }
+
+    /* --- Apply state ---------------------------------------------------- */
+
+    function apply(restartHero) {
+        page.dataset.hero = state.hero;
+        page.classList.toggle('motion', state.motion);
+        page.classList.toggle('bw', state.bw);
+
+        heroButtons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.hero === state.hero)));
+        motionButton.setAttribute('aria-pressed', String(state.motion));
+        bwButton.setAttribute('aria-pressed', String(state.bw));
+
+        if (restartHero) restartHeroEntrance();
+        if (!state.motion) revealAll();
+        saveState();
+    }
+
+    /* Re-run the hero entrance by dropping and re-adding the active class. */
+    function restartHeroEntrance() {
+        const heroes = document.querySelectorAll('.hero');
+        heroes.forEach((h) => h.classList.remove('is-active', 'settled'));
+        const active = document.querySelector('.hero--' + state.hero);
+        if (!active) return;
+        void active.offsetWidth;
+        active.classList.add('is-active');
+        /* Parallax starts only after the entrance has settled, so the two
+           transforms never fight on the same element. */
+        window.setTimeout(() => active.classList.add('settled'), 1700);
+    }
+
+    /* --- Controls ------------------------------------------------------- */
+
+    heroButtons.forEach((b) => b.addEventListener('click', () => {
+        state.hero = b.dataset.hero;
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        apply(true);
+    }));
+    motionButton.addEventListener('click', () => {
+        state.motion = !state.motion;
+        apply(true);
+        if (state.motion) observeReveals();
+    });
+    bwButton.addEventListener('click', () => {
+        state.bw = !state.bw;
+        apply(false);
+    });
+
+    /* --- Header state --------------------------------------------------- */
+
+    function onScroll() { header.classList.toggle('scrolled', window.scrollY > 24); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* --- Scroll reveals ------------------------------------------------- */
+
+    const revealTargets = Array.from(document.querySelectorAll('[data-reveal]'));
+    let revealObserver = null;
+
+    function revealAll() {
+        revealTargets.forEach((el) => el.classList.add('in'));
+    }
+    function observeReveals() {
+        if (!('IntersectionObserver' in window)) { revealAll(); return; }
+        if (revealObserver) revealObserver.disconnect();
+        revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        revealTargets.forEach((el) => {
+            if (!el.classList.contains('in')) revealObserver.observe(el);
+        });
+    }
+
+    /* --- Offer beats: highlight the one nearest the viewport centre ------ */
+
+    const beats = Array.from(document.querySelectorAll('#beats .beat'));
+    if ('IntersectionObserver' in window && beats.length) {
+        const beatObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    beats.forEach((b) => b.classList.toggle('active', b === entry.target));
+                }
+            });
+        }, { rootMargin: '-42% 0px -42% 0px', threshold: 0 });
+        beats.forEach((b) => beatObserver.observe(b));
+    }
+
+    /* --- FAQ accordion -------------------------------------------------- */
+
+    document.querySelectorAll('.faq-item').forEach((item) => {
+        const button = item.querySelector('.faq-q');
+        button.addEventListener('click', () => {
+            const open = item.classList.toggle('open');
+            button.setAttribute('aria-expanded', String(open));
+        });
+    });
+
+    /* --- Demo form: no sending ----------------------------------------- */
+
+    document.getElementById('form').addEventListener('submit', (event) => {
+        event.preventDefault();
+        document.getElementById('form-helper').textContent = 'Demo: hier würde sich dein E-Mail-Programm öffnen.';
+    });
+
+    /* --- Boot ----------------------------------------------------------- */
+
+    page.classList.add('js');
+    apply(true);
+    if (state.motion) observeReveals();
+})();
+</script>
+</body>
+</html>

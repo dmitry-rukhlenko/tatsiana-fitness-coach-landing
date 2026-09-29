@@ -1,0 +1,36 @@
+/* Shared reviewer bar for the demo pages. Russian labels: for Dmitry, not visitors. */
+.demo-nav {
+    position: fixed;
+    left: 50%;
+    bottom: 14px;
+    transform: translateX(-50%);
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px;
+    border-radius: 999px;
+    background: rgba(30, 26, 33, 0.92);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    font: 600 0.82rem/1 "Onest", "Segoe UI", Helvetica, Arial, sans-serif;
+    max-width: calc(100vw - 20px);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.demo-nav a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    padding: 9px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+    transition: color 160ms ease, background-color 160ms ease;
+}
+.demo-nav a b { font-weight: 800; margin-right: 4px; }
+.demo-nav a[aria-current="page"] { background: #fff; color: #1E1A21; }
+.demo-nav a:hover { color: #fff; }
+.demo-nav a[aria-current="page"]:hover { color: #1E1A21; }
+@media (max-width: 640px) {
+    .demo-nav { bottom: 8px; font-size: 0.74rem; }
+    .demo-nav a { padding: 8px 9px; }
+    .demo-nav a span { display: none; }
+}
