@@ -79,6 +79,50 @@ def taper(p0, p1, p2, p3, wmax, fill=MINT_ON_WHITE, pid='flourish', profile=None
     return taper_fn(lambda t: cubic(p0, p1, p2, p3, t), wmax, profile or sine_profile, fill, pid, steps)
 
 
+def curl_from(p, phi_deg, r0, sweep_deg, shrink, w0, fill, pid='curl', ccw=True, steps=48):
+    """A small spiral flourish starting at point p, leaving along direction phi, radius shrinking from r0.
+
+    Tangent-continuous with a stroke that ends at p heading phi; ccw curls back over the stroke
+    (up and back for a rightward stroke), cw curls under it. Width tapers from w0 to a hairline.
+    """
+    phi = math.radians(phi_deg)
+    th0 = phi + (math.pi / 2 if ccw else -math.pi / 2)
+    cx, cy = p[0] - r0 * math.cos(th0), p[1] - r0 * math.sin(th0)
+    sweep = math.radians(sweep_deg) * (-1 if ccw else 1)
+
+    def fn(t):
+        th = th0 + sweep * t
+        r = r0 * (1 - shrink * t)
+        return (cx + r * math.cos(th), cy + r * math.sin(th))
+    return taper_fn(fn, w0, lambda t: max(0.08, (1 - t) ** 1.2), fill, pid, steps)
+
+
+def wave_with_curl(p0, p1, p2, p3, wmax, r0, sweep_deg, shrink, fill, pid='wave', ccw=True, split=0.78, steps=64):
+    """A tapered wave whose tail continues into a small curl, drawn as one shape."""
+    ex, ey = p3[0] - p2[0], p3[1] - p2[1]
+    phi = math.atan2(ey, ex)
+    th0 = phi + (math.pi / 2 if ccw else -math.pi / 2)
+    cx, cy = p3[0] - r0 * math.cos(th0), p3[1] - r0 * math.sin(th0)
+    sweep = math.radians(sweep_deg) * (-1 if ccw else 1)
+
+    def fn(u):
+        if u < split:
+            return cubic(p0, p1, p2, p3, u / split)
+        s = (u - split) / (1 - split)
+        th = th0 + sweep * s
+        r = r0 * (1 - shrink * s)
+        return (cx + r * math.cos(th), cy + r * math.sin(th))
+
+    w_split = math.sin(math.pi * split) ** 0.8
+
+    def profile(u):
+        if u < split:
+            return math.sin(math.pi * u) ** 0.8
+        s = (u - split) / (1 - split)
+        return w_split * (1 - s) ** 1.1 + 0.06
+    return taper_fn(fn, wmax, profile, fill, pid, steps)
+
+
 def brush_ring(cx, cy, r, a0, a1, wmax, fill, pid='ring', profile=None, steps=90):
     """A ring drawn with a brush: thickness follows `profile` along the arc from angle a0 to a1 (degrees)."""
     a0r, a1r = math.radians(a0), math.radians(a1)

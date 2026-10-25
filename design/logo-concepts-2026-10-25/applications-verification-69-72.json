@@ -1,0 +1,46 @@
+[
+  {
+    "concept": "69-escape",
+    "all_images_loaded": true,
+    "unique_ids": true,
+    "svg_count": 6,
+    "clipped_logos": [],
+    "board_within_capture": true,
+    "horizontal_overflow": false,
+    "errors": [],
+    "remote_requests": []
+  },
+  {
+    "concept": "70-signature-ring",
+    "all_images_loaded": true,
+    "unique_ids": true,
+    "svg_count": 6,
+    "clipped_logos": [],
+    "board_within_capture": true,
+    "horizontal_overflow": false,
+    "errors": [],
+    "remote_requests": []
+  },
+  {
+    "concept": "71-drop",
+    "all_images_loaded": true,
+    "unique_ids": true,
+    "svg_count": 6,
+    "clipped_logos": [],
+    "board_within_capture": true,
+    "horizontal_overflow": false,
+    "errors": [],
+    "remote_requests": []
+  },
+  {
+    "concept": "72-echo",
+    "all_images_loaded": true,
+    "unique_ids": true,
+    "svg_count": 6,
+    "clipped_logos": [],
+    "board_within_capture": true,
+    "horizontal_overflow": false,
+    "errors": [],
+    "remote_requests": []
+  }
+]

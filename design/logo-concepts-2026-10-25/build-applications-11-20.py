@@ -178,8 +178,8 @@ def extend_index_page():
     page = page.replace('</article></section>', '</article>\n' + '\n'.join(cards) + '</section>', 1)
     page = re.sub(r'Logo exploration / 01—\d+', f'Logo exploration / 01—{LAST}', page, count=1)
     page = re.sub(r'<title>Tatsi in motion — \d+ logo concepts</title>', f'<title>Tatsi in motion — {LAST} logo concepts</title>', page, count=1)
-    page = re.sub(r'(Десять разных знаков|[А-Яа-яЁё\d]+ знаков в [А-Яа-яЁё]+ наборах) для выбора направления\.',
-                  f'{LAST} знаков в {"двух" if LAST == 20 else "нескольких"} наборах для выбора направления.', page, count=1)
+    page = re.sub(r'(Десять разных знаков|[А-Яа-яЁё\d]+ знак(?:ов|а)? в [А-Яа-яЁё]+ наборах) для выбора направления\.',
+                  f'{LAST} знаков в нескольких наборах для выбора направления.', page, count=1)
     page = re.sub(r'Скачать \d+ SVG ↓', f'Скачать {LAST} SVG ↓', page, count=1)
     page = re.sub(r'aria-label="[^"]* вариантов логотипа"', f'aria-label="{LAST} вариантов логотипа"', page, count=1)
     page = re.sub(r'Посмотреть все \d+ вариантов', f'Посмотреть все {LAST} вариантов', page, count=1)
@@ -195,6 +195,10 @@ def refresh_zips():
             arc = f'tatsi-in-motion/{c["slug"]}.svg'
             if arc not in names:
                 archive.write(ROOT / 'svg' / (c['slug'] + '.svg'), arc)
+    if '--svg-only' in sys.argv:
+        # The preview pack is already ~70 MB; GitHub refuses files over 100 MB, so later sets add SVGs only.
+        print('ZIP: SVG archive refreshed; preview pack left unchanged (--svg-only).')
+        return
     with zipfile.ZipFile(ROOT / 'tatsi-in-motion-preview-pack.zip', 'a', zipfile.ZIP_DEFLATED) as archive:
         names = set(archive.namelist())
         for c in concepts:
