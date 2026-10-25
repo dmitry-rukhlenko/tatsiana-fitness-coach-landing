@@ -1,0 +1,173 @@
+{
+  "reports": [
+    {
+      "code": "A1",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "A2",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "A3",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "A4",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "A5",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "A6",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "A7",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "B1",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "B2",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "B3",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "B4",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "B5",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "B6",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "B7",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "C1",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "C2",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "C3",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "C4",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "C5",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "C6",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    },
+    {
+      "code": "C7",
+      "images_loaded": true,
+      "unique_ids": true,
+      "svgs": 6,
+      "board_in_capture": true,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

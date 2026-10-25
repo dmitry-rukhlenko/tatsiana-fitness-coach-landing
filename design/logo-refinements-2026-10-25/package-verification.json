@@ -1,0 +1,28 @@
+{
+  "groups": {
+    "A": 7,
+    "B": 7,
+    "C": 7
+  },
+  "primary_svgs": 21,
+  "light_svgs": 21,
+  "transparent_pngs_1024": 42,
+  "exact_geometry_placements": 126,
+  "preserved_source_files": 121,
+  "changed_old_files": [],
+  "broken_archive_links": 0,
+  "archives": [
+    {
+      "file": "tatsi-refinements-21.zip",
+      "members": 182,
+      "bytes": 32468299,
+      "crc": "pass"
+    },
+    {
+      "file": "tatsi-refinements-svg.zip",
+      "members": 43,
+      "bytes": 93210,
+      "crc": "pass"
+    }
+  ]
+}
