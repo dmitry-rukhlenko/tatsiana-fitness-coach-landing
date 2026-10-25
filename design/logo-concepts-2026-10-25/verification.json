@@ -1,0 +1,185 @@
+{
+  "files": [
+    {
+      "file": "01-flowing-t.svg",
+      "bytes": 880,
+      "sha256": "713e256e42f8402851d8f65c9a134d1088ea46ea8861ee3c8427e891dda44b14",
+      "vector_shapes": 2,
+      "xml_valid": true,
+      "exact_palette": true,
+      "transparent_background": true,
+      "no_external_dependencies": true
+    },
+    {
+      "file": "02-open-reach.svg",
+      "bytes": 1128,
+      "sha256": "2d093f45d969eadef4b190cc871d4715b264849632d33826e3117fae2158e4cf",
+      "vector_shapes": 4,
+      "xml_valid": true,
+      "exact_palette": true,
+      "transparent_background": true,
+      "no_external_dependencies": true
+    },
+    {
+      "file": "03-tm-ligature.svg",
+      "bytes": 1012,
+      "sha256": "cd383a93ae6f16626991757ccb1b3bf0e666dbd5386e3ec35953ff26035630eb",
+      "vector_shapes": 3,
+      "xml_valid": true,
+      "exact_palette": true,
+      "transparent_background": true,
+      "no_external_dependencies": true
+    },
+    {
+      "file": "04-orbit-t.svg",
+      "bytes": 1093,
+      "sha256": "31a3e15b0f1c06bbfeec26e7f175ee773d1be3dac06fa3a82f6088689b215886",
+      "vector_shapes": 3,
+      "xml_valid": true,
+      "exact_palette": true,
+      "transparent_background": true,
+      "no_external_dependencies": true
+    },
+    {
+      "file": "05-elastic-m.svg",
+      "bytes": 968,
+      "sha256": "bee58076d5f920410097f36df907c5d784529f1ac2aeab672e229cd0ead74bac",
+      "vector_shapes": 2,
+      "xml_valid": true,
+      "exact_palette": true,
+      "transparent_background": true,
+      "no_external_dependencies": true
+    },
+    {
+      "file": "06-tatsi-wordmark.svg",
+      "bytes": 1835,
+      "sha256": "4b145640ca8c4970b94058e322624c7287cfb018adf7c7c066535fc2e89cc5d0",
+      "vector_shapes": 8,
+      "xml_valid": true,
+      "exact_palette": true,
+      "transparent_background": true,
+      "no_external_dependencies": true
+    },
+    {
+      "file": "07-free-stride.svg",
+      "bytes": 1013,
+      "sha256": "841c9260f755c55737b947f94a927c42333584ce48522db343efd3d8c785e622",
+      "vector_shapes": 3,
+      "xml_valid": true,
+      "exact_palette": true,
+      "transparent_background": true,
+      "no_external_dependencies": true
+    },
+    {
+      "file": "08-pivot-t.svg",
+      "bytes": 913,
+      "sha256": "c4504ae5d78dfc2094147b928bbe8bb9ba62ee790a363a2495319f75e9a622f1",
+      "vector_shapes": 2,
+      "xml_valid": true,
+      "exact_palette": true,
+      "transparent_background": true,
+      "no_external_dependencies": true
+    },
+    {
+      "file": "09-in-motion.svg",
+      "bytes": 1856,
+      "sha256": "c36fb853501015f46b97da93aa58c63e46b41cb741be50f631d97e9fc55fd780",
+      "vector_shapes": 8,
+      "xml_valid": true,
+      "exact_palette": true,
+      "transparent_background": true,
+      "no_external_dependencies": true
+    },
+    {
+      "file": "10-tm-ribbon.svg",
+      "bytes": 1070,
+      "sha256": "e180299b17628402fae7257a7bb3793ad2560a315b8d762a3b522bd00007f7fd",
+      "vector_shapes": 2,
+      "xml_valid": true,
+      "exact_palette": true,
+      "transparent_background": true,
+      "no_external_dependencies": true
+    }
+  ],
+  "zip_exact_match": true,
+  "browser": {
+    "all_images_loaded": true,
+    "desktop_width": 1440,
+    "desktop_overflow": false,
+    "mobile_width": 390,
+    "mobile_overflow": false,
+    "errors": [],
+    "geometry_bounds": [
+      {
+        "file": "01-flowing-t.svg",
+        "x": 145,
+        "y": 128,
+        "width": 221,
+        "height": 247.3885498046875
+      },
+      {
+        "file": "02-open-reach.svg",
+        "x": 137,
+        "y": 114,
+        "width": 222,
+        "height": 262
+      },
+      {
+        "file": "03-tm-ligature.svg",
+        "x": 125,
+        "y": 166,
+        "width": 253,
+        "height": 185
+      },
+      {
+        "file": "04-orbit-t.svg",
+        "x": 124.6158447265625,
+        "y": 117.7314453125,
+        "width": 262.2032470703125,
+        "height": 268.39605712890625
+      },
+      {
+        "file": "05-elastic-m.svg",
+        "x": 122,
+        "y": 177.89378356933594,
+        "width": 258,
+        "height": 165.10621643066406
+      },
+      {
+        "file": "06-tatsi-wordmark.svg",
+        "x": 51.209999084472656,
+        "y": 195.0800018310547,
+        "width": 380.3800354003906,
+        "height": 146.0834503173828
+      },
+      {
+        "file": "07-free-stride.svg",
+        "x": 129,
+        "y": 111,
+        "width": 250,
+        "height": 265
+      },
+      {
+        "file": "08-pivot-t.svg",
+        "x": 104.36864471435547,
+        "y": 118.2328872680664,
+        "width": 307.1451721191406,
+        "height": 293.7998046875
+      },
+      {
+        "file": "09-in-motion.svg",
+        "x": 54.400001525878906,
+        "y": 200.63999938964844,
+        "width": 390.60003662109375,
+        "height": 94.81275939941406
+      },
+      {
+        "file": "10-tm-ribbon.svg",
+        "x": 112,
+        "y": 136.82220458984375,
+        "width": 265,
+        "height": 209.36141967773438
+      }
+    ]
+  }
+}

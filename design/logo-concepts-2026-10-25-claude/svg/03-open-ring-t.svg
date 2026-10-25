@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title">
+  <title id="title">Tatsi in motion — Open ring T</title>
+  <!-- Mint ring (r=88) open at the bottom; the white T stands inside and its stem steps out through the opening. -->
+  <g id="symbol" fill="none" stroke-linecap="round">
+    <path id="ring" d="M77.5 184.1 A88 88 0 1 1 178.5 184.1" stroke="#bcf7f3" stroke-width="24"/>
+    <path id="crossbar" d="M88 76 H168" stroke="#ffffff" stroke-width="24"/>
+    <path id="stem" d="M128 76 V236" stroke="#ffffff" stroke-width="24"/>
+  </g>
+</svg>

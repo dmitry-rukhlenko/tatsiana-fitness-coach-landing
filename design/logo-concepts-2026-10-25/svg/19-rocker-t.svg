@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title">
+  <title id="title">Tatsi in motion — Rocker T</title>
+  <!-- A white T balanced on a mint rocker (arc r=173.3): stability that can move. -->
+  <g id="symbol" fill="none" stroke-linecap="round">
+    <path id="crossbar" d="M56 44 H200" stroke="#ffffff" stroke-width="28"/>
+    <path id="stem" d="M128 44 V170" stroke="#ffffff" stroke-width="28"/>
+    <path id="rocker" d="M40 190 A173.3 173.3 0 0 0 216 190" stroke="#bcf7f3" stroke-width="28"/>
+  </g>
+</svg>

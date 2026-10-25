@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — Elastic M</title>
+  <desc id="logo-description">Непрерывная упругая линия складывается в m: движение без жёстких углов и остановок. Transparent background; editable vector shapes; white #ffffff and mint #bcf7f3.</desc>
+  <g id="05-elastic-m-artwork">
+    <path id="elastic-m" d="M122 336 L154 209 C164 164 218 170 218 213 L218 292 L274 212 C304 170 342 182 332 226 L313 303 C304 341 340 354 380 318" fill="none" stroke="#ffffff" stroke-width="27" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="moving-tip" d="M342 343 C354 341 368 332 380 318" fill="none" stroke="#bcf7f3" stroke-width="27" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

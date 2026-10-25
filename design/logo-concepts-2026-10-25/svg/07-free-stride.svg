@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — Free Stride</title>
+  <desc id="logo-description">Две широкие пластичные формы напоминают шаг и разворот корпуса. Сильный силуэт для одежды. Transparent background; editable vector shapes; white #ffffff and mint #bcf7f3.</desc>
+  <g id="07-free-stride-artwork">
+    <circle id="head" cx="295" cy="132" r="21" fill="#bcf7f3"/>
+    <path id="upper-body" d="M129 193 C194 207 256 197 347 166 C333 193 310 211 283 225 C259 244 241 270 220 309 C206 334 181 356 147 369 C183 327 200 287 219 241 C183 237 153 219 129 193 Z" fill="#ffffff"/>
+    <path id="extended-leg" d="M249 269 C287 272 311 297 325 322 C340 347 356 363 379 376 C340 376 313 359 294 337 C275 313 256 299 230 297 Z" fill="#bcf7f3"/>
+  </g>
+</svg>

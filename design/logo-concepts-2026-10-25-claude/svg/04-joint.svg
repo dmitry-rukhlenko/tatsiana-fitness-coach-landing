@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title">
+  <title id="title">Tatsi in motion — Joint</title>
+  <!-- Ball-and-socket joint: a white socket arc (r=84, open towards the upper right) and a mint ball resting freely at the opening. -->
+  <g id="symbol" fill="none" stroke-linecap="round">
+    <path id="socket" d="M193.4 187.4 A84 84 0 1 1 119.4 45.3" stroke="#ffffff" stroke-width="26"/>
+    <circle id="ball" cx="162" cy="102" r="34" fill="#bcf7f3" stroke="none"/>
+  </g>
+</svg>

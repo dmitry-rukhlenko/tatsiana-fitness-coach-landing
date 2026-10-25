@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title">
+  <title id="title">Tatsi in motion — Thread</title>
+  <!-- A mint ribbon flows freely through a white ring (the body): one rising S-curve, one circle. -->
+  <g id="symbol" fill="none" stroke-linecap="round">
+    <circle id="ring" cx="128" cy="128" r="92" stroke="#ffffff" stroke-width="22"/>
+    <path id="ribbon" d="M40 212 C40 90 216 166 216 44" stroke="#bcf7f3" stroke-width="22"/>
+  </g>
+</svg>

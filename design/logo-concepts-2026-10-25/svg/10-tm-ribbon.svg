@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — TM Ribbon</title>
+  <desc id="logo-description">Мягкая монограмма tm одним росчерком. Петелька t и два подъёма m соединяют личность и движение. Transparent background; editable vector shapes; white #ffffff and mint #bcf7f3.</desc>
+  <g id="10-tm-ribbon-artwork">
+    <path id="ribbon-tm" d="M112 237 C165 231 207 206 216 167 C225 125 189 127 179 172 L151 298 C141 345 169 365 196 324 L243 249 C260 219 284 225 275 263 L259 326 L307 253 C328 221 350 230 339 268 L328 308 C319 343 342 351 377 323" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="t-crossbar" d="M121 238 C166 236 208 231 247 223" fill="none" stroke="#bcf7f3" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

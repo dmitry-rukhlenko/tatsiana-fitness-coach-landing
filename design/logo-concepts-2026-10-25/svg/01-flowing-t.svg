@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — Flowing T</title>
+  <desc id="logo-description">Наклонная t с мягким изгибом: устойчивость и свобода движения в одном жесте. Transparent background; editable vector shapes; white #ffffff and mint #bcf7f3.</desc>
+  <g id="01-flowing-t-artwork">
+    <path id="t-stem" d="M281 128 L237 320 C226 367 254 392 309 363" fill="none" stroke="#ffffff" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="flowing-crossbar" d="M145 211 C206 189 283 191 366 207" fill="none" stroke="#bcf7f3" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

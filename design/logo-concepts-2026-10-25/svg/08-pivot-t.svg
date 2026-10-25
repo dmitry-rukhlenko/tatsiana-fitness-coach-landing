@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — Pivot T</title>
+  <desc id="logo-description">Геометричная T с отделённой перекладиной. Наклон задаёт движение, широкие формы — уверенность. Transparent background; editable vector shapes; white #ffffff and mint #bcf7f3.</desc>
+  <g id="08-pivot-t-artwork">
+    <g id="pivot-symbol" transform="rotate(-12 256 256)">
+    <path id="crossbar" d="M139 143 H373 Q387 143 387 157 V184 Q387 198 373 198 H139 Q125 198 125 184 V157 Q125 143 139 143 Z" fill="#bcf7f3"/>
+    <path id="stem" d="M227 219 H285 V310 C285 342 301 353 329 342 L337 380 C282 401 227 378 227 322 Z" fill="#ffffff"/>
+    </g>
+  </g>
+</svg>

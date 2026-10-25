@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title">
+  <title id="title">Tatsi in motion — Supple T</title>
+  <!-- A T with a supple spine: straight white crossbar, mint stem drawn as one smooth S-curve. -->
+  <g id="symbol" fill="none" stroke-linecap="round">
+    <path id="crossbar" d="M52 48 H204" stroke="#ffffff" stroke-width="26"/>
+    <path id="stem" d="M128 48 C128 92 152 96 152 128 C152 160 128 168 128 212" stroke="#bcf7f3" stroke-width="26"/>
+  </g>
+</svg>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — Tatsi</title>
+  <desc id="logo-description">Авторское округлое написание tatsi. Две t задают ритм, мятная точка добавляет лёгкость. Transparent background; editable vector shapes; white #ffffff and mint #bcf7f3.</desc>
+  <g id="06-tatsi-wordmark-artwork">
+    <g id="custom-wordmark" transform="translate(23 115) scale(.91)">
+    <path id="first-t" d="M59 88 V229 Q59 254 84 247 M31 145 H89" fill="none" stroke="#ffffff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="a-bowl" d="M191 191 C191 129 115 128 115 193 C115 251 191 252 191 191" fill="none" stroke="#ffffff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="a-stem" d="M191 149 V244" fill="none" stroke="#ffffff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="second-t" d="M237 88 V229 Q237 254 262 247 M210 145 H268" fill="none" stroke="#ffffff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="s" d="M351 154 C332 136 294 140 294 166 C294 195 353 185 353 218 C353 246 315 256 291 235" fill="none" stroke="#ffffff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="i" d="M395 151 V244" fill="none" stroke="#ffffff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle id="i-dot" cx="395" cy="111" r="10" fill="#bcf7f3"/>
+    <path id="motion-after-i" d="M420 108 L449 93" fill="none" stroke="#bcf7f3" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+</svg>

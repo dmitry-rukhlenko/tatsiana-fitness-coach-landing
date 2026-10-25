@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — Orbit T</title>
+  <desc id="logo-description">Разомкнутая орбита окружает t. Продолжение траектории остаётся открытым. Transparent background; editable vector shapes; white #ffffff and mint #bcf7f3.</desc>
+  <g id="04-orbit-t-artwork">
+    <path id="open-orbit" d="M384 238 C400 159 346 109 270 119 C184 130 119 202 125 278 C131 358 199 400 276 382 C308 374 334 359 355 336" fill="none" stroke="#ffffff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="t-stem" d="M283 184 L253 310 C246 339 264 346 288 332" fill="none" stroke="#bcf7f3" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="t-crossbar" d="M205 239 Q261 226 317 235" fill="none" stroke="#bcf7f3" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

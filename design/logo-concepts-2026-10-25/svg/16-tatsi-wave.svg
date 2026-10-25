@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 256" width="640" height="256" role="img" aria-labelledby="title">
+  <title id="title">Tatsi in motion — tatsi wordmark</title>
+  <!-- Geometric monoline wordmark "tatsi" (stroke 26, x-height 120, baseline 196). One mint wave is the crossbar of both t's and lifts over the a. -->
+  <g id="wordmark" transform="translate(38 0)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="26">
+    <path id="t1" d="M80 30 V196" stroke="#ffffff"/>
+    <g id="a" stroke="#ffffff">
+      <circle cx="190" cy="136" r="60"/>
+      <path d="M250 76 V196"/>
+    </g>
+    <path id="t2" d="M320 30 V196" stroke="#ffffff"/>
+    <path id="s" d="M449.4 93 A34 34 0 1 0 420 144 A34 34 0 1 1 390.6 179" stroke="#ffffff"/>
+    <path id="i" d="M520 76 V196" stroke="#ffffff"/>
+    <circle id="i-dot" cx="520" cy="38" r="15" fill="#bcf7f3" stroke="none"/>
+    <path id="wave" d="M44 84 H80 C110 84 150 42 200 42 S290 84 320 84 H356" stroke="#bcf7f3" stroke-width="24"/>
+  </g>
+</svg>

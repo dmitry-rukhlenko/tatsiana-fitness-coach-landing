@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title">
+  <title id="title">Tatsi in motion — ti</title>
+  <!-- "ti" (Tatsi / in motion) leaning forward 15°; the mint i-dot runs ahead along the same line of motion. -->
+  <g id="symbol" fill="none" stroke-linecap="round">
+    <path id="t-stem" d="M71 212 L109.8 67.1" stroke="#ffffff" stroke-width="24"/>
+    <path id="t-bar" d="M69 100 H127" stroke="#ffffff" stroke-width="24"/>
+    <path id="i-stem" d="M139 212 L170.1 96.1" stroke="#ffffff" stroke-width="24"/>
+    <circle id="i-dot" cx="180.4" cy="57.5" r="20" fill="#bcf7f3" stroke="none"/>
+  </g>
+</svg>

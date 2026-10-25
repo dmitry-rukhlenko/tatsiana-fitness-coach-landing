@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title">
+  <title id="title">Tatsi in motion — Split disc T</title>
+  <!-- A disc (r=104) cut by two 22-unit gaps; the gaps form a T. Top cap mint, two lower pieces white. -->
+  <g id="symbol">
+    <path id="cap" d="M33.3 85 A104 104 0 0 1 222.7 85 Z" fill="#bcf7f3"/>
+    <path id="left" d="M26.1 107 H117 V231.4 A104 104 0 0 1 26.1 107 Z" fill="#ffffff"/>
+    <path id="right" d="M139 107 H229.9 A104 104 0 0 1 139 231.4 Z" fill="#ffffff"/>
+  </g>
+</svg>

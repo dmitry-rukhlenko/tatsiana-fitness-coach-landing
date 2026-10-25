@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — In motion</title>
+  <desc id="logo-description">Компактное написание motion с раскрытой o. Разрыв в букве превращает слово в траекторию. Transparent background; editable vector shapes; white #ffffff and mint #bcf7f3.</desc>
+  <g id="09-in-motion-artwork">
+    <g id="custom-wordmark" transform="translate(46 204) scale(.84)">
+    <path id="m" d="M10 105 V27 M10 52 C10 9 65 9 65 49 V105 M65 52 C65 9 120 9 120 49 V105" fill="none" stroke="#ffffff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="first-o" d="M206 88 C187 126 141 108 141 67 C141 19 202 12 210 53" fill="none" stroke="#ffffff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="o-moving-end" d="M210 53 Q212 64 209 73" fill="none" stroke="#bcf7f3" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="t" d="M245 -2 V86 Q245 108 266 102 M228 30 H271" fill="none" stroke="#ffffff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="i" d="M296 32 V105" fill="none" stroke="#ffffff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle id="i-dot" cx="296" cy="4" r="8" fill="#bcf7f3"/>
+    <path id="second-o" d="M391 67 C391 13 325 13 325 67 C325 121 391 121 391 67" fill="none" stroke="#ffffff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="n" d="M416 105 V29 M416 54 C416 10 475 10 475 52 V105" fill="none" stroke="#ffffff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+</svg>

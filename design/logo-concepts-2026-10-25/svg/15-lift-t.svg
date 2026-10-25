@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title">
+  <title id="title">Tatsi in motion — Lift T</title>
+  <!-- T whose right half of the crossbar lifts 15° (an arm rising): white rest, mint movement. -->
+  <g id="symbol" fill="none" stroke-linecap="round">
+    <path id="stem" d="M124 70 V210" stroke="#ffffff" stroke-width="26"/>
+    <path id="bar-left" d="M44 70 H124" stroke="#ffffff" stroke-width="26"/>
+    <path id="bar-lift" d="M124 70 L212 46.4" stroke="#bcf7f3" stroke-width="26"/>
+  </g>
+</svg>

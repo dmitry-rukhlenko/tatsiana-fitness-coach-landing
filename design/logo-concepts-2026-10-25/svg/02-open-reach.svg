@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — Open Reach</title>
+  <desc id="logo-description">Раскрытая фигура без спортивной агрессии. Акцент на подвижности и ощущении своего тела. Transparent background; editable vector shapes; white #ffffff and mint #bcf7f3.</desc>
+  <g id="02-open-reach-artwork">
+    <circle id="head" cx="287" cy="133" r="19" fill="#bcf7f3"/>
+    <path id="open-arms" d="M137 193 C209 235 278 225 359 161" fill="none" stroke="#ffffff" stroke-width="23" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="body-and-grounded-leg" d="M260 220 C247 275 216 333 170 376" fill="none" stroke="#ffffff" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
+    <path id="moving-leg" d="M239 282 C284 305 305 344 338 371" fill="none" stroke="#bcf7f3" stroke-width="23" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
