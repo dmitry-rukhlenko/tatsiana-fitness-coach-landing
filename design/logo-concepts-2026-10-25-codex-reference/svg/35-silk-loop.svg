@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — Silk Loop</title>
+  <desc id="logo-description">Буква t с высокой петлёй и широким мягким выходом. Знак похож на единый пластичный жест. Editable vector outlines; transparent background.</desc>
+  <g id="35-silk-loop-artwork">
+    <path id="looped-t" d="M203 286 C236 229 253 178 263 143 C277 94 304 76 328 86 C357 98 338 140 300 172 C272 195 249 206 225 215 L217 210 C253 196 278 179 299 157 C328 126 341 103 326 94 C309 84 288 107 279 148 C265 211 243 259 217 305 C198 342 174 371 152 377 C129 383 115 368 123 348 C131 329 158 318 181 319 C155 323 136 335 133 350 C128 366 144 373 159 362 C176 348 191 313 203 286 Z" fill="#ffffff"/>
+    <path id="silk-crossbar" d="M100 228 C167 196 228 208 292 224 C346 237 382 234 419 205 C388 244 345 250 290 236 C219 217 166 208 100 228 Z" fill="#bcf7f3"/>
+    <path id="silk-tail" d="M152 377 C217 354 295 355 364 390 C319 374 268 367 225 372 C193 375 169 381 152 377 Z" fill="#bcf7f3"/>
+  </g>
+</svg>

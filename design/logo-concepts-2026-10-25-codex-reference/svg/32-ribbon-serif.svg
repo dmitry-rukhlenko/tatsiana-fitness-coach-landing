@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — Ribbon Serif</title>
+  <desc id="logo-description">Выразительная T с тонкими засечками. Мятная лента проходит сквозь вертикаль и поднимается вправо. Editable vector outlines; transparent background.</desc>
+  <g id="32-ribbon-serif-artwork">
+    <path id="upper-t" d="M128 120 H381 L385 177 H377 C366 141 346 133 284 133 V224 C264 233 245 244 228 257 V133 C166 133 146 143 135 177 H127 Z" fill="#ffffff"/>
+    <path id="lower-t" d="M228 287 C244 271 264 261 284 254 V354 C284 382 294 393 321 398 V405 H191 V398 C219 393 228 382 228 354 Z" fill="#ffffff"/>
+    <path id="rising-ribbon" d="M72 204 C144 248 211 256 266 225 C331 188 393 193 443 145 C408 204 353 212 285 240 C213 269 146 263 72 204 Z" fill="#bcf7f3"/>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — Continuum T</title>
+  <desc id="logo-description">Длинная петля одновременно формирует перекладину T и орбиту. Самый каллиграфичный вариант набора. Editable vector outlines; transparent background.</desc>
+  <g id="40-continuum-t-artwork">
+    <path id="long-t" d="M305 139 C286 179 255 237 236 283 C217 328 193 370 165 388 C140 404 116 400 110 382 C102 358 125 335 151 326 C134 340 121 356 124 371 C127 386 146 388 162 376 C185 360 203 319 219 278 C237 232 266 177 286 141 Z" fill="#142627"/>
+    <path id="continuous-orbit" d="M91 238 C59 199 78 157 119 145 C166 131 216 161 269 165 C322 169 384 136 391 104 C399 74 363 70 336 96 C319 112 311 130 308 146 C305 125 316 101 333 87 C363 60 405 68 401 102 C397 140 333 178 269 177 C210 176 165 141 123 151 C87 159 74 194 94 221 C108 240 139 237 157 223 C142 248 110 257 91 238 Z" fill="#bcf7f3"/>
+    <path id="lower-flourish" d="M165 388 C224 380 290 348 358 290 C319 340 250 392 199 400 C183 403 171 397 165 388 Z" fill="#bcf7f3"/>
+  </g>
+</svg>

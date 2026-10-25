@@ -1,8 +1,12 @@
-"""Add concepts 11-20 (the Claude set) to the existing galleries and build their placement mockups.
+"""Add a further set of concepts to the existing galleries and build their placement mockups.
 
 Same board template as build-applications.py; the first ten concepts and their files are not touched.
-Run from any directory:  python3 build-applications-11-20.py          # boards + gallery pages
-                         python3 build-applications-11-20.py --zip    # after render: refresh both ZIP archives
+Run from any directory:
+  python3 build-applications-11-20.py                          # concepts-11-20.json: boards + gallery pages
+  python3 build-applications-11-20.py concepts-21-30.json      # any other set
+  python3 build-applications-11-20.py [concepts.json] --zip    # after render: refresh both ZIP archives
+Optional per-concept keys: "on_dark" {colour: colour} swaps paint for the dark mockup surfaces,
+"light_card" true gives the gallery card a white art area, "set_title" labels the set's divider.
 """
 
 from pathlib import Path
@@ -19,8 +23,12 @@ SKILL_SCRIPTS = Path.home() / '.claude' / 'skills' / 'logo-design' / 'scripts'
 sys.path.insert(0, str(SKILL_SCRIPTS))
 import svglib  # noqa: E402  (bundled with the logo-design skill; pure Python)
 
-concepts = json.loads((ROOT / 'concepts-11-20.json').read_text())
-first_ten = json.loads((ROOT / 'concepts.json').read_text())
+CONCEPTS_FILE = next((a for a in sys.argv[1:] if a.endswith('.json')), 'concepts-11-20.json')
+concepts = json.loads((ROOT / CONCEPTS_FILE).read_text())
+FIRST, LAST = int(concepts[0]['slug'][:2]), int(concepts[-1]['slug'][:2])
+# Total number of concepts across every set present in the folder (for "N of M" labels).
+TOTAL = max(int(p.name[:2]) for p in (ROOT / 'svg').glob('[0-9][0-9]-*.svg'))
+SET_TITLE = concepts[0].get('set_title', f'{FIRST:02d}—{LAST:02d}')
 SVG_NS = '{http://www.w3.org/2000/svg}'
 
 
@@ -68,6 +76,9 @@ def mark(concept, suffix):
     svg = re.sub(r'\swidth="\d+" height="\d+"', '', svg, count=1)
     svg = re.sub(r'id="([^"]+)"', lambda m: f'id="{suffix}-{m[1]}"', svg)
     svg = svg.replace('aria-labelledby="title"', f'aria-labelledby="{suffix}-title"')
+    # Every mockup surface is dark: marks drawn for white paper swap their paints here.
+    for src, dst in concept.get('on_dark', {}).items():
+        svg = re.sub(re.escape(src), dst, svg, flags=re.IGNORECASE)
     return svg
 
 
@@ -75,6 +86,12 @@ def site_brand(c):
     logo = mark(c, 'site')
     if c['slug'] == '16-tatsi-wave':
         return f'<div class="wordmark-brand">{logo}<span>in motion</span></div>'
+    if c['slug'] == '23-didone-wordmark':
+        return f'<div class="wordmark-brand motion">{logo}</div>'
+    if c['slug'] == '25-script-tatsi':
+        return f'<div class="wordmark-brand">{logo}<span>in motion</span></div>'
+    if c['slug'] in ('24-stacked-ring', '30-flourish-t'):
+        return f'<div class="site-brand"><div class="site-logo" style="width:66px;height:66px">{logo}</div></div>'
     return f'<div class="site-brand"><div class="site-logo">{logo}</div><span>Tatsi <small>in motion</small></span></div>'
 
 
@@ -109,59 +126,65 @@ def build_boards():
       <div class="ig-bottom"><span>⌂</span><span>⌕</span><span>⊞</span><span>▷</span><span class="mini-avatar">{mini_logo}</span></div>
     </div>'''
         html = f'''<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{i:02d} · {escape(c['name'])} — сайт и Instagram</title><style>{CSS}</style></head><body><main class="board">
-    <header class="board-heading"><div class="heading-left"><div class="hero-mark">{hero_logo}</div><div><p class="eyebrow">Tatsi in motion / {i:02d} of 20</p><h1>{escape(c['name'])}</h1></div></div><p class="concept-note">{escape(c['idea'])}</p></header>
+    <header class="board-heading"><div class="heading-left"><div class="hero-mark">{hero_logo}</div><div><p class="eyebrow">Tatsi in motion / {i:02d} of {TOTAL}</p><h1>{escape(c['name'])}</h1></div></div><p class="concept-note">{escape(c['idea'])}</p></header>
     <div class="applications"><section><p class="application-label">01 / Сайт · шапка и первый экран</p>{website}<div class="website-notes"><p><strong>Белый + #bcf7f3</strong>Тёмная шапка даёт контраст светлому логотипу. В макете использованы фотография и тексты существующего сайта.</p><p><strong>Один знак в разных размерах</strong>Геометрия и цвета совпадают с SVG. Здесь скорректированы только размер и свободное поле вокруг знака.</p></div></section><section><p class="application-label">02 / Instagram · аватар и публикации</p>{instagram}<p class="social-note">Макет профиля. Имя пользователя — пример; показатели не указаны. Публикации иллюстрируют оформление.</p></section></div>
     <footer class="board-footer"><span>Вариант {i:02d} · {escape(c['ru'])} · локальная примерка логотипа</span><span>SVG сохранён отдельно · 25.10.2026</span></footer>
     </main></body></html>'''
         (OUT / (c['slug'] + '.html')).write_text(html)
-    print(f'Built {len(concepts)} boards (11-20).')
+    print(f'Built {len(concepts)} boards ({FIRST:02d}-{LAST:02d}).')
 
 
 def extend_applications_page():
     path = ROOT / 'applications.html'
     page = path.read_text()
-    if 'id="tab-11"' in page:
-        print('applications.html already has tabs 11-20.')
+    if f'id="tab-{FIRST:02d}"' in page:
+        print(f'applications.html already has tabs {FIRST:02d}-{LAST:02d}.')
         return
     tabs = ''.join(
         f'<a href="#concept-{i:02d}" id="tab-{i:02d}" role="tab" aria-controls="panel-{i:02d}" aria-selected="false" tabindex="-1">{i:02d}</a>'
-        for i in range(11, 21))
+        for i in range(FIRST, LAST + 1))
     sections = []
     for c in concepts:
         i = int(c['slug'][:2]); slug = c['slug']
         sections.append(f'''<section id="panel-{i:02d}" role="tabpanel" aria-labelledby="tab-{i:02d}" tabindex="0" hidden><div class="section-title"><h2>{i:02d} / {escape(c['name'])}</h2><a href="svg/{slug}.svg" download>Скачать SVG ↓</a></div><a href="applications/{slug}-board.png" target="_blank"><img src="applications/{slug}-board.png" alt="{escape(c['name'])}: пример на сайте и в Instagram" loading="eager" width="1600" height="1200"></a><div class="links"><a href="applications/{slug}-website.png" target="_blank">Сайт отдельно ↗</a><a href="applications/{slug}-instagram.png" target="_blank">Instagram отдельно ↗</a><a href="applications/{slug}.html" target="_blank">Макет HTML ↗</a></div></section>''')
     page = page.replace('</nav>', tabs + '</nav>', 1)
     page = page.replace('</main>', '\n'.join(sections) + '</main>', 1)
-    page = page.replace('Наведите мышку на номер', 'Варианты 01–10 — первый набор, 11–20 — второй (геометрический). Наведите мышку на номер', 1)
+    if FIRST == 11:
+        page = page.replace('Наведите мышку на номер', 'Варианты 01–10 — первый набор, 11–20 — второй (геометрический). Наведите мышку на номер', 1)
+    else:
+        label = SET_TITLE.split('·', 1)[-1].strip().rstrip('.')
+        page = page.replace('. Наведите мышку на номер', f', {FIRST}–{LAST} — {label}. Наведите мышку на номер', 1)
     path.write_text(page)
-    print('applications.html extended with tabs 11-20.')
+    print(f'applications.html extended with tabs {FIRST:02d}-{LAST:02d}.')
 
 
 def extend_index_page():
     path = ROOT / 'index.html'
     page = path.read_text()
-    if 'id="concept-11"' in page:
-        print('index.html already has cards 11-20.')
+    if f'id="concept-{FIRST:02d}"' in page:
+        print(f'index.html already has cards {FIRST:02d}-{LAST:02d}.')
         return
-    cards = ['<h2 class="set-divider" style="grid-column:1/-1;margin:26px 0 4px;font-size:14px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#bcf7f3">11—20 · второй набор: геометрические знаки</h2>']
+    divider = SET_TITLE if FIRST != 11 else '11—20 · второй набор: геометрические знаки'
+    cards = [f'<h2 class="set-divider" style="grid-column:1/-1;margin:26px 0 4px;font-size:14px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#bcf7f3">{escape(divider)}</h2>']
     for c in concepts:
         i = int(c['slug'][:2])
+        art_style = ' style="background:#fff;border-radius:6px;padding:14px"' if c.get('light_card') else ''
         cards.append(f'''<article class="concept" id="concept-{i:02d}">
       <div class="card-top"><span class="number">{i:02d}</span><span>{escape(c['type'])}</span></div>
-      <div class="art"><img src="svg/{c['slug']}.svg" alt="{escape(c['ru'])}" width="512" height="512"></div>
+      <div class="art"{art_style}><img src="svg/{c['slug']}.svg" alt="{escape(c['ru'])}" width="512" height="512"></div>
       <div class="card-bottom"><div><h2>{escape(c['name'])}</h2><p class="ru">{escape(c['ru'])}</p></div><a href="svg/{c['slug']}.svg" download aria-label="Скачать {escape(c['name'])} в SVG">SVG <span aria-hidden="true">↓</span></a></div>
       <p class="rationale">{escape(c['idea'])}</p><p style="margin:14px 0 0;font-size:12px"><a href="applications.html#concept-{i:02d}" style="color:#bcf7f3;text-decoration:none">Сайт + Instagram →</a></p>
     </article>''')
     page = page.replace('</article></section>', '</article>\n' + '\n'.join(cards) + '</section>', 1)
-    page = page.replace('Logo exploration / 01—10', 'Logo exploration / 01—20', 1)
-    page = page.replace('<title>Tatsi in motion — 10 logo concepts</title>', '<title>Tatsi in motion — 20 logo concepts</title>', 1)
-    page = page.replace('Десять разных знаков для выбора направления.', 'Двадцать знаков в двух наборах для выбора направления.', 1)
-    page = page.replace('Скачать 10 SVG ↓', 'Скачать 20 SVG ↓', 1)
-    page = page.replace('aria-label="Десять вариантов логотипа"', 'aria-label="Двадцать вариантов логотипа"', 1)
-    page = page.replace('<p style="margin:0 0 26px"><a href="applications.html"', '<p style="margin:0 0 26px"><a href="applications.html"', 1)
-    page = page.replace('Посмотреть все 10 вариантов на сайте и в Instagram', 'Посмотреть все 20 вариантов на сайте и в Instagram', 1)
+    page = re.sub(r'Logo exploration / 01—\d+', f'Logo exploration / 01—{LAST}', page, count=1)
+    page = re.sub(r'<title>Tatsi in motion — \d+ logo concepts</title>', f'<title>Tatsi in motion — {LAST} logo concepts</title>', page, count=1)
+    page = re.sub(r'(Десять разных знаков|[А-Яа-яЁё\d]+ знаков в [А-Яа-яЁё]+ наборах) для выбора направления\.',
+                  f'{LAST} знаков в {"двух" if LAST == 20 else "нескольких"} наборах для выбора направления.', page, count=1)
+    page = re.sub(r'Скачать \d+ SVG ↓', f'Скачать {LAST} SVG ↓', page, count=1)
+    page = re.sub(r'aria-label="[^"]* вариантов логотипа"', f'aria-label="{LAST} вариантов логотипа"', page, count=1)
+    page = re.sub(r'Посмотреть все \d+ вариантов', f'Посмотреть все {LAST} вариантов', page, count=1)
     path.write_text(page)
-    print('index.html extended with cards 11-20.')
+    print(f'index.html extended with cards {FIRST:02d}-{LAST:02d}.')
 
 
 def refresh_zips():
@@ -183,7 +206,7 @@ def refresh_zips():
             arc = f'tatsi-in-motion/{c["slug"]}/{c["slug"]}.svg'
             if arc not in names:
                 archive.write(ROOT / 'svg' / (c['slug'] + '.svg'), arc)
-    print('ZIP archives refreshed with 11-20.')
+    print(f'ZIP archives refreshed with {FIRST:02d}-{LAST:02d}.')
 
 
 if __name__ == '__main__':

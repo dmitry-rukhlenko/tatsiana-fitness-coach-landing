@@ -77,3 +77,16 @@ same template as `build-applications.py` and appends tabs/cards 11-20 to
 the PNGs with a stroke-aware clipping check (`applications-verification-11-20.json`).
 Both ZIP archives now also carry 11-20. Files 01-10 and their scripts are
 unchanged. Owner selection remains pending.
+
+## Extension: concepts 21-30 (calligraphic / Didone set), 25 October 2026
+
+After seeing reference images (thin mint flourishes, open rings, a script or
+Didone t/T in dark ink on white), the owner asked for ten more in that style.
+`build-21-30.py` outlines letterforms from macOS system fonts (Snell Roundhand,
+Zapfino, Didot) with fontTools via `glyphs.py`, draws tapered mint flourishes as
+filled paths and writes `svg/21-…30-…` plus `concepts-21-30.json`. On white the
+mint is one step deeper (#86e3da) because #bcf7f3 is 1.2:1 against white; the
+mockups swap it back to #bcf7f3 and the ink to white on dark surfaces
+(`on_dark` map). The gallery builder/renderer now take the concepts file as an
+argument. Font licences: Apple system fonts are licensed for use on macOS;
+commercial logo use of the outlines should be checked before final delivery.

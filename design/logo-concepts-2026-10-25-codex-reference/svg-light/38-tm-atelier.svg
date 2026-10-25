@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — TM Atelier</title>
+  <desc id="logo-description">Высокая T и рукописная m соединены в личный знак. Контраст строгой формы и живой линии. Editable vector outlines; transparent background.</desc>
+  <g id="38-tm-atelier-artwork">
+    <path id="serif-t" d="M101 134 H304 L307 182 H300 C289 151 272 145 232 145 V338 C232 365 238 373 263 378 V385 H151 V378 C178 373 184 365 184 338 V145 C140 145 122 154 109 182 H102 Z" fill="#142627"/>
+    <path id="script-m" d="M238 344 C252 303 263 271 279 257 C298 239 314 247 309 273 C307 283 303 293 299 304 C318 273 338 247 355 246 C376 246 373 266 366 288 C384 261 400 243 413 245 C434 250 412 284 404 305 C395 330 401 339 425 321 C414 341 393 350 386 335 C378 320 398 287 403 271 C406 261 402 258 396 264 C379 279 360 315 350 343 L338 343 L354 282 C358 266 355 260 347 268 C326 286 310 320 301 343 L287 343 L298 283 C303 260 299 257 290 265 C273 280 259 314 252 344 Z" fill="#bcf7f3"/>
+  </g>
+</svg>

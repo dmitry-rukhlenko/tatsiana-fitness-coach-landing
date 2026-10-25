@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — Orbit Italic</title>
+  <desc id="logo-description">Собранная курсивная t внутри диагональной орбиты. Тонкая волна уравновешивает плотную букву. Editable vector outlines; transparent background.</desc>
+  <g id="34-orbit-italic-artwork">
+    <path id="tilted-orbit" d="M421 222 C428 154 400 104 342 95 C257 82 151 162 113 256 C78 342 103 410 169 420 C245 432 339 377 396 309 C354 382 252 446 169 432 C92 420 63 343 103 248 C145 148 258 72 346 86 C408 96 438 151 421 222 Z" fill="#bcf7f3"/>
+    <path id="italic-t" d="M289 154 L306 154 L281 218 H330 L326 228 H277 L233 339 C224 361 231 371 244 371 C260 371 279 357 292 341 L297 346 C277 373 251 389 228 387 C199 385 196 363 210 328 L250 228 H216 L219 220 C248 207 268 181 289 154 Z" fill="#142627"/>
+    <path id="sweeping-crossbar" d="M78 276 C139 218 198 212 271 234 C336 253 381 261 440 223 C394 267 336 267 271 248 C196 225 137 226 78 276 Z" fill="#bcf7f3"/>
+  </g>
+</svg>

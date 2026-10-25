@@ -1,4 +1,5 @@
-// Render boards 11-20 to PNG (board, website, instagram) with the same checks as render-applications.cjs.
+// Render a set of boards to PNG (board, website, instagram) with the same checks as render-applications.cjs.
+// Usage: node render-applications-11-20.cjs [concepts-11-20.json]
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
@@ -6,7 +7,9 @@ const { pathToFileURL } = require('url');
 
 async function main() {
   const root = __dirname;
-  const concepts = JSON.parse(fs.readFileSync(path.join(root, 'concepts-11-20.json')));
+  const conceptsFile = process.argv[2] || 'concepts-11-20.json';
+  const concepts = JSON.parse(fs.readFileSync(path.join(root, conceptsFile)));
+  const reportFile = conceptsFile.replace(/^concepts-/, 'applications-verification-');
   const browser = await chromium.launch({
     headless: true,
     executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
@@ -67,7 +70,7 @@ async function main() {
       }
       console.log(`Rendered ${reports.length}/${concepts.length}: ${concept.slug}`);
     }
-    fs.writeFileSync(path.join(root, 'applications-verification-11-20.json'), JSON.stringify(reports, null, 2) + '\n');
+    fs.writeFileSync(path.join(root, reportFile), JSON.stringify(reports, null, 2) + '\n');
   } finally {
     await browser.close();
   }

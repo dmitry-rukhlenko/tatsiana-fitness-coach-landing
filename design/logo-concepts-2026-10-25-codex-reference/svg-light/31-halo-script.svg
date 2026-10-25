@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — Halo Script</title>
+  <desc id="logo-description">Лёгкая открытая окружность и наклонная t. Волна становится перекладиной буквы. Editable vector outlines; transparent background.</desc>
+  <g id="31-halo-script-artwork">
+    <path id="open-halo" d="M409 163 C373 105 311 75 246 80 C149 87 79 165 83 259 C87 357 162 429 256 429 C351 429 425 357 433 266 C438 365 361 442 258 442 C153 442 72 365 69 260 C65 158 144 75 246 69 C314 65 375 100 409 163 Z" fill="#bcf7f3"/>
+    <path id="t" d="M303 137 C311 126 322 132 314 146 C282 193 249 253 228 305 C212 344 211 374 239 374 C261 373 284 354 305 330 C286 370 254 394 228 390 C190 386 194 350 210 311 C235 247 271 185 303 137 Z" fill="#142627"/>
+    <path id="wave-crossbar" d="M124 221 C171 173 230 181 291 195 C342 207 385 206 419 184 C389 215 346 221 292 207 C230 192 175 184 124 221 Z" fill="#bcf7f3"/>
+  </g>
+</svg>

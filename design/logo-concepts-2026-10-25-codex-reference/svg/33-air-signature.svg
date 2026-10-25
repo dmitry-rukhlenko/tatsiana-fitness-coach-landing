@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — Air Signature</title>
+  <desc id="logo-description">Размашистая заглавная T с открытой петлёй. Смена толщины штриха напоминает движение пера. Editable vector outlines; transparent background.</desc>
+  <g id="33-air-signature-artwork">
+    <path id="calligraphic-stem" d="M332 131 C307 174 276 231 248 287 C222 341 207 385 177 399 C160 407 139 401 141 382 C143 362 171 349 197 345 C174 352 153 368 153 382 C153 394 167 397 177 390 C202 372 217 319 236 272 C257 221 285 164 307 135 Z" fill="#ffffff"/>
+    <path id="looped-cap" d="M99 220 C54 185 98 122 171 117 C250 110 285 152 342 153 C385 153 413 133 410 110 C407 88 369 88 344 112 C327 128 316 147 311 161 C315 132 331 110 349 98 C382 75 420 84 420 111 C420 142 381 164 338 164 C281 163 246 121 174 123 C112 125 76 174 99 205 C105 214 117 217 130 214 C121 224 109 226 99 220 Z" fill="#bcf7f3"/>
+  </g>
+</svg>

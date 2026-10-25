@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — Sculpted T</title>
+  <desc id="logo-description">Архитектурная T и короткая асимметричная лента. Меньше деталей для компактного аватара. Editable vector outlines; transparent background.</desc>
+  <g id="36-sculpted-t-artwork">
+    <path id="t" d="M132 125 H379 L383 182 H375 C363 145 344 138 284 138 V355 C284 381 292 392 321 397 V404 H191 V397 C220 392 228 381 228 355 V138 C169 138 148 146 137 182 H129 Z" fill="#142627"/>
+    <path id="ribbon" d="M111 285 C170 294 214 266 256 233 C297 201 335 195 399 211 C345 211 312 221 275 252 C230 290 176 311 111 285 Z" fill="#bcf7f3"/>
+  </g>
+</svg>

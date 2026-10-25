@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — Breeze Circle</title>
+  <desc id="logo-description">Почти замкнутый круг с двумя лёгкими окончаниями. Вертикальная t задаёт спокойный центр. Editable vector outlines; transparent background.</desc>
+  <g id="37-breeze-circle-artwork">
+    <path id="upper-circle" d="M92 269 C67 173 138 81 235 72 C324 64 402 114 424 197 C395 121 324 79 240 85 C152 92 90 170 92 269 Z" fill="#bcf7f3"/>
+    <path id="lower-circle" d="M425 245 C454 343 377 431 280 441 C186 451 117 399 92 324 C125 391 192 431 276 427 C364 423 427 349 425 245 Z" fill="#bcf7f3"/>
+    <path id="slender-t" d="M268 133 C273 124 285 130 280 140 L247 324 C241 356 247 371 263 371 C281 370 298 355 310 340 C296 371 276 389 253 386 C223 383 222 357 229 321 Z" fill="#ffffff"/>
+    <path id="breathing-wave" d="M123 244 C178 207 228 213 286 227 C333 239 371 239 407 216 C373 248 331 250 285 237 C222 221 173 220 123 244 Z" fill="#bcf7f3"/>
+  </g>
+</svg>

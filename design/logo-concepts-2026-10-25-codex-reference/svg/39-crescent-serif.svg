@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Tatsi in motion — Crescent Serif</title>
+  <desc id="logo-description">Чистая T и один широкий круговой жест. Лента переходит в орбиту, оставляя справа воздух. Editable vector outlines; transparent background.</desc>
+  <g id="39-crescent-serif-artwork">
+    <path id="crescent" d="M386 125 C319 65 208 87 150 157 C89 232 100 331 171 382 C229 424 305 417 361 377 C300 431 219 440 156 391 C78 331 69 226 137 146 C200 71 315 53 386 125 Z" fill="#bcf7f3"/>
+    <path id="t" d="M176 156 H374 L377 201 H370 C359 172 345 167 300 167 V344 C300 364 307 371 330 375 V381 H230 V375 C252 371 259 364 259 344 V167 C215 167 199 176 184 201 H177 Z" fill="#ffffff"/>
+    <path id="crescent-return" d="M156 391 C211 357 283 356 339 375 C375 387 407 383 438 360 C411 390 375 400 337 386 C277 365 213 370 156 391 Z" fill="#bcf7f3"/>
+  </g>
+</svg>

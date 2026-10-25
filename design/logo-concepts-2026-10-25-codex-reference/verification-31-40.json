@@ -1,0 +1,105 @@
+{
+  "files": [
+    {
+      "file": "31-halo-script.svg",
+      "sha256": "1895f472c5336ab2174c16cbdeaae79fe98c19f02514c2f6f16bc0bde0a47c38",
+      "bounds": {
+        "x": 68.85456848144531,
+        "y": 68.69081115722656,
+        "width": 364.375732421875,
+        "height": 373.3092041015625
+      }
+    },
+    {
+      "file": "32-ribbon-serif.svg",
+      "sha256": "e44d484338042c1f07ebdd8e7a7e07ae406414c3cb0ae8c6bd37b0833a205447",
+      "bounds": {
+        "x": 72,
+        "y": 120,
+        "width": 371,
+        "height": 285
+      }
+    },
+    {
+      "file": "33-air-signature.svg",
+      "sha256": "fbadac88bc118be98886350da00bf259eb4854d4e1fac39ac8c6b7e5a48f5de9",
+      "bounds": {
+        "x": 80.81549072265625,
+        "y": 84.86032104492188,
+        "width": 339.18450927734375,
+        "height": 317.5919494628906
+      }
+    },
+    {
+      "file": "34-orbit-italic.svg",
+      "sha256": "cfa364d0c9c6a92e2a0773351b0b6b2cad539cd8bc3596a733122b3038b0a5e3",
+      "bounds": {
+        "x": 78,
+        "y": 84.33419799804688,
+        "width": 362,
+        "height": 349.6035461425781
+      }
+    },
+    {
+      "file": "35-silk-loop.svg",
+      "sha256": "9d49b084dcd8d2404b52dbae106dda45010c36bb9794ff373304d9f9728a0e7a",
+      "bounds": {
+        "x": 100,
+        "y": 83.33827209472656,
+        "width": 319,
+        "height": 306.6617431640625
+      }
+    },
+    {
+      "file": "36-sculpted-t.svg",
+      "sha256": "41d2fc0310a81e368b9f76826c2b6ef45bda9c08602a599ab0a6770e1fefcbc9",
+      "bounds": {
+        "x": 111,
+        "y": 125,
+        "width": 288,
+        "height": 279
+      }
+    },
+    {
+      "file": "37-breeze-circle.svg",
+      "sha256": "89e5b7400f85e0c2c131a6ea3119a05923948a3ca597772b4047be9f26273baa",
+      "bounds": {
+        "x": 86.95047760009766,
+        "y": 71.16402435302734,
+        "width": 344.2408142089844,
+        "height": 371.0669250488281
+      }
+    },
+    {
+      "file": "38-tm-atelier.svg",
+      "sha256": "36cbd30d156ea49e4aa9300322c65e0f02c39bc2355e5037033917a65d2013b5",
+      "bounds": {
+        "x": 101,
+        "y": 134,
+        "width": 324,
+        "height": 251
+      }
+    },
+    {
+      "file": "39-crescent-serif.svg",
+      "sha256": "f01bad0c9070b674adbb2ee7a4eb91362807a486a7795027e3a80e19fe7461f1",
+      "bounds": {
+        "x": 91.24745178222656,
+        "y": 79.41439819335938,
+        "width": 346.7525634765625,
+        "height": 343.6898498535156
+      }
+    },
+    {
+      "file": "40-continuum-t.svg",
+      "sha256": "df9f3d3ec25c3511833be63ae583da153e37765b1787d53ac471de42c6910510",
+      "bounds": {
+        "x": 74.89872741699219,
+        "y": 70.81937408447266,
+        "width": 326.36712646484375,
+        "height": 329.9610290527344
+      }
+    }
+  ],
+  "errors": []
+}
