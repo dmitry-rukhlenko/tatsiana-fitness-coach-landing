@@ -1,0 +1,12 @@
+{
+  "deep_link": "34",
+  "hover_switches": 10,
+  "only_one_panel": true,
+  "no_scroll_jump": true,
+  "keyboard": "Home, End, ArrowRight and wraparound passed",
+  "mobile_click": "38",
+  "mobile_overflow": false,
+  "page_errors": [],
+  "network_requests": 0,
+  "local_documents_fulfilled": 1
+}

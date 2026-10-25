@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-labelledby="title">
+  <title id="title">Tatsi in motion — Orbit T</title>
+  <!-- Letterforms outlined to paths (no fonts needed). Ink #ffffff, deep mint #bcf7f3 for white backgrounds; on dark surfaces use ink #ffffff and brand mint #bcf7f3. -->
+  <g id="symbol">
+    <path id="ring" d="M386.5 363.4 C302.6 423.7 189.5 443.8 110.7 412.4 C32 381.1 7.2 306.1 50.3 229.6 C93.5 153 193.8 94.1 294.8 85.9 C395.9 77.6 472.6 122.1 481.8 194.4" fill="none" stroke="#bcf7f3" stroke-width="7" stroke-linecap="round"/>
+    <path id="T" d="M207.7 357.8H241.0V152.6H223.60000000000002Q217.60000000000002 152.6 210.10000000000002 153.65Q202.6 154.70000000000002 194.95 159.5Q187.3 164.3 180.25 174.65Q173.20000000000002 185.0 168.1 203.3H164.8V148.4H347.2V203.3H343.9Q338.8 185.0 331.75 174.65Q324.7 164.3 317.04999999999995 159.5Q309.4 154.70000000000002 301.9 153.65Q294.4 152.6 288.4 152.6H271.0V357.8H304.3V362.0H207.7Z" fill="#ffffff"/>
+  </g>
+</svg>
