@@ -50,10 +50,14 @@ curl -fsSL https://raw.githubusercontent.com/dmitry-rukhlenko/tatsiana-fitness-c
 
 ## 3. Защитить `main`
 
-GitHub Pages публикует сайт из ветки `main`, папка `/`. На 20 ноября 2026
-ветка не защищена: любой соавтор может запушить в неё напрямую, и правка
-через минуту окажется на живом сайте. Инструкция велит Тане работать через
-ветки и pull request, но надёжнее, чтобы это обеспечивал GitHub.
+GitHub Pages публикует сайт из ветки `main`, папка `/`. Без защиты любой
+соавтор может запушить в неё напрямую, и правка через минуту окажется на
+живом сайте. Инструкция велит Тане работать через ветки и pull request, но
+надёжнее, чтобы это обеспечивал GitHub.
+
+**Сделано 20 ноября 2026:** ruleset `protect-main` создан через API и активен
+(<https://github.com/dmitry-rukhlenko/tatsiana-fitness-coach-landing/rules/27721864>).
+Шаги ниже оставлены на случай, если его придётся пересоздать.
 
 1. Открой <https://github.com/dmitry-rukhlenko/tatsiana-fitness-coach-landing/settings/rules>
 2. **New ruleset** → **New branch ruleset**.
