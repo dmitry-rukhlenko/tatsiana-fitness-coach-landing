@@ -131,15 +131,15 @@ textarea {
     text-decoration: none;
 }
 
+/* The logo file has a white background; multiply lets the cream header show through it. */
 .brand-mark {
-    display: grid;
-    place-items: center;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: var(--color-lavender);
-    color: var(--color-text);
-    font-size: 0.78rem;
+    display: block;
+    flex: none;
+    width: 60px;
+    height: 60px;
+    /* The ring has wide empty margins in the file; pull it closer to the name. */
+    margin: -6px -4px -6px -6px;
+    mix-blend-mode: multiply;
 }
 
 .site-nav {
@@ -245,6 +245,10 @@ textarea {
     font-weight: 820;
     letter-spacing: 0;
     text-transform: none;
+}
+
+.hero .eyebrow {
+    color: #1D6964;
 }
 
 h1,
